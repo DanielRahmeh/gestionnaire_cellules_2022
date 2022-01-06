@@ -12,7 +12,17 @@
    --text-m: 1.6rem;
    --text-s: 1.4rem;
 
+   /* Couleurs */
+   --text-color: #1B2032;
+   --light-color: white;
+   --orange-color: #FB4210;
+   --blue-color: #4C39E9;
 }
+
+
+/* vvv General vvv */
+
+/* s */
 
 html {
    font-size: 62.5%;
@@ -22,18 +32,36 @@ body {
    margin: 0;
    font-family: var(--font);
    font-size: var(--text-m);
+   color: var(--text-color);
+}
+
+a {
+   text-decoration: none;
+   color: var(--orange-color);
+   transition-duration: 0.5s;
+}
+
+a:hover {
+   color: var(--blue-color);
+}
+
+/* ^^^ General ^^^ */
+
+
+/* vvv Index.html / Page de connexion vvv */
+
+#main_login {
+   display: grid;
+   place-items: center;
+   min-height: 100vh;
  }
 
-
- /* vvv Index.html / Page de connexion vvv */
-
- #connexion {
-   margin-top: 20%;
+#connexion {
    border-radius: 10% / 50%;
    width:45rem;
    margin-left: auto;
    margin-right: auto;
-   box-shadow: 0 0 20px 0 rgb(105, 105, 105), 0 0px 10px 0 rgb(100, 100, 100);
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #connexion form {
@@ -41,12 +69,40 @@ body {
 }
 
 #connexion h2 {
+   margin: 0;
    text-align: center;
+   margin-bottom: 1%;
+}
+
+#img_login {
+   display: grid;
+   place-items: center;
+   margin-top: 3%;
+   margin-bottom: 2%;
+}
+
+#connexion img {
+   width: 30%;
+   transition-duration: 0.5s;
+}
+
+#connexion img:hover {
+   transition-duration: 1s;
+   width: 40%;
+}
+
+.lab_login label {
+   margin-left: 3%;
 }
 
 .input_login {
    width: 100%;
    margin-bottom: 3%;
+   height: 25px;
+   border-radius: 10px;
+   padding-left: 2%;
+   border: 0;
+   box-shadow: inset 0 0 5px #9b9b9b;
 }
 
 #submit_login_div {
@@ -63,7 +119,8 @@ body {
 
 #check_login {
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
+   gap: 10%;
 }
 
- /* ^^^ Index.html / Page de connexion ^^^ */
+/* ^^^ Index.html / Page de connexion ^^^ */
