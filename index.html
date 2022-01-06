@@ -21,13 +21,26 @@
       <form action="#">
          <h1>Connexion</h1>
          <!-- Saisie de l'email  -->
-         <label>Email</label>
-         <input type="email" placeholder="Entrer l'email" name="email" required>
+         <div class="lab_login">
+            <label>Email</label>
+            <input type="email" class="input_login" name="email" placeholder="Entrer l'email" required>
+         </div>
          <!-- Saisie du mot de passe  -->
-         <label>Mot de passe</label>
-         <input type="password" placeholder="Entrer le mot de passe" name="pass" required>
+         <div class="lab_login">
+            <label>Mot de passe</label>
+            <input type="password" class="input_login" name="pass" placeholder="Entrer le mot de passe" required>
+         </div>
+         <div id="check_login">
+            <div>
+               <!-- Checkbox pour rester connecté -->
+               <label>Rester connecté</label>
+               <input type="checkbox" name="stay_connected" placeholder="Toujours rester connecté">
+            </div>
+            <!-- Lien vers la demande d'un nouveau mot de passe -->
+            <a href="#">mot de passe oublié</a>
+         </div>
          <!-- Bouton de confirmation  -->
-         <input type="submit" id='submit' value='Connexion' >
+         <input type="submit" id="submit_login" value='Connexion' >
       </form>
    </div>
 </body>
