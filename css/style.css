@@ -53,13 +53,17 @@ a:hover {
 /* vvv Index.html / Page de connexion vvv */
 
 #main_login {
+   left: 0;
+	bottom: 0;
+   background-size: cover;
+   background-repeat: no-repeat;
    position: relative;
    display: grid;
    place-items: center;
    min-height: 100vh;
  }
 
- #main_login::before {
+ /* #main_login:before {
    content: " ";
 	position: absolute;
 	left: 0;
@@ -72,11 +76,11 @@ a:hover {
    -o-background-size: cover;
    background-size: cover;
    background-image: url("../img/background/HotelTertiaire_Bat.jpg") ;
-   /* background-size: contain; */
+   background-size: contain;
 	background-repeat: no-repeat;
 	filter: blur(5px);
 	z-index: 0;
- }
+ } */
 
 #connexion {
    position: relative;

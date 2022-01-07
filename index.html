@@ -53,25 +53,28 @@
 
 <script>
    //Array of images which you want to show: Use path you want.
-   let images=new Array('img/background/HotelTertiaire_Bat.jpg',
-                        'img/background/HotelTertiare_Lieu.jpg',
-                        'img/background/Numerica1_Bat.jpg', 
-                        'img/background/Numerica1_Lieu.jpg',
-                        'img/background/Numerica2_BatA.jpg', 
-                        'img/background/Numerica2_BatB.jpg',
-                        'img/background/Numerica2_BatC.jpg',
-                        'img/background/Numerica2_Lieu.jpg');
+   let images=new Array('http://localhost/gestionnaire_cellules_2022/img/background/HotelTertiaire_Bat.png',
+                        'http://localhost/gestionnaire_cellules_2022/img/background/HotelTertiaire_Lieu.png',
+                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica1_Bat.png', 
+                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica1_Lieu.png',
+                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_BatA.png', 
+                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_BatB.png',
+                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_BatC.png',
+                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_Lieu.png');
    
-   let index = 0;
+   let i = 0;
 
+   console.log(images);
 
    function change() {
-      document.getElementById('main_login').setAttribute("style", "background-image: url('"+ images[index] +"');");
-      index > 1 ? index = 0 : index++;
+      if (i == images.length)
+         i = 0;
+      document.getElementById('main_login').setAttribute("style", "background-image: url('" + images[i] + "');");
+      i++;
    }
 
    window.onload = function () {
-      setInterval(change, 3000);
+      setInterval(change, 4000);
    };
 
 </script>
