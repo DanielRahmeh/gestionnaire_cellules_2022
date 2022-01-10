@@ -17,6 +17,7 @@
    --light-color: white;
    --orange-color: #FB4210;
    --blue-color: #4C39E9;
+   --error-color: #b30000;
    --gray-100: #e0e0e0;
    --gray-200: #c0bebe;
 }
@@ -33,8 +34,6 @@ body {
    font-family: var(--font);
    font-size: var(--text-m);
    color: var(--text-color);
-
-   
 }
 
 a {
@@ -47,10 +46,17 @@ a:hover {
    color: var(--blue-color);
 }
 
+.error {
+   color: var(--error-color);
+   font-weight: bold;
+   font-style: italic;
+   text-align: center;
+}
+
 /* ^^^ General ^^^ */
 
 
-/* vvv Index.html / Page de connexion vvv */
+/* vvv Index.php / Page de connexion vvv */
 
 #main_login {
    
@@ -155,7 +161,7 @@ a:hover {
 #check_login {
    display: flex;
    justify-content: space-around;
-   gap: 10%;
+   margin-bottom: 1rem;
 }
 
 /* ^^^ Index.html / Page de connexion ^^^ */
