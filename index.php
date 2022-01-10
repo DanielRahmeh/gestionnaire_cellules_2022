@@ -20,7 +20,7 @@
       <div id="connexion">
          <!-- Formulaire de connexion -->
          <div id="img_login"><img src="img/logo/logo_texte.png"></div>
-         <form action="#">
+         <form action="php/authentify.php" method="POST">
             <h2>Connexion</h2>
             <!-- Saisie de l'email  -->
             <div class="lab_login">
@@ -30,7 +30,7 @@
             <!-- Saisie du mot de passe  -->
             <div class="lab_login">
                <label><i>Mot de passe</i></label>
-               <input type="password" class="input_login" name="pass" placeholder="Entrer le mot de passe" required>
+               <input type="password" class="input_login" name="password" placeholder="Entrer le mot de passe" required>
             </div>
             <div id="check_login">
                <div>
@@ -46,6 +46,13 @@
                <input type="submit" id="submit_login" value='Connexion' >
             </div>
          </form>
+         <?php
+         if(isset($_GET['erreur'])) {
+               $err = $_GET['erreur'];
+               ?> <div class="error">Utilisateur ou mot de passe incorrect</div> <?php
+               // echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+            }
+        ?>
       </div>
    </main>
 </body>
