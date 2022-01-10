@@ -20,6 +20,6 @@
          session_start();
          $_SESSION['email'] = $_POST['email'];
          $_SESSION['admin'] = $admin;
-         header('Location: principal.php');
+         header('Location: ../pages/principal.php');
       }
 ?>

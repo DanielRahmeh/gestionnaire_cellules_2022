@@ -20,7 +20,7 @@
       <div id="connexion">
          <!-- Formulaire de connexion -->
          <div id="img_login"><img src="img/logo/logo_texte.png"></div>
-         <form action="php/authentify.php" method="POST">
+         <form action="php/scripts/authentify.php" method="POST">
             <h2>Connexion</h2>
             <!-- Saisie de l'email  -->
             <div class="lab_login">
