@@ -15,11 +15,18 @@
             }
       }
    if ($count == 0)
-      header('Location: ../index.php?erreur=1');
+      header('Location: ../pages/login.php?erreur=1');
    else {
          session_start();
          $_SESSION['email'] = $_POST['email'];
+         $_SESSION['password'] = $_POST['password'];
          $_SESSION['admin'] = $admin;
+         if (!empty($_POST["stay_connected"])) {
+            setcookie('email', $_POST['email'], time()+36000, '/');
+            setcookie('password', $_POST['password'], time()+36000, '/');
+            setcookie('admin', $admin, time()+36000, '/');
+            echo "Cookies Set Successfuly : " . $_COOKIE['email'];
+         }
          header('Location: ../pages/principal.php');
       }
 ?>
