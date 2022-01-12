@@ -12,6 +12,8 @@
       if($_SESSION['email'] != "") {
          $email = $_SESSION['email'];
          $admin = $_SESSION['admin'];
+
+         include('header.php');
          if ($admin == 1) {
                echo 'Bonjour, vous êtes connecté au compte de : <b>' . $email . '</b> en tant qu\'administrateur</br>';
                ?><a href="param_admin.php">Paramètre administrateur</a><?php

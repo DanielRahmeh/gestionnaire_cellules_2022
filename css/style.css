@@ -18,8 +18,9 @@
    --orange-color: #FB4210;
    --blue-color: #4C39E9;
    --error-color: #b30000;
-   --gray-100: #e0e0e0;
+   --gray-100: #eeeeee;
    --gray-200: #c0bebe;
+   --gray-300: #969696;
 }
 
 
@@ -56,7 +57,7 @@ a:hover {
 /* ^^^ General ^^^ */
 
 
-/* vvv Index.php / Page de connexion vvv */
+/* vvv login.php / Page de connexion vvv */
 
 #main_login {
    
@@ -164,4 +165,44 @@ a:hover {
    margin-bottom: 1rem;
 }
 
-/* ^^^ Index.html / Page de connexion ^^^ */
+/* ^^^ login.html / Page de connexion ^^^ */
+
+/* vvv header.php / Header vvv */
+
+header {
+   margin: 0;
+   padding: 0;
+   background-color : var(--gray-100);
+   display: flex;
+   justify-content: space-between;
+   border: 1px solid var(--gray-300);
+}
+
+header nav {
+   display: flex;
+}
+
+header nav a {
+   width: 5rem;
+   padding-top: 1%;
+   padding: 8px 10px 4px 30px;
+   display:inline-block;
+   vertical-align:middle;
+   line-height:normal;
+   border-left: 1px solid var(--gray-300);
+}
+
+.icon_nav {
+   width: 3rem;
+}
+
+#little_icon_nav {
+   margin-top: 0.1rem;
+}
+
+#banniere {
+   margin: 8px 0px 5px 10px;
+   width: 15rem;
+}
+
+/* ^^^ header.html / Header ^^^ */
