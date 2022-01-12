@@ -9,7 +9,10 @@
 </head>
 <body>
    <header>
-      <a href="principal.php"><img src="../../img/logo/logo_texte.png" alt="Retour à l'accueil" id="banniere"></a>
+      <a href="principal.php" id="banniere">
+         <img src="../../img/logo/logo_image.png" alt="Retour à l'accueil" id="principal_logo">
+         <h3>Gestionnaire de cellules</h3>
+      </a>
       <nav>
          <?php if ($_SESSION['admin'] == 1)?>
             <a href="settings_admin.php"><img src="../../img/icon/admin_settings.png" alt="" class="icon_nav"></a>

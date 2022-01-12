@@ -54,6 +54,12 @@ a:hover {
    text-align: center;
 }
 
+h3 {
+   color: var(--text-color);
+   margin: 0;
+   padding: 0;
+}
+
 /* ^^^ General ^^^ */
 
 
@@ -201,8 +207,17 @@ header nav a {
 }
 
 #banniere {
+   display: flex;
+}
+#banniere h3 {
+   display: flex;
+   padding: 12px 0px 0px 10px;
+   font-weight:normal; 
+}
+
+#principal_logo {
    margin: 8px 0px 5px 10px;
-   width: 15rem;
+   width: 3.3rem;
 }
 
 /* ^^^ header.html / Header ^^^ */
