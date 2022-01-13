@@ -11,7 +11,7 @@
 <body>
    <header>
       <a href="principal.php" id="banniere">
-         <img src="../../img/logo/logo_img2.png" alt="Retour à l'accueil" id="principal_logo">
+         <img src="../../img/logo/logo_img2.png" alt="Retour à l'accueil">
          <h3>Gestionnaire de cellules</h3>
       </a>
          <form action="" id="search_bar_header">

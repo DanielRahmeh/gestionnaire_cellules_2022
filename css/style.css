@@ -54,10 +54,28 @@ a:hover {
    text-align: center;
 }
 
-h3 {
+h3, h4 {
    color: var(--text-color);
    margin: 0;
    padding: 0;
+}
+
+/* barre de recherche */
+.search_bar {
+   width: 100%;
+   height: 30px;
+   padding-left: 1%;
+   border: 0;
+   border-radius: 10px 0 0 10px;
+   box-shadow: inset 0 0 5px #9b9b9b;
+}
+
+/* bouton de recherche */
+.search_button {
+   border : 1px solid var(--gray-200);
+   border-radius: 0 10px 10px 0;
+   box-shadow: inset 0 0 0px #9b9b9b;
+   cursor:pointer;
 }
 
 /* ^^^ General ^^^ */
@@ -65,8 +83,8 @@ h3 {
 
 /* vvv login.php / Page de connexion vvv */
 
+/* main */
 #main_login {
-   
    margin: 0;
    background-image: url('../img/background/Numerica2_Lieu.png');
    background-size: cover;
@@ -77,6 +95,7 @@ h3 {
    transition-duration: 1s;
  }
 
+ /* main */
  #main_login:before {
    left: 0%;
    background-color: rgba(0, 0, 0, 0.521);
@@ -88,6 +107,7 @@ h3 {
    width: 100%;
  }
 
+/* div id="connexion" */
 #connexion {
    position: absolute;
    background-color: rgba(255, 255, 255, 0.719);
@@ -98,36 +118,43 @@ h3 {
    box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.747) ;
 }
 
+/* formulaire de connexion */
 #connexion form {
    background-color: var(--white-color);
    padding: 1% 8% 6% 6%;
 }
 
+/* titre du formulaire de connexion */
 #connexion h2 {
    text-align: center;
    margin: 0 0 1% 0;
 }
 
+/* logo page de connexion */
 #img_login {
    display: grid;
    place-items: center;
    margin: 3% 2% 2% 0;
 }
 
+/* images de la page de connexion */
 #connexion img {
    width: 30%;
    transition-duration: 0.5s;
 }
 
+/* survol des images de la page de connexion */
 #connexion img:hover {
    transition-duration: 1s;
    width: 40%;
 }
 
+/* label des formulaires de la page de connexion */
 .lab_login label {
    margin-left: 3%;
 }
 
+/* champs de formulaire de la page de ocnnexion */
 .input_login {
    width: 100%;
    margin-bottom: 3%;
@@ -138,11 +165,13 @@ h3 {
    box-shadow: inset 0 0 5px #9b9b9b;
 }
 
+/* div id="submit_login_div" */
 #submit_login_div {
    display: flex;
    justify-content: center;
 }
 
+/* bouton submit de la page de connexion */
 #submit_login {
    margin-top: 5%;
    cursor:pointer;
@@ -160,11 +189,13 @@ h3 {
    transition-duration: 1.5s;
 }
 
+/* survol du bouton submit de la page de connexion */
 #submit_login:hover {
    background-color: var(--blue-color);
    color: var(--gray-100);
 }
 
+/* div contenant le réster connécter + mot de passe oublié */
 #check_login {
    display: flex;
    justify-content: space-around;
@@ -175,6 +206,7 @@ h3 {
 
 /* vvv header.php / Header vvv */
 
+/* header */
 header {
    margin: 0;
    padding: 0;
@@ -187,9 +219,12 @@ header {
    border: 1px solid var(--gray-300);
 }
 
+/* bannière principal */
 #banniere {
    display: flex;
 }
+
+/* texte de la banière */
 #banniere h3 {
    display: flex;
    padding: 12px 0px 0px 10px;
@@ -197,11 +232,13 @@ header {
    white-space: nowrap;
 }
 
-#principal_logo {
+/* image de la bannière */
+#banniere img {
    margin: 6px 0px 5px 10px;
    width: 3.3rem;
 }
 
+/* div contenant la champs de texte + le bouton pour la recherche */
 #search_bar_header {
    margin: 0 5% 0 5%;
    flex-grow: 2;
@@ -209,28 +246,13 @@ header {
    border-radius: 10px;
 }
 
-.search_bar {
-   width: 100%;
-   height: 30px;
-   padding-left: 2%;
-   border: 0;
-   border-radius: 10px 0 0 10px;
-   box-shadow: inset 0 0 5px #9b9b9b;
-
-}
-
-.search_button {
-   border : 1px solid var(--gray-200);
-   border-radius: 0 10px 10px 0;
-   box-shadow: inset 0 0 0px #9b9b9b;
-   cursor:pointer;
-}
-
+/* navigation */
 header nav {
    position: relative;
    display: flex;
 }
 
+/* bouton de navigation */
 header nav a {
    width: 5rem;
    padding-top: 1%;
@@ -241,13 +263,79 @@ header nav a {
    border-left: 1px solid var(--gray-300);
 }
 
+/* icones de navigation */
 .icon_nav {
    width: 2.5rem;
 }
 
+/* icones de recherche */
 .icon_search {
    width: 2rem;
 }
 
-
 /* ^^^ header.html / Header ^^^ */
+
+
+/* vvv Principal.html / main de la page principal vvv */
+
+#main_principal {
+   background-color: var(--text-color);
+   display: grid;
+   grid-template-columns: 23rem auto;
+}
+
+.slide_bar {
+   height: 1080px;
+   color: white;
+}
+
+.main_display {
+   background-color: var(--light-color);
+   border-radius: 30px 0 0 0;
+   padding: 2rem 0 0 3rem;
+}
+
+.main_display p {
+   margin: 0 0 2rem 0;
+   padding: 0;
+}
+
+#research_grid {
+   display: grid;
+   place-items: center;
+}
+
+#research_main {
+   margin-top: 37%;
+   display: grid;
+   place-items: center;
+   position: absolute;
+   background-color: rgba(255, 255, 255, 0.719);
+   border-radius: 10% / 50%;
+   margin-left: auto;
+   margin-right: auto;
+   box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.096) ;
+   padding: 1rem 2rem 2rem 1.3rem;
+}
+
+#research_main h4 {
+   margin-top: 1rem;
+}
+
+#search_bar_main {
+   margin-top: 1rem;
+   display: flex;
+   border-radius: 10px;
+}
+
+/* barre de recherche de la page principal*/
+.search_bar_main {
+   height: 30px;
+   padding-left: 3%;
+   border: 0;
+   border-radius: 10px 0 0 10px;
+   box-shadow: inset 0 0 5px #9b9b9b;
+}
+
+
+/* ^^^ Principal.html / main de la page principal ^^^ */
