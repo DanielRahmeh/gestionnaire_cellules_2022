@@ -17,8 +17,10 @@
    --light-color: white;
    --orange-color: #FB4210;
    --blue-color: #4C39E9;
+   --alert-color: #f39494;
    --error-color: #b30000;
    --gray-100: #eeeeee;
+   --gray-150: #e0e0e0;
    --gray-200: #c0bebe;
    --gray-300: #969696;
 }
@@ -37,10 +39,15 @@ body {
    color: var(--text-color);
 }
 
+html, body {
+   max-width: 100%;
+   overflow-x: hidden;
+}
+
 a {
    text-decoration: none;
    color: var(--orange-color);
-   transition-duration: 1s;
+   transition-duration: 0.5s;
 }
 
 a:hover {
@@ -254,23 +261,42 @@ header nav {
 
 /* bouton de navigation */
 header nav a {
-   width: 5rem;
-   padding-top: 1%;
-   padding: 10px 10px 4px 35px;
+   width: 7.3rem;
+   height: 4.4rem;
    display:inline-block;
    vertical-align:middle;
    line-height:normal;
    border-left: 1px solid var(--gray-300);
+   display: flex;
+   justify-content: center;
 }
 
 /* icones de navigation */
 .icon_nav {
-   width: 2.5rem;
+   width: 37%;
+   height: 60%;
+   padding-top: 0.9rem;
 }
 
 /* icones de recherche */
 .icon_search {
    width: 2rem;
+}
+
+.icon_search:hover {
+   width: 2rem;
+   background-color: var(--gray-300);
+
+}
+
+#settings:hover, #user:hover {
+   background-color: var(--gray-150);
+   box-shadow: inset 0 0 5px #7e7e7e;
+}
+
+#power-button:hover {
+   background-color: var(--alert-color);
+   box-shadow: inset 0 0 5px #353535;
 }
 
 /* ^^^ header.html / Header ^^^ */
@@ -306,16 +332,21 @@ header nav a {
 }
 
 #research_main {
-   margin-top: 37%;
+   margin-top: 35%;
    display: grid;
    place-items: center;
    position: absolute;
-   background-color: rgba(255, 255, 255, 0.719);
-   border-radius: 10% / 50%;
+   background-color: var(--light-color);
    margin-left: auto;
-   margin-right: auto;
-   box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.096) ;
+   margin-right: auto;   
    padding: 1rem 2rem 2rem 1.3rem;
+   border-top: 1px solid var(--gray-300);
+   border-bottom: 1px solid var(--gray-300);
+   /* border-right: 1px solid var(--gray-300); */
+   /* border-bottom: 1px solid var(--gray-300); */
+   border-radius: 30px 0 30px 0;
+    box-shadow: rgba(0, 0, 0, 0.089) -1px 3px 8px 2px;
+   /* box-shadow: 0 -4px 8px 0px rgba(0, 0, 0, 0.233); */
 }
 
 #research_main h4 {

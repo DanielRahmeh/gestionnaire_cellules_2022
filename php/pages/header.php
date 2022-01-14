@@ -19,10 +19,13 @@
             <button type="submit" name="btnEnvoiForm" title="Search" class="search_button"><img src="../../img/icon/search.png" class="icon_search" /></button>
          </form>
       <nav>
-         <?php if ($_SESSION['admin'] == 1)?>
-            <a href="settings_admin.php"><img src="../../img/icon/settings.png" alt="" class="icon_nav"></a>
-         <a href="settings.php"><img src="../../img/icon/user.png" alt="" class="icon_nav" id="little_icon_nav"></a>
-         <a href="../scripts/disconnect.php"><img src="../../img/icon/power-button.png" alt="" class="icon_nav" id="little_icon_nav"></a>
+         <?php if ($_SESSION['admin'] == 1) {?>
+            <a href="settings_admin.php"  id="settings">
+               <img src="../../img/icon/settings.png" alt="" class="icon_nav">
+            </a>
+            <?php }?>
+         <a href="settings.php" id="user"><img src="../../img/icon/user.png" alt="" class="icon_nav"></a>
+         <a href="../scripts/disconnect.php"  id="power-button"><img src="../../img/icon/power-button.png" alt="" class="icon_nav"></a>
       </nav>
    </header>
 </body>
