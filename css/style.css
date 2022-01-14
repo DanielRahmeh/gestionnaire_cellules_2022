@@ -299,6 +299,11 @@ header nav a {
    box-shadow: inset 0 0 5px #353535;
 }
 
+#settings_active {
+   background-color: var(--gray-150);
+   box-shadow: inset 0 0 5px #7e7e7e;
+}
+
 /* ^^^ header.html / Header ^^^ */
 
 
@@ -369,4 +374,21 @@ header nav a {
 }
 
 
-/* ^^^ Principal.html / main de la page principal ^^^ */
+/* ^^^ principal.php / main de la page principal ^^^ */
+
+
+/* vvv settings.php / Page des paramètres administrateur vvv */
+
+#new_user_container {
+   margin: 1% 0 0 3%;
+}
+
+.elem_setting {
+   margin-bottom: 1rem;
+}
+
+#check_pass  {
+   font-size: var(--text-s);
+} 
+
+/* ^^^ settings.php / Page des paramètres administrateur ^^^ */

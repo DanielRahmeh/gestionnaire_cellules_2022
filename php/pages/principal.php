@@ -12,7 +12,7 @@
       if($_SESSION['email'] != "") {
          $email = $_SESSION['email'];
          $admin = $_SESSION['admin'];
-         include('header.php');
+         include('header/header.php');
          ?>
          <main id="main_principal">
             <div class="slide_bar">
