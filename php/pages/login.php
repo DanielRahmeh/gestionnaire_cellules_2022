@@ -50,7 +50,6 @@
          if(isset($_GET['erreur'])) {
                $err = $_GET['erreur'];
                ?> <div class="error">Utilisateur ou mot de passe incorrect</div> <?php
-               // echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
             }
         ?>
       </div>

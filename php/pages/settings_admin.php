@@ -4,6 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/responsive.css" type="text/css" />
    <title>Document</title>
 </head>
 <body>
@@ -38,10 +39,34 @@
                required>
                <br />
                <div id="check_pass">
-                  <div id="len_pass">Minimum 6 charactères : non</div>
-                  <div id="maj_pass">Minimum une majuscule (A-Z) : non</div>
-                  <div id="min_pass">Minimum une minuscule (a-z) : non</div>
-                  <div id="num_pass">Minimum un nombre (1-9) : non</div>
+                  <div class="validity_pass">
+                     <div>
+                        <input type="checkbox" name="len_password_check"> 
+                        <div id="len_pass">Minimum 6 charactères</div>
+                     </div>
+                     <input type="range" min="1" max="100" value="50">
+                  </div>
+                  <div class="validity_pass">
+                     <div>
+                        <input type="checkbox" name="maj_password_check">
+                        <div id="maj_pass">Minimum une majuscule (A-Z)</div>
+                     </div>
+                     <input type="range" min="1" max="100" value="50">
+                  </div>
+                  <div class="validity_pass">
+                     <div>
+                        <input type="checkbox" name="min_password_check"> 
+                        <div id="min_pass">Minimum une minuscule (a-z)</div>
+                     </div>
+                     <input type="range" min="1" max="100" value="50">
+                  </div>
+                  <div class="validity_pass">
+                     <div>
+                        <input type="checkbox" name="num_password_check"> 
+                        <div id="num_pass">Minimum un nombre (1-9)</div>
+                     </div>
+                     <input type="range" min="1" max="100" value="50">
+                  </div>
                </div>
             </div>
             <!-- Champs pour la confirmation de mot de passe -->
@@ -67,6 +92,11 @@
                </div> 
             </div>  
          </form>
+         <?php
+         if(isset($_GET['erreur']))
+            ?> <div class="error">L'adresse mail possède déjà un compte utilisateur</div> <?php
+         if (isset($_GET['valide']))
+            ?> <div class="valide">Création du compte utilisateur validé</div>
       </div>
    </main>
    <script src="../../js/settings_admin.js"></script>
