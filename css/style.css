@@ -385,7 +385,7 @@ header nav a {
 }
 
 #check_pass  {
-   width: 37rem;
+   width: 45rem;
    font-size: var(--text-s);
 }
 
@@ -397,6 +397,14 @@ header nav a {
 
 .validity_pass div {
    display: flex;
+}
+
+.password_val {
+   display: none;
+}
+
+.password_text{
+   text-decoration: line-through;
 }
 
 /* ^^^ settings.php / Page des paramètres administrateur ^^^ */

@@ -6,24 +6,58 @@ function checkGeneratePass() {
    var pass = document.getElementById("pass");
    var nPass = document.getElementById("nPass");
 
-
+   console.log(checkBox);
    if (checkBox.checked == true || (checkBox.checked == true && window.location.href.includes("param_admin.php?gen=1") == true)){
-       genPass.style.display = "block";
-       formPass.style.display = "none";
-       formPass.setAttribute("pattern", "");
-       pass.required = false;
-       nPass.required = false;
+      genPass.style.display = "block";
+      formPass.style.display = "none";
+      formPass.setAttribute("pattern", "");
+      pass.required = false;
+      nPass.required = false;
    } else {
-       genPass.style.display = "none";
-       formPass.style.display = "block";
+      genPass.style.display = "none";
+      formPass.style.display = "block";
    }
 }
 
 // vérification des critères de validité d'un mot de passe
-var len_password_check = document.getElementById("len_password_check");
-var maj_password_check = document.getElementById("maj_password_check");
-var min_password_check = document.getElementById("min_password_check");
-var num_password_check = document.getElementById("num_password_check");
+var lenPasswordText = document.getElementById("len_password_text");
+var lenPasswordVal = document.getElementById("len_password_val");
+var lenPasswordCheck = document.getElementById("len_password_check");
+function lenPasswordCheckClick() { 
+   PasswordCheckClick(lenPasswordCheck, lenPasswordVal, lenPasswordText);
+}
+var majPasswordText = document.getElementById("maj_password_text");
+var majPasswordVal = document.getElementById("maj_password_val");
+var majPasswordCheck = document.getElementById("maj_password_check");
+function majPasswordCheckClick() { 
+   PasswordCheckClick(majPasswordCheck, majPasswordVal, majPasswordText);
+}
+var minPasswordText = document.getElementById("min_password_text");
+var minPasswordVal = document.getElementById("min_password_val");
+var minPasswordCheck = document.getElementById("min_password_check");
+function minPasswordCheckClick() { 
+   PasswordCheckClick(minPasswordCheck, minPasswordVal, minPasswordText);
+}
+var numPasswordText = document.getElementById("num_password_text");
+var numPasswordVal = document.getElementById("num_password_val")
+var numPasswordCheck = document.getElementById("num_password_check");
+function numPasswordCheckClick() { 
+   PasswordCheckClick(numPasswordCheck, numPasswordVal, numPasswordText);
+}
+
+
+function PasswordCheckClick(check, val, text) {
+   if (check.checked == true) {
+      val.style.display = "block";
+      text.style.textDecoration = "none";
+      text.innerHTML=('Minimum ' + val.value)
+   }
+   else {
+      val.style.display = "none";
+      text.style.textDecoration = "line-through";
+      text.innerHTML=('Minimum 0')
+   }
+}
 
 /*********** Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM) ***********/
 var pass = document.getElementById('pass');
