@@ -37,6 +37,7 @@
                title="- Minimum 6 charactère &#10;- Au moins une MAJ (A-Z) &#10;- Au moins une MIN (a-z) &#10;- Au moins un NUM (1-9)"
                required>
                <br />
+               </div>
                <div id="check_pass">
                   <div class="validity_pass">
                      <div>
@@ -44,7 +45,7 @@
                         <div id="password_text_info">Nombre de charactères : </div>
                         <div id="len_password_text" class="password_text">Minimum 0</div> 
                      </div>
-                     <input type="range" min="1" max="100" value="50" id="len_password_val" class="password_val" oninput="lenPasswordCheckClick()">
+                     <input type="range" min="1" max="40" value="6" id="len_password_val" class="password_val" oninput="lenPasswordCheckClick()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -52,7 +53,7 @@
                         <div id="password_text_info">Nombre de majuscules (A-Z) : </div>
                         <div id="maj_password_text" class="password_text">Minimum 0</div>                    
                      </div>
-                     <input type="range" min="1" max="100" value="50" id="maj_password_val" class="password_val" oninput="majPasswordCheckClick()">
+                     <input type="range" min="1" max="10" value="1" id="maj_password_val" class="password_val" oninput="majPasswordCheckClick()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -60,7 +61,7 @@
                         <div id="password_text_info">Nombre de minuscules (a-z) : </div>
                         <div id="min_password_text" class="password_text">Minimum 0</div>
                      </div>
-                     <input type="range" min="1" max="100" value="50" id="min_password_val" class="password_val" oninput="minPasswordCheckClick()">
+                     <input type="range" min="1" max="10" value="1" id="min_password_val" class="password_val" oninput="minPasswordCheckClick()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -68,16 +69,17 @@
                         <div id="password_text_info">nombre (1-9) : </div> 
                         <div id="num_password_text" class="password_text">Minimum 0</div>
                      </div>
-                     <input type="range" min="1" max="100" value="50" id="num_password_val" class="password_val" oninput="numPasswordCheckClick()">
+                     <input type="range" min="1" max="10" value="1" id="num_password_val" class="password_val" oninput="numPasswordCheckClick()">
                   </div>
+                  <br>
                </div>   
                <!-- Champs pour la confirmation de mot de passe -->
-               <div class="elem_setting">
+               <div class="elem_setting" id="confirm_pass">
                   <label>Confirmation mot de passe</label><br />
                   <input type="password" id="nPass" placeholder="Confirmer le mot de passe" name="nPass" 
                   title="Confirmer le mot de passe" required>
                </div>
-            </div>
+            
             <div class="elem_setting" id="generate_pass" style="display:none">
                   Un mot de passe sera généré et sera envoyé directement par mail.<br />
             </div>
