@@ -32,8 +32,7 @@
             <div class="elem_setting" id="form_pass">
                <!-- Champs pour le mot de passe -->
                <label>Mot de passe</label><br />
-               <input type="password" id="pass" placeholder="Entrer le mot de passe" name="pass" 
-               pattern="" title="mot de passe libre" required>
+               <input type="password" id="pass" placeholder="Entrer le mot de passe" name="pass" title="mot de passe libre" required>
                <br />
                </div>
                <div id="check_pass">
@@ -104,10 +103,10 @@
             </div>  
          </form>
          <?php
-         if(isset($_GET['erreur']))
-            ?> <div class="error">L'adresse mail possède déjà un compte utilisateur</div> <?php
-         if (isset($_GET['valide']))
-            ?> <div class="valide">Création du compte utilisateur validé</div>
+         if(isset($_GET['erreur'])){
+            ?> <div class="error">L'adresse mail possède déjà un compte utilisateur</div> <?php }
+         else if (isset($_GET['valide'])){
+            ?> <div class="valide">Création du compte utilisateur validé</div> <?php } ?>
       </div>
    </main>
    <script src="../../js/settings_admin.js"></script>

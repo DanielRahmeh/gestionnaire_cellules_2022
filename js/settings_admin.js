@@ -52,7 +52,7 @@ function numPasswordCheckClick() {
    PasswordCheckClick(numPasswordCheck, numPasswordVal, numPasswordText, numPasswordIco, 3);
 }
 
-var arrayPasswordCheck = [40, 0, 0, 0];
+var arrayPasswordCheck = [0, 0, 0, 0];
 
 var pass = document.getElementById('pass');
 
@@ -84,11 +84,14 @@ function PasswordCheckClick(check, val, text, ico, index) {
                               " charactère \r\n- Au moins " + arrayPasswordCheck[1] +
                               " MAJ (A-Z) \r\n- Au moins " + arrayPasswordCheck[2] + 
                               " MIN (a-z) \r\n- Au moins " + arrayPasswordCheck[3] + " NUM (1-9)");
+   
    pass.setAttribute("pattern", "^(?=.*[a-z]{" + arrayPasswordCheck[2] +
                                  "})(?=.*[A-Z]{" + arrayPasswordCheck[1] +
                                  "})(?=.*[0-9]{" + arrayPasswordCheck[3] +
                                  "}).{" + arrayPasswordCheck[0] + ",40}$");
 }
+
+console.log(pass);
 
 /*********** Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM) ***********/
 var pass = document.getElementById('pass');
@@ -150,7 +153,7 @@ function confirmation() {
     var confirmDiv = document.getElementById("confirm");
 
     if (email.value != '') {
-        document.getElementById("confirm_text").innerHTML = ("Etes vous sur de vouloir créer un compte pour " + email.value);
+        document.getElementById("confirm_text").innerHTML = ("Etes vous sur de vouloir créer un compte pour <b>" + email.value + "</b>");
         confirmDiv.style.display = "block";
     }
 }
