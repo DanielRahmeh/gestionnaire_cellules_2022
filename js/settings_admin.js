@@ -27,39 +27,53 @@ var lenPasswordText = document.getElementById("len_password_text");
 var lenPasswordVal = document.getElementById("len_password_val");
 var lenPasswordCheck = document.getElementById("len_password_check");
 function lenPasswordCheckClick() { 
-   PasswordCheckClick(lenPasswordCheck, lenPasswordVal, lenPasswordText);
+   PasswordCheckClick(lenPasswordCheck, lenPasswordVal, lenPasswordText, 0);
 }
 var majPasswordText = document.getElementById("maj_password_text");
 var majPasswordVal = document.getElementById("maj_password_val");
 var majPasswordCheck = document.getElementById("maj_password_check");
 function majPasswordCheckClick() { 
-   PasswordCheckClick(majPasswordCheck, majPasswordVal, majPasswordText);
+   PasswordCheckClick(majPasswordCheck, majPasswordVal, majPasswordText, 1);
 }
 var minPasswordText = document.getElementById("min_password_text");
 var minPasswordVal = document.getElementById("min_password_val");
 var minPasswordCheck = document.getElementById("min_password_check");
 function minPasswordCheckClick() { 
-   PasswordCheckClick(minPasswordCheck, minPasswordVal, minPasswordText);
+   PasswordCheckClick(minPasswordCheck, minPasswordVal, minPasswordText, 2);
 }
 var numPasswordText = document.getElementById("num_password_text");
 var numPasswordVal = document.getElementById("num_password_val")
 var numPasswordCheck = document.getElementById("num_password_check");
 function numPasswordCheckClick() { 
-   PasswordCheckClick(numPasswordCheck, numPasswordVal, numPasswordText);
+   PasswordCheckClick(numPasswordCheck, numPasswordVal, numPasswordText, 3);
 }
 
+var arrayPasswordCheck = [40, 0, 0, 0]
 
-function PasswordCheckClick(check, val, text) {
+function PasswordCheckClick(check, val, text, index) {
    if (check.checked == true) {
       val.style.display = "block";
       text.style.textDecoration = "none";
-      text.innerHTML=('Minimum ' + val.value)
+      arrayPasswordCheck[index] = parseInt(val.value);
+      var tot = arrayPasswordCheck[1] + arrayPasswordCheck[2] + arrayPasswordCheck[3];
+      console.log(tot);
+      if (tot > arrayPasswordCheck[0]) {
+         val.value = arrayPasswordCheck[index] - (tot - arrayPasswordCheck[0]);
+         arrayPasswordCheck[index] =  parseInt(val.value);
+      }
+      
+      text.innerHTML=('Minimum ' + arrayPasswordCheck[index]);
    }
    else {
       val.style.display = "none";
       text.style.textDecoration = "line-through";
       text.innerHTML=('Minimum 0')
+      if (index == 0)
+         arrayPasswordCheck[index] = 40;
+      else
+         arrayPasswordCheck[index] = 0;
    }
+   console.log(arrayPasswordCheck);
 }
 
 /*********** Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM) ***********/

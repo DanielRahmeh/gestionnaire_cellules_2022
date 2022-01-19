@@ -53,7 +53,7 @@
                         <div id="password_text_info">Nombre de majuscules (A-Z) : </div>
                         <div id="maj_password_text" class="password_text">Minimum 0</div>                    
                      </div>
-                     <input type="range" min="1" max="10" value="1" id="maj_password_val" class="password_val" oninput="majPasswordCheckClick()">
+                     <input type="range" min="1" max="10" value="0" id="maj_password_val" class="password_val" oninput="majPasswordCheckClick()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -61,7 +61,7 @@
                         <div id="password_text_info">Nombre de minuscules (a-z) : </div>
                         <div id="min_password_text" class="password_text">Minimum 0</div>
                      </div>
-                     <input type="range" min="1" max="10" value="1" id="min_password_val" class="password_val" oninput="minPasswordCheckClick()">
+                     <input type="range" min="1" max="10" value="0" id="min_password_val" class="password_val" oninput="minPasswordCheckClick()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -69,7 +69,7 @@
                         <div id="password_text_info">nombre (1-9) : </div> 
                         <div id="num_password_text" class="password_text">Minimum 0</div>
                      </div>
-                     <input type="range" min="1" max="10" value="1" id="num_password_val" class="password_val" oninput="numPasswordCheckClick()">
+                     <input type="range" min="1" max="10" value="0" id="num_password_val" class="password_val" oninput="numPasswordCheckClick()">
                   </div>
                   <br>
                </div>   
