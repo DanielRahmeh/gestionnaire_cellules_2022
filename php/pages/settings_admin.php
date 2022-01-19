@@ -33,9 +33,7 @@
                <!-- Champs pour le mot de passe -->
                <label>Mot de passe</label><br />
                <input type="password" id="pass" placeholder="Entrer le mot de passe" name="pass" 
-               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,40}$" 
-               title="- Minimum 6 charactère &#10;- Au moins une MAJ (A-Z) &#10;- Au moins une MIN (a-z) &#10;- Au moins un NUM (1-9)"
-               required>
+               pattern="" title="mot de passe libre" required>
                <br />
                </div>
                <div id="check_pass">
@@ -46,7 +44,8 @@
                         <div id="len_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico"  id="len_password_ico"></div> 
                      </div>
-                     <input type="range" min="1" max="40" value="6" id="len_password_val" class="password_val" oninput="lenPasswordCheckClick()">
+                     <input type="range" min="1" max="30" value="6" id="len_password_val" class="password_val"
+                     oninput="lenPasswordCheckClick();checkLivePassword()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -55,7 +54,8 @@
                         <div id="maj_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="maj_password_ico"></div>                     
                      </div>
-                     <input type="range" min="1" max="10" value="0" id="maj_password_val" class="password_val" oninput="majPasswordCheckClick()">
+                     <input type="range" min="0" max="10" value="0" id="maj_password_val" class="password_val"
+                     oninput="majPasswordCheckClick();checkLivePassword()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -64,7 +64,8 @@
                         <div id="min_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico"  id="min_password_ico"></div>   
                      </div>
-                     <input type="range" min="1" max="10" value="0" id="min_password_val" class="password_val" oninput="minPasswordCheckClick()">
+                     <input type="range" min="0" max="10" value="0" id="min_password_val" class="password_val"
+                     oninput="minPasswordCheckClick();checkLivePassword()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -73,7 +74,8 @@
                         <div id="num_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="num_password_ico"></div>   
                      </div>
-                     <input type="range" min="1" max="10" value="0" id="num_password_val" class="password_val" oninput="numPasswordCheckClick()">
+                     <input type="range" min="0" max="10" value="0" id="num_password_val" class="password_val"
+                     oninput="numPasswordCheckClick();checkLivePassword()">
                   </div>
                   <br>
                </div>   
@@ -96,7 +98,7 @@
                <button id="create" type="button">Créer</button>
                <div id="confirm" style="display: none;">
                      <div id="confirm_text"></div>
-                     <button type="button" onclick="location.href='param_admin.php'">non</button>
+                     <button type="button" onclick="location.href='settings_admin.php'">non</button>
                      <input type="submit" id='submit' value='oui' title="Confirmer la création du compte">
                </div> 
             </div>  

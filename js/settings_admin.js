@@ -54,6 +54,8 @@ function numPasswordCheckClick() {
 
 var arrayPasswordCheck = [40, 0, 0, 0];
 
+var pass = document.getElementById('pass');
+
 function PasswordCheckClick(check, val, text, ico, index) {
    if (check.checked == true) {
       val.style.display = "block";
@@ -75,12 +77,17 @@ function PasswordCheckClick(check, val, text, ico, index) {
       ico.style.display = "none";
       text.style.textDecoration = "line-through";
       text.innerHTML=('Minimum 0')
-      if (index == 0)
-         arrayPasswordCheck[index] = 40;
-      else
-         arrayPasswordCheck[index] = 0;
+      arrayPasswordCheck[index] = 0;
    }
    console.log(arrayPasswordCheck);
+   pass.setAttribute("title", "- Minimum " + arrayPasswordCheck[0] + 
+                              " charactère \r\n- Au moins " + arrayPasswordCheck[1] +
+                              " MAJ (A-Z) \r\n- Au moins " + arrayPasswordCheck[2] + 
+                              " MIN (a-z) \r\n- Au moins " + arrayPasswordCheck[3] + " NUM (1-9)");
+   pass.setAttribute("pattern", "^(?=.*[a-z]{" + arrayPasswordCheck[2] +
+                                 "})(?=.*[A-Z]{" + arrayPasswordCheck[1] +
+                                 "})(?=.*[0-9]{" + arrayPasswordCheck[3] +
+                                 "}).{" + arrayPasswordCheck[0] + ",40}$");
 }
 
 /*********** Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM) ***********/
@@ -109,14 +116,17 @@ function checkLivePassword() {
    if (pass.value.length - pass.value.replace(/[a-z]/g, '').length  >= arrayPasswordCheck[2])
       document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
    else
-      document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
-   var hasNumber = /\d/; 
+      document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png"; 
    if (pass.value.length - pass.value.replace(/[1-9]/g, '').length  >= arrayPasswordCheck[3])
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
    else
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
 }
 pass.onkeyup = checkLivePassword;
+// document.getElementById("len_password_val").oninput = checkLivePassword;
+// document.getElementById("maj_password_val").oninput = checkLivePassword;
+// document.getElementById("min_password_val").oninput = checkLivePassword;
+// document.getElementById("num_password_val").oninput = checkLivePassword;
 
 // Verification de la confirmation du mot de passe
 var pass = document.getElementById("pass");

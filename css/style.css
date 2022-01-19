@@ -414,4 +414,8 @@ header nav a {
    display: none;
 }
 
+#create {
+   margin-bottom: 1rem;
+}
+
 /* ^^^ settings.php / Page des paramètres administrateur ^^^ */
