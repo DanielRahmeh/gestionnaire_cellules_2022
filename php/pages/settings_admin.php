@@ -69,7 +69,7 @@
                   <div class="validity_pass">
                      <div>
                         <input type="checkbox" id="num_password_check" class="password_check" onclick="numPasswordCheckClick()">
-                        <div id="password_text_info">nombre (1-9) : </div> 
+                        <div id="password_text_info">Nombre de charactères numeriques (1-9) : </div> 
                         <div id="num_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="num_password_ico"></div>   
                      </div>

@@ -102,16 +102,16 @@ function checkLivePassword() {
       document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
    else
       document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
-   if (pass.value.length - pass.value.replace(/[A-Z]/g, '').length  <= arrayPasswordCheck[1])
+   if (pass.value.length - pass.value.replace(/[A-Z]/g, '').length  >= arrayPasswordCheck[1])
       document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
    else
       document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
-   if (pass.value.length - pass.value.replace(/[a-z]/g, '').length  <= arrayPasswordCheck[2])
+   if (pass.value.length - pass.value.replace(/[a-z]/g, '').length  >= arrayPasswordCheck[2])
       document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
    else
       document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
    var hasNumber = /\d/; 
-   if (pass.value.length - pass.value.replace(/[1-9]/g, '').length  <= arrayPasswordCheck[3])
+   if (pass.value.length - pass.value.replace(/[1-9]/g, '').length  >= arrayPasswordCheck[3])
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
    else
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";

@@ -409,6 +409,7 @@ header nav a {
 }
 
 .password_ico {
+   height: 1rem;
    width: 1rem;
    display: none;
 }
