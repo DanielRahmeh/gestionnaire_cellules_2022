@@ -1,4 +1,4 @@
-// génération d'un mot de passe ou saisie d'un mot de passe
+// Génération d'un mot de passe ou saisie d'un mot de passe
 function checkGeneratePass() {
    var checkBox = document.getElementById("generateCheckBox");
    var genPass = document.getElementById("generate_pass");
@@ -21,7 +21,7 @@ function checkGeneratePass() {
    }
 }
 
-// vérification des critères de validité d'un mot de passe
+// Vérification des critères de validité d'un mot de passe
 var lenPasswordText = document.getElementById("len_password_text");
 var lenPasswordVal = document.getElementById("len_password_val");
 var lenPasswordCheck = document.getElementById("len_password_check");
@@ -90,8 +90,11 @@ function PasswordCheckClick(check, val, text, ico, index) {
                                  "}).{" + arrayPasswordCheck[0] + ",40}$");
 }
 
+// Générateur de mot de passe
+
 function generatePassword() {
    var checkBox = document.getElementById("generateCheckBox");
+   var newUserForm = document.getElementById("new_user_form");
    var alphaMin = "abcdefghijklmnopqrstuvwxyz";
    var alphaMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
    var alphaNum = "0123456789";
@@ -125,8 +128,11 @@ function generatePassword() {
       password = '';
       checkLivePassword();
    }
+   newUserForm.setAttribute("action", "../scripts/new_user.php?=genPassword=" + password);
    console.log(password);
 }
+
+
 
 // Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM)
 var pass = document.getElementById('pass');

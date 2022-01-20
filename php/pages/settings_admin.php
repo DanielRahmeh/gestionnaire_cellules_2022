@@ -20,7 +20,7 @@
       <div id="new_user_container">
          <a href="principal.php"> < retour</a><br /><br />
          <h3>Créer un nouveau compte utilisateur</h3><br />
-         <form name="new_user" method="POST" action="../scripts/new_user.php">
+         <form name="new_user" method="POST" id="new_user_form" action="../scripts/new_user.php">
             <!-- Champs pour l'email -->
             <div class="elem_setting">
                <label>Email</label><br />
