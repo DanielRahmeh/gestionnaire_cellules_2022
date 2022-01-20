@@ -7,7 +7,6 @@ function checkGeneratePass() {
    var pass = document.getElementById("pass");
    var nPass = document.getElementById("nPass");
 
-   console.log(checkBox);
    if (checkBox.checked == true || (checkBox.checked == true && window.location.href.includes("param_admin.php?gen=1") == true)){
       genPass.style.display = "block";
       formPass.style.display = "none";
@@ -91,9 +90,45 @@ function PasswordCheckClick(check, val, text, ico, index) {
                                  "}).{" + arrayPasswordCheck[0] + ",40}$");
 }
 
-console.log(pass);
+function generatePassword() {
+   var checkBox = document.getElementById("generateCheckBox");
+   var alphaMin = "abcdefghijklmnopqrstuvwxyz";
+   var alphaMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   var alphaNum = "0123456789";
+   var password = '';
+   var len = 0;
+   
+   if (checkBox.checked) {
+      document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      if (arrayPasswordCheck[0] == 0)
+         tot_len = 6;
+      else
+         tot_len = arrayPasswordCheck[0];
+      for (i = 0; i < arrayPasswordCheck[1]; i++)
+         password += alphaMaj.charAt(Math.floor(Math.random() * alphaMaj.length));
+      len = i;
+      for (i = len; i <  arrayPasswordCheck[2] + len; i++)
+         password += alphaMin.charAt(Math.floor(Math.random() * alphaMin.length));
+      len = i;
+      for (i = len; i < arrayPasswordCheck[3] + len; i++)
+         password += alphaNum.charAt(Math.floor(Math.random() * alphaNum.length));
+      len = i;
+      if (len != tot_len) {
+         for (i = len; i <  tot_len; i++)
+            password += alphaMin.charAt(Math.floor(Math.random() * alphaMin.length));
+      }
+   }
+   else {
+      password = '';
+      checkLivePassword();
+   }
+   console.log(password);
+}
 
-/*********** Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM) ***********/
+// Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM)
 var pass = document.getElementById('pass');
 
 pass.oninvalid = function(event) {
@@ -104,7 +139,7 @@ pass.oninvalid = function(event) {
     " MIN (a-z)\n- Au moins " + arrayPasswordCheck[3] + " NUM (1-9)");
 }
 
-/*********** Verification lors de la validité du mot de passe lors de sa saisie ***********/
+// Verification lors de la validité du mot de passe lors de sa saisie
 var pass = document.getElementById("pass");
 
 function checkLivePassword() {
@@ -126,10 +161,7 @@ function checkLivePassword() {
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
 }
 pass.onkeyup = checkLivePassword;
-// document.getElementById("len_password_val").oninput = checkLivePassword;
-// document.getElementById("maj_password_val").oninput = checkLivePassword;
-// document.getElementById("min_password_val").oninput = checkLivePassword;
-// document.getElementById("num_password_val").oninput = checkLivePassword;
+
 
 // Verification de la confirmation du mot de passe
 var pass = document.getElementById("pass");
@@ -144,6 +176,7 @@ function validatePassword(){
 }
 pass.onchange = validatePassword;
 nPass.onkeyup = validatePassword;
+
 
 // Affichage d'un message d'alerte afin de confirmer la création d'un nouveau compte utilisateur
 var createButton = document.getElementById("create");

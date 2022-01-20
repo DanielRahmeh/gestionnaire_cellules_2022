@@ -18,8 +18,9 @@
    <main>
       <!-- Formulaire de création d'un nouveau compte utilisateur -->
       <div id="new_user_container">
+         <a href="principal.php"> < retour</a><br /><br />
          <h3>Créer un nouveau compte utilisateur</h3><br />
-         <form name="new_user" method="POST" action="#">
+         <form name="new_user" method="POST" action="../scripts/new_user.php">
             <!-- Champs pour l'email -->
             <div class="elem_setting">
                <label>Email</label><br />
@@ -27,7 +28,8 @@
             </div>
             <div class="elem_setting" id="generate" >
                <label>Genérer un mot de passe</label>
-               <input type="checkbox"  name="generate" id="generateCheckBox" title="Le mot de passe sera envoyé par mail" onclick="checkGeneratePass()">
+               <input type="checkbox"  name="generate" id="generateCheckBox" title="Le mot de passe sera envoyé par mail" 
+                     onclick="checkGeneratePass();generatePassword()">
             </div>
             <div class="elem_setting" id="form_pass">
                <!-- Champs pour le mot de passe -->
@@ -44,7 +46,7 @@
                         <div><img src="../../img/icon/cancel.png" class="password_ico"  id="len_password_ico"></div> 
                      </div>
                      <input type="range" min="1" max="30" value="6" id="len_password_val" class="password_val"
-                     oninput="lenPasswordCheckClick();checkLivePassword()">
+                     oninput="lenPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -54,7 +56,7 @@
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="maj_password_ico"></div>                     
                      </div>
                      <input type="range" min="0" max="10" value="0" id="maj_password_val" class="password_val"
-                     oninput="majPasswordCheckClick();checkLivePassword()">
+                     oninput="majPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -64,7 +66,7 @@
                         <div><img src="../../img/icon/cancel.png" class="password_ico"  id="min_password_ico"></div>   
                      </div>
                      <input type="range" min="0" max="10" value="0" id="min_password_val" class="password_val"
-                     oninput="minPasswordCheckClick();checkLivePassword()">
+                     oninput="minPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <div class="validity_pass">
                      <div>
@@ -74,7 +76,7 @@
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="num_password_ico"></div>   
                      </div>
                      <input type="range" min="0" max="10" value="0" id="num_password_val" class="password_val"
-                     oninput="numPasswordCheckClick();checkLivePassword()">
+                     oninput="numPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <br>
                </div>   
