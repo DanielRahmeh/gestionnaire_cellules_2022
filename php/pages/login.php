@@ -49,7 +49,7 @@
          <?php
          if(isset($_GET['erreur'])) {
                $err = $_GET['erreur'];
-               ?> <div class="error">Utilisateur ou mot de passe incorrect</div> <?php
+               ?> <div class="error" id="error_login">Utilisateur ou mot de passe incorrect</div> <?php
             }
         ?>
       </div>

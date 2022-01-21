@@ -19,6 +19,7 @@
    --blue-color: #4C39E9;
    --alert-color: #f39494;
    --error-color: #b30000;
+   --valide-color: #0b8000;
    --gray-100: #eeeeee;
    --gray-150: #e0e0e0;
    --gray-200: #c0bebe;
@@ -58,7 +59,24 @@ a:hover {
    color: var(--error-color);
    font-weight: bold;
    font-style: italic;
+   animation: hide 6s linear 3s 1 forwards;
+}
+
+#error_login {
    text-align: center;
+}
+
+.valide {
+   color: var(--valide-color);
+   font-weight: bold;
+   font-style: italic;
+   animation: hide 2s linear 2s 1 forwards;
+}
+
+@keyframes hide {
+   to {
+       opacity: 0;
+   }
 }
 
 h3, h4 {

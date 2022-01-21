@@ -128,7 +128,7 @@ function generatePassword() {
       password = '';
       checkLivePassword();
    }
-   newUserForm.setAttribute("action", "../scripts/new_user.php?=genPassword=" + password);
+   newUserForm.setAttribute("action", "../scripts/new_user.php?password=" + password);
    console.log(password);
 }
 
