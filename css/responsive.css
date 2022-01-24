@@ -8,4 +8,8 @@
    div.validity_pass {
       display: block;
    }
+
+   .settings_input {
+      width: 95%;
+   }
 }

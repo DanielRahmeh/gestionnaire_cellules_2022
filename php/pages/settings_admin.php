@@ -4,6 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta content="width=device-width, initial-scale=1" name="viewport" />
    <title>Paramètres admin</title>
 </head>
 <body>
@@ -24,7 +25,8 @@
             <!-- Champs pour l'email -->
             <div class="elem_setting">
                <label>Email</label><br />
-               <input type="email" id="email" placeholder="Entrer l'email" name="email" title="Adresse email valide" required>
+               <input type="email" class="settings_input" id="email" placeholder="Entrer l'email" name="email"
+               title="Adresse email valide" required>
             </div>
             <div class="elem_setting" id="generate" >
                <label>Genérer un mot de passe</label>
@@ -34,7 +36,8 @@
             <div class="elem_setting" id="form_pass">
                <!-- Champs pour le mot de passe -->
                <label>Mot de passe</label><br />
-               <input type="password" id="pass" placeholder="Entrer le mot de passe" name="pass" title="mot de passe libre" required>
+               <input type="password"  class="settings_input" id="pass" placeholder="Entrer le mot de passe" name="pass" 
+               title="mot de passe libre" required>
                <br />
                </div>
                <div id="check_pass">
@@ -83,7 +86,7 @@
                <!-- Champs pour la confirmation de mot de passe -->
                <div class="elem_setting" id="confirm_pass">
                   <label>Confirmation mot de passe</label><br />
-                  <input type="password" id="nPass" placeholder="Confirmer le mot de passe" name="nPass" 
+                  <input type="password" class="settings_input" id="nPass" placeholder="Confirmer le mot de passe" name="nPass" 
                   title="Confirmer le mot de passe" required>
                </div>
             
