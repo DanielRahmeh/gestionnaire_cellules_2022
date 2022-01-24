@@ -8,10 +8,11 @@
          die("Error connecting to the database");
    }
    $email_user = $_POST['email'];
-   if (isset($_POST['pass']))
-      $password_user = $_POST['pass'];
+   if (isset($_GET['password']) && $_GET['password'] != '')
+      $password_user = $_GET['password'];  
    else
-      $password_user = $_GET['pass'];
+      $password_user = $_POST['pass'];
+   $base_password = $password_user;
    $hash_password = password_hash($password_user, PASSWORD_DEFAULT);
    $admin_user = 0;
    if (isset($_POST['rights']))
@@ -27,7 +28,7 @@
    if ($count == 1)
       header('Location: ../pages/settings_admin.php?erreur=1');
    else {
-      echo("email : " . $email_user . " password : " . $password_user . " rights : " . $admin_user . " date : ". $date_inscription);
+      echo("email : " . $email_user . " password : " . $base_password . " rights : " . $admin_user . " date : ". $date_inscription);
       $query = $bdd->prepare("INSERT INTO user(email_user, password_user, admin_user, date_inscription) 
                               VALUES(:email_user, :hash_password, :admin_user, :date_inscription)");
       $query->execute(array(
@@ -36,39 +37,17 @@
                            'admin_user' => $admin_user,
                            'date_inscription' => $date_inscription));
       // Protocole d'envoi de mail
-      require '../../PHPMailer/src/Exception.php';
-      require '../../PHPMailer/src/PHPMailer.php';
-      require '../../PHPMailer/src/SMTP.php';
-      $mail = new PHPMailer();
-      $mail->Charset 	= 'UTF-8';
-      $body = utf8_decode("Bonjour,<br />
-                           Vous avez été inscrit sur l'application \'Gestionnaire de cellules\'.<br />
-                           Voici vos identifiants : <br />
-                           -email : <b>" . $email_user . "</b><br />
-                           -mot de passe : <b>" . $password_user . "</b><br />
-                           Nous vous remercions de votre confiance.<br />
-                           Cordialement,<br />
-                           L'équipe technique de Numerica.");
-      $mail->IsSMTP();
-      $mail->SMTPAuth   = true;
-      $mail->SMTPSecure = "ssl";
-      $mail->Host       = "smtp.gmail.com";
-      $mail->Port       = 465;
-      $mail->Username   = "gdc.numerica@gmail.com";
-      $mail->Password   = "@bcdef1234!";
-      $mail->AddReplyTo("gdc.numerica@gmail.com","gdc.numerica");
-      $mail->From       = "gdc.numerica@gmail.com";
-      $mail->FromName   = "gdc.numerica";
-      $mail->Subject    = "Inscription au gestionnaire de cellules";
-      $mail->AltBody    = 'ok';
-      $mail->WordWrap   = 50;
-      $mail->MsgHTML($body);
-      $mail->AddAddress($email);
-      $mail->IsHTML(true);
-      if(!$mail->Send())
-         echo $mail->ErrorInfo;
-      $mail->SmtpClose();
-      unset($mail);
+      require 'send_mail.php';
+      send_mail('Inscription au gestionnaire de cellules',
+               'Bonjour,<br /><br />
+               Vous avez été inscrit sur l\'application \'Gestionnaire de cellules\'.<br />
+               Voici vos identifiants : <br />
+               -email : <b>' . $email_user . '</b><br />
+               -mot de passe : <b>' . $base_password . '</b><br /><br />
+               Nous vous remercions de votre confiance.<br /><br />
+               Cordialement,<br />
+               L\'équipe technique de Numerica.',
+               $email_user);
       header('Location: ../pages/settings_admin.php?valide=1');     
    }
 ?>
