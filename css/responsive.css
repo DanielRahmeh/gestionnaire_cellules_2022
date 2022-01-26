@@ -12,4 +12,8 @@
    .settings_input {
       width: 95%;
    }
+
+   .text_validity_pass {
+      display: block;
+   }
 }

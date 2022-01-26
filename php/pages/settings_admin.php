@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta content="width=device-width, initial-scale=1" name="viewport" />
-   <title>Paramètres admin</title>
-</head>
-<body>
    <?php
       session_start();
       if($_SESSION['email'] != "") {
@@ -42,9 +32,11 @@
                </div>
                <div id="check_pass">
                   <div class="validity_pass">
-                     <div>
-                        <input type="checkbox" id="len_password_check" class="password_check" onclick="lenPasswordCheckClick()"> 
-                        <div id="password_text_info">Nombre de charactères : </div>
+                     <div class="text_validity_pass">
+                        <div>
+                           <input type="checkbox" id="len_password_check" class="password_check" onclick="lenPasswordCheckClick()"> 
+                           <div id="password_text_info">Nombre de charactères : </div>
+                        </div>
                         <div id="len_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico"  id="len_password_ico"></div> 
                      </div>
@@ -52,9 +44,11 @@
                      oninput="lenPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <div class="validity_pass">
-                     <div>
-                        <input type="checkbox" id="maj_password_check" class="password_check" onclick="majPasswordCheckClick()">
-                        <div id="password_text_info">Nombre de majuscules (A-Z) : </div>
+                     <div class="text_validity_pass">
+                        <div>
+                           <input type="checkbox" id="maj_password_check" class="password_check" onclick="majPasswordCheckClick()">
+                           <div id="password_text_info">Nombre de majuscules (A-Z) : </div>
+                        </div>
                         <div id="maj_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="maj_password_ico"></div>                     
                      </div>
@@ -62,9 +56,11 @@
                      oninput="majPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <div class="validity_pass">
-                     <div>
-                        <input type="checkbox" id="min_password_check" class="password_check" onclick="minPasswordCheckClick()">
-                        <div id="password_text_info">Nombre de minuscules (a-z) : </div>
+                     <div class="text_validity_pass">
+                        <div>
+                           <input type="checkbox" id="min_password_check" class="password_check" onclick="minPasswordCheckClick()">
+                           <div id="password_text_info">Nombre de minuscules (a-z) : </div>
+                        </div>
                         <div id="min_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico"  id="min_password_ico"></div>   
                      </div>
@@ -72,9 +68,11 @@
                      oninput="minPasswordCheckClick();checkLivePassword();generatePassword()">
                   </div>
                   <div class="validity_pass">
-                     <div>
-                        <input type="checkbox" id="num_password_check" class="password_check" onclick="numPasswordCheckClick()">
-                        <div id="password_text_info">Nombre de charactères numeriques (1-9) : </div> 
+                     <div class="text_validity_pass">
+                        <div>
+                           <input type="checkbox" id="num_password_check" class="password_check" onclick="numPasswordCheckClick()">
+                           <div id="password_text_info">Nombre de charactères numeriques (1-9) : </div> 
+                        </div>
                         <div id="num_password_text" class="password_text">Minimum 0</div>
                         <div><img src="../../img/icon/cancel.png" class="password_ico" id="num_password_ico"></div>   
                      </div>
