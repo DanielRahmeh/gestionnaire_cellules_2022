@@ -400,21 +400,42 @@ header nav a {
 
 /* vvv settings.php / Page des paramètres administrateur vvv */
 
-#new_user_container {
+.new_user_container {
    margin: 1% 0 0 3%;
+   width: 34rem;
 }
 
-#new_user_container h3 {
+.new_user_container h3 {
    font-weight: bold;
 }
 
-#new_user_container label {
+.new_user_container label {
    font-weight: 550;
-   /* font-style: italic; */
 }
 
 .elem_setting {
    margin-bottom: 1rem;
+}
+
+.elem_setting button {
+   margin-top: 2rem;
+   cursor:pointer;
+   margin-left: auto;
+   margin-right: auto;
+   border: 0;
+   padding-top: 3px;
+   width: 10rem;
+   height: 30px;
+   box-shadow: rgba(0, 0, 0, 0.459) -1px 3px 8px 2px;
+   background-color: var(--orange-color);
+   color: var(--gray-100);
+   border-radius: 10px;
+   transition-duration: 1s;
+   display: flex;
+   justify-content: center;
+}
+.elem_setting button:hover {
+   background-color: var(--blue-color);
 }
 
 .settings_input {
@@ -464,6 +485,10 @@ header nav a {
 
 #create {
    margin-bottom: 1rem;
+}
+
+#tab_user {
+   margin-top: 100px;
 }
 
 /* ^^^ settings.php / Page des paramètres administrateur ^^^ */

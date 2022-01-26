@@ -5,6 +5,9 @@
 }
 
 @media screen and (max-width: 600px) {
+   .new_user_container {
+      width: 100%;
+   }
    div.validity_pass {
       display: block;
    }
