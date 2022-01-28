@@ -198,3 +198,21 @@ function confirmation() {
 }
 
 createButton.onclick = confirmation;
+
+// Bouton afficher la liste des comptes ou masquer la liste des comptes
+var link = window.location.href;
+var display_users = document.getElementById("display_users");
+var hide_users = document.getElementById("hide_users");
+
+console.log(link);
+
+// if (link.includes("settings_admin.php?delete=") == true 
+//     || link.includes("settings_admin.php?delete_admin=") == true
+//     || link.includes("settings_admin.php?new_admin=") == true){
+//     console.log('oui');
+//     hide_users.style.display = "block";
+//     display_users.style.display = "none";
+// } else {
+//     hide_users.style.display = "none";
+//     display_users.style.display = "block";
+// }

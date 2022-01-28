@@ -121,14 +121,10 @@
       <div class="new_user_container" id="tab_user">
          <h3>Gérer les comptes utilisateurs</h3><br />
          <p>(supprimmer, gerer droits administrateurs)</p>
-         <form  name="new" method="POST" id ="display_users" action="settings_admin.php?delete=1">
-            <input type="submit" id='submit_disp' value='Afficher les comptes' title="Afficher la liste des comptes">
-         </form>
-         <form  name="new" method="POST" id ="hide_users" action="settings_admin.php">
-            <input type="submit" id='submit_hide' value='Masquer les comptes' title="Masquer la liste des comptes">
-         </form>
+
          <?php
-            if(isset($_GET['delete']) || isset($_GET['delete_admin']) || isset($_GET['new_admin'])){
+            if(isset($_GET['delete']) || isset($_GET['delete_admin']) || isset($_GET['new_admin'])) {
+               ?><a href="settings_admin.php">Masquer la liste des comptes</a><?php
                // Connexion à la base de données
                require ('../scripts/connect_to_db.php');
                $db = new Database();
@@ -201,9 +197,11 @@
                      Les droits administrateurs on bien été accorder au compte suivant : <b><?php echo $_GET['check_new_admin']; ?><b/>
                   </div><?php
                }
+            }
+            else {
+               ?><a href="settings_admin.php?delete=1">Afficher les comptes</a><?php
             }                       
          ?>
-
       </div>
    </main>
    <script src="../../js/settings_admin.js"></script>
