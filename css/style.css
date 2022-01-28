@@ -48,7 +48,7 @@ html, body {
 a {
    text-decoration: none;
    color: var(--orange-color);
-   transition-duration: 0.5s;
+   transition-duration: 0.3s;
 }
 
 a:hover {
@@ -63,30 +63,45 @@ a:hover {
 }
 
 table {
-   width: 80%;
+   border-radius: 2rem;
+   margin-top: 10px;
+   width: 95%;
+   table-layout: fixed;
    border-collapse: collapse;
 }
 
 table td, table th {
-   border-radius: 20px;
+   height: 40px;
    border: 5px solid white;
    text-align: center;
-   width: 25%;
+   /* width: 25%; */
    
 }
 
 table th {
-   height: 40px;
    background-color: var(--text-color);
    color: var(--gray-100);
 }
 
-table td {
-   height: 30px;
-   background-color: var(--gray-150);
-  
+table tr {
+   background-color: var(--gray-100);
 }
 
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table a {
+   color: var(--text-color);
+   border-bottom: 2px dashed var(--text-color);
+   padding-bottom: 2px;
+}
+
+table a:hover {
+   color: var(--orange-color);
+}
+
+.table_link_pos:hover {
+   color: var(--blue-color);
+}
 
 input {
    font-family: var(--font);
@@ -120,7 +135,7 @@ h3, h4 {
 /* barre de recherche */
 .search_bar {
    width: 100%;
-   height: 30px;
+   height: 40px;
    padding-left: 1rem;
    border: 0;
    border-radius: 10px 0 0 10px;
@@ -305,6 +320,7 @@ header {
 
 /* navigation */
 header nav {
+   height: 50px;
    position: relative;
    display: flex;
 }
@@ -312,7 +328,7 @@ header nav {
 /* bouton de navigation */
 header nav a {
    width: 7.3rem;
-   height: 4.4rem;
+   height: 50px;
    display:inline-block;
    vertical-align:middle;
    line-height:normal;
@@ -324,8 +340,8 @@ header nav a {
 /* icones de navigation */
 .icon_nav {
    width: 37%;
-   height: 80%;
-   padding-top: 0.9rem;
+   height: 75%;
+   padding-top: 1.2rem;
 }
 
 /* icones de recherche */

@@ -140,7 +140,7 @@
                         <tr>
                            <th>Email</th>
                            <th>Droit administrateurs</th>
-                           <th>Supprimer</th>
+                           <th>Supprimer le compte</th>
                         </tr>
                   </thead>
                   <?php
@@ -149,16 +149,16 @@
                         ?>
                         <tbody>
                            <tr>
-                              <td><?php echo $donnees['email_user']; ?></td>
+                              <td data-label="Email"><?php echo $donnees['email_user']; ?></td>
                               <?php if ($donnees['admin_user'] == 1) {
                                     $link = "settings_admin.php?delete_admin=" . $donnees['email_user'];?>
-                                    <td><button onclick="location.href='<?php echo $link; ?>'">Supprimer</button></td>
+                                    <td data-label="Droits administrateurs"><a href="<?php echo($link); ?>">Supprimer</a></td>
                               <?php } else {
                                     $link = "settings_admin.php?new_admin=" . $donnees['email_user'];?>
-                                    <td><button onclick="location.href='<?php echo $link; ?>'">Accorder</button></td>
+                                    <td data-label="Droits administrateurs"><a href="<?php echo($link); ?>" class="table_link_pos">Accorder</a></td>
                               <?php }
                               $link = "settings_admin.php?delete=" . $donnees['email_user'];?>
-                              <td><button id="delete_user" onclick="location.href='<?php echo $link; ?>'">Supprimer</button></td>
+                              <td data-label="Supprimer le compte"><a href="<?php echo($link); ?>">Supprimer</a></td>
                            </tr>
                         </tbody> 
                         <?php              
