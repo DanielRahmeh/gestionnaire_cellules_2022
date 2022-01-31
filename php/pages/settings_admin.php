@@ -169,17 +169,17 @@
                   if (isset($_GET['delete_admin']) || isset($_GET['new_admin']) ||
                         (isset($_GET['delete']) && $_GET['delete'] != 1)) {
                            if (isset($_GET['delete_admin'])) {
-                              $link = "delete_admin.php?new_admin=" . $_GET['delete_admin'];?>
+                              $link = "../scripts/delete_admin.php?new_admin=" . $_GET['delete_admin'];?>
                               Etes-vous sur de vouloir supprimer les droits administrateur au compte suivant :
                               <?php echo $_GET['delete_admin'];
                            }
                            if (isset($_GET['new_admin'])) {
-                              $link = "new_admin.php?new_admin=" . $_GET['new_admin'];?>
+                              $link = "../scripts/new_admin.php?new_admin=" . $_GET['new_admin'];?>
                               Etes-vous sur de vouloir accorder les droits administrateurs au compte suivant : 
                               <?php echo $_GET['new_admin'];
                            }
                            if (isset($_GET['delete']) && $_GET['delete'] != 1) {
-                              $link = "delete_user.php?delete=" . $_GET['delete'];?>
+                              $link = "../scripts/delete_user.php?delete=" . $_GET['delete'];?>
                               Etes-vous sur de vouloir supprimer le compte suivant : <?php echo $_GET['delete'];
                            } ?>
                            <button type="button" onclick="location.href='settings_admin.php?delete=1'">non</button>

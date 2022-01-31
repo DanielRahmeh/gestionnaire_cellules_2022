@@ -38,6 +38,7 @@
                            'date_inscription' => $date_inscription));
       // Protocole d'envoi de mail
       require 'send_mail.php';
+      //	
       send_mail('Inscription au gestionnaire de cellules',
                'Bonjour,<br /><br />
                Vous avez été inscrit sur l\'application \'Gestionnaire de cellules\'.<br />
