@@ -135,19 +135,19 @@
                // Requete récupération des données des utilisateurs
                $reponse = $bdd->query("SELECT * FROM user");
                ?>
-               <table>
+               <table class="excel-table">
                   <thead>
                         <tr>
-                           <th>Email</th>
-                           <th>Droit administrateurs</th>
-                           <th>Supprimer le compte</th>
+                           <th _sorttype="string">Email</th>
+                           <th _sorttype="string">Droit administrateurs</th>
+                           <th _sorttype="string">Supprimer le compte</th>
                         </tr>
                   </thead>
+                  <tbody>
                   <?php
                   while ($donnees = $reponse->fetch())
                   {
                         ?>
-                        <tbody>
                            <tr>
                               <td data-label="Email"><?php echo $donnees['email_user']; ?></td>
                               <?php if ($donnees['admin_user'] == 1) {
@@ -160,10 +160,11 @@
                               $link = "settings_admin.php?delete=" . $donnees['email_user'];?>
                               <td data-label="Supprimer le compte"><a href="<?php echo($link); ?>">Supprimer</a></td>
                            </tr>
-                        </tbody> 
+                        
                         <?php              
                   }
                   ?>
+                  </tbody> 
                </table>
                <div id="confirm_delete"> <?php
                   if (isset($_GET['delete_admin']) || isset($_GET['new_admin']) ||

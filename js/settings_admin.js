@@ -206,13 +206,26 @@ var hide_users = document.getElementById("hide_users");
 
 console.log(link);
 
-// if (link.includes("settings_admin.php?delete=") == true 
-//     || link.includes("settings_admin.php?delete_admin=") == true
-//     || link.includes("settings_admin.php?new_admin=") == true){
-//     console.log('oui');
-//     hide_users.style.display = "block";
-//     display_users.style.display = "none";
-// } else {
-//     hide_users.style.display = "none";
-//     display_users.style.display = "block";
-// }
+var tfConfig = {
+   base_path: '../../TableFilter-master/dist/tablefilter/',
+   alternate_rows: true,
+   rows_counter: {
+       text: 'Résultats: '
+   },
+   btn_reset: {
+       text: 'Reset les filtrages'
+   },
+   loader: true,
+   no_results_message: true,
+   col_1: 'select',
+   col_2: 'select',
+   col_types: [
+      'string',
+      'string',
+      'string',
+   ],
+   extensions: [{ name: 'sort' }]
+};
+
+var tf = new TableFilter(document.querySelector('table'), tfConfig);
+tf.init();

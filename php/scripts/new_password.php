@@ -7,7 +7,6 @@
    }  
    if (isset($_GET['email']) && isset($_POST['pass']) && isset($_POST['nPass'])) {
       $email_user = $_GET['email'];
-      echo ($email_user . '<br />' . $_POST['pass']);
       $password_user = password_hash($_POST['pass'], PASSWORD_DEFAULT);
       $query = $bdd->prepare('UPDATE user SET password_user = :password_user WHERE email_user = :email_user');
       $query->execute(array(
