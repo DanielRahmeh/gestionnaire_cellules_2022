@@ -11,11 +11,11 @@ function send_mail($subject, $body, $destinator) {
       $mail->isSMTP();
       $mail->Host       = 'smtp.gmail.com';
       $mail->SMTPAuth   = true;
-      $mail->Username   = 'gdc.numerica@gmail.com';
-      $mail->Password   = '@bcdef1234!';
+      $mail->Username   = 'gdc.numerica.contact@gmail.com';
+      $mail->Password   = 'Numerica!2022.gdc';
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
       $mail->Port       = 465;
-      $mail->setFrom('gdc.numerica@gmail.com', 'GDC Numerica');
+      $mail->setFrom('gdc.numerica.contact@gmail.com', 'GDC Numerica');
       $mail->addAddress($destinator);
       $mail->isHTML(true);
       $mail->Subject = $subject;
