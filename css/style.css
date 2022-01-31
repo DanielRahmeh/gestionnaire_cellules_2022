@@ -460,7 +460,7 @@ header nav a {
    margin-bottom: 1rem;
 }
 
-.elem_setting button {
+.elem_setting button, .elem_setting input[type="submit"] {
    margin-top: 2rem;
    cursor:pointer;
    margin-left: auto;
@@ -477,7 +477,7 @@ header nav a {
    display: flex;
    justify-content: center;
 }
-.elem_setting button:hover {
+.elem_setting button:hover, .elem_setting input[type="submit"]:hover {
    background-color: var(--blue-color);
 }
 

@@ -9,8 +9,6 @@
    rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-   <script src="sortabletable.js" language="javascript" type="text/javascript"></script>
-   <script src="tfAdapter.sortabletable.js" language="javascript" type="text/javascript"></script>
    <link rel="stylesheet" href="../../css/style.css" type="text/css" />
    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
    <title>Paramètres admin</title>
@@ -27,11 +25,11 @@
          </form>
       <nav>
          <?php if ($_SESSION['admin'] == 1) {?>
-            <a href="settings_admin.php"  id="settings_active">
+            <a href="settings_admin.php" id="user">
                <img src="../../img/icon/settings.png" alt="" class="icon_nav">
             </a>
             <?php }?>
-         <a href="settings.php" id="user"><img src="../../img/icon/user.png" alt="" class="icon_nav"></a>
+         <a href="settings.php" id="settings_active"><img src="../../img/icon/user.png" alt="" class="icon_nav"></a>
          <a href="../scripts/disconnect.php"  id="power-button"><img src="../../img/icon/power-button.png" alt="" class="icon_nav"></a>
       </nav>
    </header>
