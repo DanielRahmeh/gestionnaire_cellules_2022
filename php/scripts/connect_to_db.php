@@ -1,3 +1,5 @@
+<!-- Script permettant de se connecter à une base de donnée MySQL -->
+
 <?php
     class Database {
         private $_conn = null;

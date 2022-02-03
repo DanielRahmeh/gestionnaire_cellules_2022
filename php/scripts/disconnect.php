@@ -1,4 +1,7 @@
+<!-- Scrtipt permettant la déconnexion de l'utilisateur -->
+
 <?php
+   // Supression des données dans les cookies du navigateur
    if (isset($_COOKIE['email']) && isset($_COOKIE['password']) && isset($_COOKIE['admin'])) {
       unset($_COOKIE['email']);
       unset($_COOKIE['password']);
@@ -7,8 +10,13 @@
       setcookie('password', null, -1, '/');
       setcookie('admin', null, -1, '/');
    }
+   
    session_start();
-   session_destroy(); //destroy the session
-   header('Location: ../pages/login.php'); //to redirect back to "index.php" after logging out
+
+   // Destruction de la session utilisateur
+   session_destroy();
+
+   // Redirection vers la page de login
+   header('Location: ../pages/login.php');
    exit();
 ?>

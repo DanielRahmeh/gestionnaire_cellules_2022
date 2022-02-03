@@ -1,4 +1,6 @@
-// Génération d'un mot de passe ou saisie d'un mot de passe
+// Fonction permettant de détécter si l'utilisateur souhaite génerer un mot de passe ou le saisir
+// lors de l création d'un nouveau compte utilisataur
+
 function checkGeneratePass() {
    var checkBox = document.getElementById("generateCheckBox");
    var genPass = document.getElementById("generate_pass");
@@ -21,7 +23,11 @@ function checkGeneratePass() {
    }
 }
 
-// Vérification des critères de validité d'un mot de passe
+// Récupération des éléments permettant de mettre en place des critère de validité du mot de passe
+// A chaque manipulation d'un de ces élément par l'utilisateur la fonction 'PasswordCheckClick' est appelé
+// permettant de mettre à jour les critères de validités
+
+// Longueur du mot de passe
 var lenPasswordText = document.getElementById("len_password_text");
 var lenPasswordVal = document.getElementById("len_password_val");
 var lenPasswordCheck = document.getElementById("len_password_check");
@@ -29,6 +35,8 @@ var lenPasswordIco = document.getElementById("len_password_ico");
 function lenPasswordCheckClick() { 
    PasswordCheckClick(lenPasswordCheck, lenPasswordVal, lenPasswordText, lenPasswordIco, 0);
 }
+
+// Nombre de majuscules
 var majPasswordText = document.getElementById("maj_password_text");
 var majPasswordVal = document.getElementById("maj_password_val");
 var majPasswordCheck = document.getElementById("maj_password_check");
@@ -36,6 +44,8 @@ var majPasswordIco = document.getElementById("maj_password_ico");
 function majPasswordCheckClick() { 
    PasswordCheckClick(majPasswordCheck, majPasswordVal, majPasswordText, majPasswordIco, 1);
 }
+
+// Nombre de minuscules
 var minPasswordText = document.getElementById("min_password_text");
 var minPasswordVal = document.getElementById("min_password_val");
 var minPasswordCheck = document.getElementById("min_password_check");
@@ -43,6 +53,8 @@ var minPasswordIco = document.getElementById("min_password_ico");
 function minPasswordCheckClick() { 
    PasswordCheckClick(minPasswordCheck, minPasswordVal, minPasswordText, minPasswordIco, 2);
 }
+
+// Nombre de numéros
 var numPasswordText = document.getElementById("num_password_text");
 var numPasswordVal = document.getElementById("num_password_val")
 var numPasswordCheck = document.getElementById("num_password_check");
@@ -51,10 +63,16 @@ function numPasswordCheckClick() {
    PasswordCheckClick(numPasswordCheck, numPasswordVal, numPasswordText, numPasswordIco, 3);
 }
 
+// Tableau contenant la valeur des critère de validité du mot de passe
+// arrayPasswordCheck[0] -> longueur minimum du mot de passe
+// arrayPasswordCheck[1] -> nombre minimum de maj dans le mot de passe
+// arrayPasswordCheck[2] -> nombre minimum de min dans le mot de passe
+// arrayPasswordCheck[3] -> nombre minimum de num dans le mot de passe
 var arrayPasswordCheck = [0, 0, 0, 0];
 
 var pass = document.getElementById('pass');
 
+// Fonction permettant de mettre à jour les valeur du tableau arrayPasswordCheck
 function PasswordCheckClick(check, val, text, ico, index) {
    if (check.checked == true) {
       val.style.display = "block";
@@ -78,7 +96,7 @@ function PasswordCheckClick(check, val, text, ico, index) {
       text.innerHTML=('Minimum 0')
       arrayPasswordCheck[index] = 0;
    }
-   console.log(arrayPasswordCheck);
+   // Mise à jour des formulaires html en fonction des critères défini par la fonction
    pass.setAttribute("title", "- Minimum " + arrayPasswordCheck[0] + 
                               " charactère \r\n- Au moins " + arrayPasswordCheck[1] +
                               " MAJ (A-Z) \r\n- Au moins " + arrayPasswordCheck[2] + 
@@ -90,8 +108,7 @@ function PasswordCheckClick(check, val, text, ico, index) {
                                  "}).{" + arrayPasswordCheck[0] + ",40}$");
 }
 
-// Générateur de mot de passe
-
+// Fonction permettant de génerer un mot de passe
 function generatePassword() {
    var checkBox = document.getElementById("generateCheckBox");
    var newUserForm = document.getElementById("new_user_form");
@@ -106,19 +123,29 @@ function generatePassword() {
       document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
       document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+
+      // Longueur du mot de passe généré
       if (arrayPasswordCheck[0] == 0)
          tot_len = 6;
       else
          tot_len = arrayPasswordCheck[0];
+      
+      // Géneration des majuscules du mot de passe
       for (i = 0; i < arrayPasswordCheck[1]; i++)
          password += alphaMaj.charAt(Math.floor(Math.random() * alphaMaj.length));
+      
       len = i;
+      // Géneration des minuscules du mot de passe
       for (i = len; i <  arrayPasswordCheck[2] + len; i++)
          password += alphaMin.charAt(Math.floor(Math.random() * alphaMin.length));
+      
       len = i;
+      // Géneration des numéros du mot de passe
       for (i = len; i < arrayPasswordCheck[3] + len; i++)
          password += alphaNum.charAt(Math.floor(Math.random() * alphaNum.length));
+
       len = i;
+      // Génération des caractrères manquant au mot de passe
       if (len != tot_len) {
          for (i = len; i <  tot_len; i++)
             password += alphaMin.charAt(Math.floor(Math.random() * alphaMin.length));
@@ -134,9 +161,8 @@ function generatePassword() {
 
 
 
-// Verification de la validité du mot de passe (min 6 CAR, min 1 MAJ, min 1 MIN, min 1 NUM)
 var pass = document.getElementById('pass');
-
+// Affichage d'un message d'erreur au niveau du formulaire HTML si le mot de passe saisi ne correspond pas au critère de validité
 pass.oninvalid = function(event) {
     event.target.setCustomValidity
     ("- Minimum " + arrayPasswordCheck[0] + 
@@ -145,9 +171,8 @@ pass.oninvalid = function(event) {
     " MIN (a-z)\n- Au moins " + arrayPasswordCheck[3] + " NUM (1-9)");
 }
 
-// Verification lors de la validité du mot de passe lors de sa saisie
-var pass = document.getElementById("pass");
 
+// Fonction permettant d'afficher à l'utilisateur si les critère de validités du mot de passe sont réspecté gràce à des icones
 function checkLivePassword() {
    if (pass.value.length >= arrayPasswordCheck[0])
       document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
@@ -166,10 +191,12 @@ function checkLivePassword() {
    else
       document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
 }
+
+// Cette fonction est appelé à chaque appui sur le clavier de l'utilisateur dans le champs de saisie du mot de passe
 pass.onkeyup = checkLivePassword;
 
 
-// Verification de la confirmation du mot de passe
+// Fonction permetta de vérifier si la confirmation du mot de passe correspond au mot de passe
 var pass = document.getElementById("pass");
 var nPass = document.getElementById("nPass");
 
@@ -206,6 +233,7 @@ var hide_users = document.getElementById("hide_users");
 
 console.log(link);
 
+// Création du tableau : paramètre utilisateur
 var tfConfig = {
    base_path: '../../TableFilter-master/dist/tablefilter/',
    alternate_rows: true,
@@ -227,5 +255,6 @@ var tfConfig = {
    extensions: [{ name: 'sort' }]
 };
 
+// Localisation du tableau
 var tf = new TableFilter(document.querySelector('table'), tfConfig);
 tf.init();

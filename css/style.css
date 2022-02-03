@@ -1,5 +1,7 @@
+/* Import de la googlefont : Rubick */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,550;0,700;1,400;1,550;1,700&display=swap');
 
+/* Variables CSS */
 :root {
 
    /* Font */
@@ -45,16 +47,19 @@ html, body {
    overflow-x: hidden;
 }
 
+/* Liens */
 a {
    text-decoration: none;
    color: var(--orange-color);
    transition-duration: 0.3s;
 }
 
+/* Survol de liens */
 a:hover {
    color: var(--blue-color);
 }
 
+/* Message d'erreur */
 .error {
    color: var(--error-color);
    font-weight: bold;
@@ -62,6 +67,7 @@ a:hover {
    animation: hide 6s linear 3s 1 forwards;
 }
 
+/* Tableau */
 table {
    border-radius: 2rem;
    margin-top: 10px;
@@ -70,49 +76,48 @@ table {
    border-collapse: collapse;
 }
 
+/* Case de tableau */
 table td, table th {
    height: 40px;
    border: 5px solid white;
    text-align: center;
-   /* width: 25%; */
+   width: 25%;
    
 }
 
-table th {
-   background-color: var(--text-color);
-   color: var(--gray-100);
-}
-
-table tr {
-   background-color: var(--gray-100);
-}
-
+/* 1 ligne du tableau sur 2 */
 table tr:nth-child(even){background-color: #f2f2f2;}
 
+/* Lien du tableau */
 table a {
    color: var(--text-color);
    border-bottom: 2px dashed var(--text-color);
    padding-bottom: 2px;
 }
 
+/* Survol des liens du tableau */
 table a:hover {
    color: var(--orange-color);
 }
 
+/* Survol de liens spécifiques du tableau  */
 .table_link_pos:hover {
    color: var(--blue-color);
 }
 
+/* Champs de saisi */
 input {
    font-family: var(--font);
    font-size: var(--text-m);
    color: var(--text-color);
 }
 
+/* message d'erreur de login */
 #error_login {
    text-align: center;
 }
 
+/* message de confirmation valide */
 .valide {
    color: var(--valide-color);
    font-weight: bold;
@@ -120,12 +125,14 @@ input {
    animation: hide 2s linear 2s 1 forwards;
 }
 
+/* Disparition progressive des message d'erreurs et de validation */
 @keyframes hide {
    to {
        opacity: 0;
    }
 }
 
+/* Titres h3 et h4 */
 h3, h4 {
    color: var(--text-color);
    margin: 0;
@@ -155,7 +162,7 @@ h3, h4 {
 
 /* vvv login.php / Page de connexion vvv */
 
-/* main */
+/* Main de la page login */
 #main_login {
    margin: 0;
    background-image: url('../img/background/Numerica2_Lieu.png');
@@ -167,7 +174,7 @@ h3, h4 {
    transition-duration: 1s;
  }
 
- /* main */
+ /* Main avant la recharge de la page*/
  #main_login:before {
    left: 0%;
    background-color: rgba(0, 0, 0, 0.521);
@@ -179,54 +186,53 @@ h3, h4 {
    width: 100%;
  }
 
-/* div id="connexion" */
+/* Partie ou se trouve les champs de connexion */
 #connexion {
    position: absolute;
    background-color: rgba(255, 255, 255, 0.719);
    border-radius: 10% / 50%;
-   /* width:45rem; */
    margin-left: auto;
    margin-right: auto;
    box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.747) ;
 }
 
-/* formulaire de connexion */
+/* Formulaire de connexion */
 #connexion form {
    background-color: var(--white-color);
    padding: 1% 8% 6% 6%;
 }
 
-/* titre du formulaire de connexion */
+/* Titre du formulaire de connexion */
 #connexion h2 {
    text-align: center;
    margin: 0 0 1% 0;
 }
 
-/* logo page de connexion */
+/* Logo page de connexion */
 #img_login {
    display: grid;
    place-items: center;
    margin: 3% 2% 2% 0;
 }
 
-/* images de la page de connexion */
+/* Images de la page de connexion */
 #connexion img {
    width: 30%;
    transition-duration: 0.5s;
 }
 
-/* survol des images de la page de connexion */
+/* Survol des images de la page de connexion */
 #connexion img:hover {
    transition-duration: 1s;
    width: 40%;
 }
 
-/* label des formulaires de la page de connexion */
+/* Label des formulaires de la page de connexion */
 .lab_login label {
    margin-left: 3%;
 }
 
-/* champs de formulaire de la page de ocnnexion */
+/* Champs de formulaire de la page de ocnnexion */
 .input_login {
    width: 100%;
    margin-bottom: 3%;
@@ -237,13 +243,13 @@ h3, h4 {
    box-shadow: inset 0 0 5px #9b9b9b;
 }
 
-/* div id="submit_login_div" */
+/* Partie permettant de valider le formulaire */
 #submit_login_div {
    display: flex;
    justify-content: center;
 }
 
-/* bouton submit de la page de connexion */
+/* Bouton submit de la page de connexion */
 #submit_login {
    margin-top: 5%;
    cursor:pointer;
@@ -261,13 +267,13 @@ h3, h4 {
    transition-duration: 1.5s;
 }
 
-/* survol du bouton submit de la page de connexion */
+/* Survol du bouton submit de la page de connexion */
 #submit_login:hover {
    background-color: var(--blue-color);
    color: var(--gray-100);
 }
 
-/* div contenant le réster connécter + mot de passe oublié */
+/* Div contenant le réster connécter + mot de passe oublié */
 #check_login {
    display: flex;
    justify-content: space-around;
@@ -278,7 +284,7 @@ h3, h4 {
 
 /* vvv header.php / Header vvv */
 
-/* header */
+/* Header */
 header {
    margin: 0;
    padding: 0;
@@ -291,12 +297,12 @@ header {
    border: 1px solid var(--gray-300);
 }
 
-/* bannière principal */
+/* Bannière principal */
 #banniere {
    display: flex;
 }
 
-/* texte de la banière */
+/* Texte de la banière */
 #banniere h3 {
    display: flex;
    padding: 12px 0px 0px 10px;
@@ -304,13 +310,13 @@ header {
    white-space: nowrap;
 }
 
-/* image de la bannière */
+/* Image de la bannière */
 #banniere img {
    margin: 6px 0px 5px 10px;
    width: 3.3rem;
 }
 
-/* div contenant la champs de texte + le bouton pour la recherche */
+/* Div contenant la champs de texte + le bouton pour la recherche */
 #search_bar_header {
    margin: 0 5% 0 5%;
    flex-grow: 2;
@@ -318,14 +324,14 @@ header {
    border-radius: 10px;
 }
 
-/* navigation */
+/* Navigation */
 header nav {
    height: 50px;
    position: relative;
    display: flex;
 }
 
-/* bouton de navigation */
+/* Bouton de navigation */
 header nav a {
    width: 7.3rem;
    height: 50px;
@@ -337,34 +343,31 @@ header nav a {
    justify-content: center;
 }
 
-/* icones de navigation */
+/* Icones de navigation */
 .icon_nav {
    width: 37%;
    height: 75%;
    padding-top: 1.2rem;
 }
 
-/* icones de recherche */
+/* Icones de recherche */
 .icon_search {
    width: 2rem;
 }
 
-.icon_search:hover {
-   width: 2rem;
-   background-color: var(--gray-300);
-
-}
-
+/* Survol des boutons de la barre de navigation*/
 #settings:hover, #user:hover {
    background-color: var(--gray-150);
    box-shadow: inset 0 0 5px #7e7e7e;
 }
 
+/* Survol du bouton deconnexion */
 #power-button:hover {
    background-color: var(--alert-color);
    box-shadow: inset 0 0 5px #353535;
 }
 
+/* Survol des boutons settings */
 #settings_active {
    background-color: var(--gray-150);
    box-shadow: inset 0 0 5px #7e7e7e;
@@ -375,33 +378,39 @@ header nav a {
 
 /* vvv Principal.html / main de la page principal vvv */
 
+/* Totalité de la page */
 #main_principal {
    background-color: var(--text-color);
    display: grid;
    grid-template-columns: 23rem auto;
 }
 
+/* Partie gauche */
 .slide_bar {
    height: 1080px;
    color: white;
 }
 
+/* Partie droite */
 .main_display {
    background-color: var(--light-color);
    border-radius: 30px 0 0 0;
    padding: 2rem 0 0 3rem;
 }
 
+/* Paragraphe */
 .main_display p {
    margin: 0 0 2rem 0;
    padding: 0;
 }
 
+/* Contenue en rapport avec la partie de recherche */
 #research_grid {
    display: grid;
    place-items: center;
 }
 
+/* Contenue en rapport avec la partie de recherche */
 #research_main {
    margin-top: 35%;
    display: grid;
@@ -417,10 +426,12 @@ header nav a {
     box-shadow: rgba(0, 0, 0, 0.089) -1px 3px 8px 2px;
 }
 
+/* Contenue en rapport avec la partie de recherche */
 #research_main h4 {
    margin-top: 1rem;
 }
 
+/* Contenue en rapport avec la partie de recherche */
 #search_bar_main {
    margin-top: 1rem;
    display: flex;
@@ -443,15 +454,18 @@ header nav a {
 /* vvv settings.php / Page des paramètres administrateur vvv */
 
 
+/* Contenu basique dans les paramètres */
 .new_user_container {
    margin: 1% 3% 0 3%;
    width: 34rem;
 }
 
+/* Titre h3 */
 .new_user_container h3 {
    font-weight: bold;
 }
 
+/* Label */
 .new_user_container label {
    font-weight: 550;
 }
@@ -460,6 +474,7 @@ header nav a {
    margin-bottom: 1rem;
 }
 
+/* Boutons  */
 .elem_setting button, .elem_setting input[type="submit"] {
    margin-top: 2rem;
    cursor:pointer;
@@ -477,10 +492,13 @@ header nav a {
    display: flex;
    justify-content: center;
 }
+
+/* Survol des boutons */
 .elem_setting button:hover, .elem_setting input[type="submit"]:hover {
    background-color: var(--blue-color);
 }
 
+/* Champs de saisie */
 .settings_input {
    margin-top: 0.5rem;
    padding-left: 1rem;
@@ -491,45 +509,54 @@ header nav a {
    height: 30px;
 }
 
+/* Champs en rapport avec les critère de validitées */
 #check_pass  {
    width: 55rem;
    font-size: var(--text-s);
 }
 
+/* Champs en rapport avec les critère de validitées */
 .validity_pass {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
 }
 
+/* Champs en rapport avec les critère de validitées */
 .text_validity_pass {
    display: flex;
    gap: 1rem;
 }
 
+/* Champs en rapport avec les critère de validitées */
 .text_validity_pass div {
    display: flex;
    gap: 1rem;
 }
 
+/* Champs en rapport avec les critère de validitées */
 .password_val {
    display: none;
 }
 
+/* Champs en rapport avec les critère de validitées */
 .password_text {
    text-decoration: line-through;
 }
 
+/* Champs en rapport avec les critère de validitées */
 .password_ico {
    height: 1rem;
    width: 1rem;
    display: none;
 }
 
+/* Champs en rapport avec les critère de validitées */
 #create {
    margin-bottom: 1rem;
 }
 
+/* Champs en rapport avec les critère de validitées */
 #tab_user {
    margin-top: 100px;
    width: 100%;

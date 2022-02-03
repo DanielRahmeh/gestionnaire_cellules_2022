@@ -1,8 +1,17 @@
 <?php
+   // Récupération des données de la session de l'utilisateur
    session_start();
-   $email = $_SESSION['email'];
-   $admin = $_SESSION['admin'];
+   // Vérification si l'utilisateur à une section active
+   if($_SESSION['email'] != "") {
+      $email = $_SESSION['email'];
+      $admin = $_SESSION['admin'];
+   // Affichage du header de la page
    include('header/settings_header.php');
+   }
+   // Si l'utilisateur atterit sur la page sans session active
+   else {
+      header('Location: index.php');
+   }
 ?>
 
 <main>

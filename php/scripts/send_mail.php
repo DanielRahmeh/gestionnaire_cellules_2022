@@ -1,10 +1,20 @@
+<!-- Script permmettant l'envoi d'un mail -->
+<!-- Utilisé avec l'adresse suivant : -->
+<!-- - Email           : gdc.numerica.contact@gmail.com -->
+<!-- - Mot de passe    : Numerica!2022.gdc -->
+
+<!-- vu sur : https://github.com/PHPMailer/PHPMailer -->
+
 <?php
+// Appel des fichiers utiles au fonctionnment du protocol de mailing
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require '../../PHPMailer/src/Exception.php';
 require '../../PHPMailer/src/PHPMailer.php';
 require '../../PHPMailer/src/SMTP.php';
 
+// Fonction a appelé lors de la mise en place d'un evoie de mail
+// prend en paramètre : le sujet du mail / le message du mail / l'adresse mail du destinataire
 function send_mail($subject, $body, $destinator) {
    try {
       $mail = new PHPMailer(true);
