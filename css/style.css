@@ -387,7 +387,7 @@ header nav a {
 
 /* Partie gauche */
 .slide_bar {
-   height: 1080px;
+   /* height: 1080px; */
    color: white;
 }
 

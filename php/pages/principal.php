@@ -13,7 +13,8 @@
       <div class="slide_bar">
 
          <!-- Liste de test -->
-         <ul>
+         <?php require('../scripts/list.php');?>
+         <!-- <ul>
             <li>Numerica 1
                <ul>
                   <li>Batiment A
@@ -44,7 +45,7 @@
                   <li>Etage2</li>
                </ul>
             </li>
-         </ul>
+         </ul> -->
          <!-- Liste de test -->
 
       </div>
