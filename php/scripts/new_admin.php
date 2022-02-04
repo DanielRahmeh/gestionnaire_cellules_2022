@@ -1,4 +1,4 @@
-<!-- Script permettant d'accorder les droits administrateur à un compt utilisateur -->
+<!-- Script permettant d'accorder les droits administrateur à un compte utilisateur -->
 
 <?php
    // Appel du fichier permettant de se connecter à la bdd

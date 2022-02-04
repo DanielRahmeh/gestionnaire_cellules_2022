@@ -30,10 +30,12 @@
             setcookie('admin', $admin, time()+36000, '/');
          }
          // Connexion réussi : redirection vers la page d'accueil (principal.php)
-         header('Location: ../pages/principal.php'); 
+         ?> <script>window.location = "../pages/principal.php";</script> <?php
+         // header('Location: ../pages/principal.php'); 
       }
    }
    // Saisi de l'email ou du mdp incorect, l'utilisateur est revoyé sur la page de connexion accompagné d'un message d'erreur
    if ($count == 0)
-      header('Location: ../pages/login.php?erreur=1');
+      ?> <script>window.location = "../pages/login.php?erreur=1";</script> <?php
+      // header('Location: ../pages/login.php?erreur=1');
 ?>

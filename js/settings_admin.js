@@ -196,7 +196,7 @@ function checkLivePassword() {
 pass.onkeyup = checkLivePassword;
 
 
-// Fonction permetta de vérifier si la confirmation du mot de passe correspond au mot de passe
+// Fonction permettant de vérifier si la confirmation du mot de passe correspond au mot de passe
 var pass = document.getElementById("pass");
 var nPass = document.getElementById("nPass");
 
@@ -243,6 +243,7 @@ var tfConfig = {
    btn_reset: {
        text: 'Reset les filtrages'
    },
+   clear_filter_text: 'Tous',
    loader: true,
    no_results_message: true,
    col_1: 'select',
