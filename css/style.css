@@ -391,6 +391,24 @@ header nav a {
    color: white;
 }
 
+/* Liste de navigation des structures */
+.slide_bar ul {
+   padding: 5px 0px 5px 17px;
+   list-style: none;
+}
+
+/* Liens de la liste de navigations des structures */
+.slide_bar ul a {
+   color: var(--white-color);
+   margin-left: 10px;
+}
+
+.slide_bar ul a:hover{
+   color: var(--blue-color);
+}
+
+
+
 /* Partie droite */
 .main_display {
    background-color: var(--light-color);

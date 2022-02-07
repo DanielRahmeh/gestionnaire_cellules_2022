@@ -14,40 +14,6 @@
 
          <!-- Liste de test -->
          <?php require('../scripts/list.php');?>
-         <!-- <ul>
-            <li>Numerica 1
-               <ul>
-                  <li>Batiment A
-                     <ul>
-                        <li>Etage1
-                           <ul>
-                              <li>1.01</li>
-                              <li>1.02</li>
-                              <li>1.03</li>
-                              <li>1.04</li>
-                              <li>1.05</li>
-                           </ul>
-                        </li>
-                        <li>Etage2</li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-            <li>Numerica 2
-               <ul>
-                  <li>Etage1</li>
-                  <li>Etage2</li>
-               </ul>
-            </li>
-            <li>Numerica 3
-               <ul>
-                  <li>Etage1</li>
-                  <li>Etage2</li>
-               </ul>
-            </li>
-         </ul> -->
-         <!-- Liste de test -->
-
       </div>
 
       <!-- Partie principal au centre de la page -->
