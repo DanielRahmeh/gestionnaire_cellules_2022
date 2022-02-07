@@ -26,6 +26,7 @@
    table tr{
       display: block;
       margin-bottom: 40px;
+      width: 95%;
    }
    table td {
       display: block;
@@ -36,4 +37,11 @@
       float: left;
       font-weight: bold;
    }
+}
+
+   @media screen and (max-width: 400px) {
+      table tr{
+
+         width: 90%;
+      }
 }
