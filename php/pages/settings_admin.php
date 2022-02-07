@@ -1,4 +1,4 @@
-   <?php
+<?php
       // Récuperation des élement de la session de l'utilisateur
       session_start();
       // Vérification si l'utilisateur est bien connécté
@@ -153,8 +153,50 @@
             if(isset($_GET['delete']) || isset($_GET['delete_admin']) || isset($_GET['new_admin'])) {
 
                // Affichage du lien pour masquer les comptes
-               ?><a href="settings_admin.php">Masquer la liste des comptes</a><?php
+               ?><a href="settings_admin.php">Masquer la liste des comptes</a>
 
+               <!-- Demande de confirmation en cas d'action sur un compte -->
+               <div id="confirm_delete"> <?php
+                  if (isset($_GET['delete_admin']) || isset($_GET['new_admin']) ||
+                        (isset($_GET['delete']) && $_GET['delete'] != 1)) {
+                           if (isset($_GET['delete_admin'])) {
+                              $link = "../scripts/delete_admin.php?new_admin=" . $_GET['delete_admin'];?>
+                              Etes-vous sur de vouloir supprimer les droits administrateur au compte suivant :
+                              <b><?php echo $_GET['delete_admin']; ?></b><?php
+                           }
+                           if (isset($_GET['new_admin'])) {
+                              $link = "../scripts/new_admin.php?new_admin=" . $_GET['new_admin'];?>
+                              Etes-vous sur de vouloir accorder les droits administrateurs au compte suivant : 
+                              <b><?php echo $_GET['new_admin']; ?></b><?php
+                           }
+                           if (isset($_GET['delete']) && $_GET['delete'] != 1) {
+                              $link = "../scripts/delete_user.php?delete=" . $_GET['delete'];?>
+                              Etes-vous sur de vouloir supprimer le compte suivant : <b><?php echo $_GET['delete']; ?></b><?php
+                           } ?>
+                           <button type="button" onclick="location.href='settings_admin.php?delete=1'">non</button>
+                           <button type="button" onclick="location.href='<?php echo $link; ?>'">oui</button> <?php
+                        }
+                  ?>
+               </div>
+
+
+               <!-- Message de confirmation en cas d'action validé par l'utilisateur -->
+               <?php 
+               if (isset($_GET['check_delete'])  && $_GET['check_delete'] != 1) {
+                  ?> <div class="error">
+                     Le compte de <b><?php echo $_GET['check_delete']; ?></b> a bien été supprimer.
+                  </div> <?php
+               }
+               if (isset($_GET['check_new_admin'])) {
+                  ?><div class="valide">
+                     Les droits administrateurs on bien été accorder au compte suivant : <b> <?php echo $_GET['check_new_admin']; ?></b>
+                  </div><?php
+               }
+               if (isset($_GET['check_delete_admin'])) {
+                  ?><div class="error">
+                     Les droits administrateurs on bien été supprimer du compte suivant : <b> <?php echo $_GET['check_delete_admin']; ?></b>
+                  </div><?php
+               }
                // Connexion à la base de données
                require ('../scripts/connect_to_db.php');
                $db = new Database();
@@ -199,43 +241,9 @@
                   ?>
                   </tbody> 
                </table>
-
-               <!-- Demande de confirmation en cas d'action sur un compte -->
-               <div id="confirm_delete"> <?php
-                  if (isset($_GET['delete_admin']) || isset($_GET['new_admin']) ||
-                        (isset($_GET['delete']) && $_GET['delete'] != 1)) {
-                           if (isset($_GET['delete_admin'])) {
-                              $link = "../scripts/delete_admin.php?new_admin=" . $_GET['delete_admin'];?>
-                              Etes-vous sur de vouloir supprimer les droits administrateur au compte suivant :
-                              <?php echo $_GET['delete_admin'];
-                           }
-                           if (isset($_GET['new_admin'])) {
-                              $link = "../scripts/new_admin.php?new_admin=" . $_GET['new_admin'];?>
-                              Etes-vous sur de vouloir accorder les droits administrateurs au compte suivant : 
-                              <?php echo $_GET['new_admin'];
-                           }
-                           if (isset($_GET['delete']) && $_GET['delete'] != 1) {
-                              $link = "../scripts/delete_user.php?delete=" . $_GET['delete'];?>
-                              Etes-vous sur de vouloir supprimer le compte suivant : <?php echo $_GET['delete'];
-                           } ?>
-                           <button type="button" onclick="location.href='settings_admin.php?delete=1'">non</button>
-                           <button type="button" onclick="location.href='<?php echo $link; ?>'">oui</button> <?php
-                        }
-                  ?>
-               </div>
+               <?php
                
-               <!-- Message de confirmation en cas d'action validé par l'utilisateur -->
-               <?php 
-               if (isset($_GET['check_delete'])  && $_GET['check_delete'] != 1) {
-                  ?> <div id="check_delete">
-                     Le compte de <b><?php echo $_GET['check_delete']; ?></b> a bien été supprimer.
-                  </div> <?php
-               }
-               if (isset($_GET['check_new_admin'])) {
-                  ?><div id="check_new_admin">
-                     Les droits administrateurs on bien été accorder au compte suivant : <b><?php echo $_GET['check_new_admin']; ?><b/>
-                  </div><?php
-               }
+
             }
 
             // Vérification si l'utilisateur n'a pas cliqué sur "afficher les comptes"
