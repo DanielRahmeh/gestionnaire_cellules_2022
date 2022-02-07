@@ -53,8 +53,10 @@
                         <input type="checkbox" id="len_password_check" class="password_check" onclick="lenPasswordCheckClick()"> 
                         <div id="password_text_info">Nombre de charactères : </div>
                      </div>
-                     <div id="len_password_text" class="password_text">Minimum 0</div>
-                     <div><img src="../../img/icon/cancel.png" class="password_ico"  id="len_password_ico"></div> 
+                     <div>
+                        <div id="len_password_text" class="password_text">Minimum 0</div>
+                        <div><img src="../../img/icon/cancel.png" class="password_ico"  id="len_password_ico"></div>
+                     </div>
                   </div>
                   <input type="range" min="1" max="30" value="6" id="len_password_val" class="password_val"
                   oninput="lenPasswordCheckClick();checkLivePassword();generatePassword()">
@@ -67,8 +69,10 @@
                         <input type="checkbox" id="maj_password_check" class="password_check" onclick="majPasswordCheckClick()">
                         <div id="password_text_info">Nombre de majuscules (A-Z) : </div>
                      </div>
-                     <div id="maj_password_text" class="password_text">Minimum 0</div>
-                     <div><img src="../../img/icon/cancel.png" class="password_ico" id="maj_password_ico"></div>                     
+                     <div>
+                        <div id="maj_password_text" class="password_text">Minimum 0</div>
+                        <div><img src="../../img/icon/cancel.png" class="password_ico" id="maj_password_ico"></div>
+                     </div>                 
                   </div>
                   <input type="range" min="0" max="10" value="0" id="maj_password_val" class="password_val"
                   oninput="majPasswordCheckClick();checkLivePassword();generatePassword()">
@@ -81,8 +85,10 @@
                         <input type="checkbox" id="min_password_check" class="password_check" onclick="minPasswordCheckClick()">
                         <div id="password_text_info">Nombre de minuscules (a-z) : </div>
                      </div>
-                     <div id="min_password_text" class="password_text">Minimum 0</div>
-                     <div><img src="../../img/icon/cancel.png" class="password_ico"  id="min_password_ico"></div>   
+                     <div>
+                        <div id="min_password_text" class="password_text">Minimum 0</div>
+                        <div><img src="../../img/icon/cancel.png" class="password_ico"  id="min_password_ico"></div>
+                     </div>
                   </div>
                   <input type="range" min="0" max="10" value="0" id="min_password_val" class="password_val"
                   oninput="minPasswordCheckClick();checkLivePassword();generatePassword()">
@@ -95,8 +101,10 @@
                         <input type="checkbox" id="num_password_check" class="password_check" onclick="numPasswordCheckClick()">
                         <div id="password_text_info">Nombre de charactères numeriques (1-9) : </div> 
                      </div>
-                     <div id="num_password_text" class="password_text">Minimum 0</div>
-                     <div><img src="../../img/icon/cancel.png" class="password_ico" id="num_password_ico"></div>   
+                     <div>
+                        <div id="num_password_text" class="password_text">Minimum 0</div>
+                        <div><img src="../../img/icon/cancel.png" class="password_ico" id="num_password_ico"></div>
+                     </div>   
                   </div>
                   <input type="range" min="0" max="10" value="0" id="num_password_val" class="password_val"
                   oninput="numPasswordCheckClick();checkLivePassword();generatePassword()">

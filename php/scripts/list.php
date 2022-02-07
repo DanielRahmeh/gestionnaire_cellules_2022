@@ -24,6 +24,12 @@
       }
    }
 
+   function get_link($url, $structure) {
+      ?><img src="../../img/icon/right_white.png" alt="">
+      <?php $link = $url . $structure->id_structure; ?>
+      <a href="<?php echo($link); ?>"><?php echo($structure->nom_structure); ?></a><?php
+   }
+
    $array_structure = array();
    $reponse = $bdd->query("SELECT * FROM structure, lieu
                            WHERE structure.id_structure = lieu.id_structure");
@@ -35,15 +41,11 @@
                                     $donnees['image_structure']);
       array_push($array_structure, $my_structure);
    }
-   
    ?>
    <ul>
       <?php
          foreach ($array_structure as $lieu) {
-            ?> <li>
-                  <img src="../../img/icon/right_white.png" alt="">
-                  <a href=""><?php echo($lieu->nom_structure); ?></a>
-               </li> <?php
+            ?> <li><?php get_link('../pages/lieu.php?id=', $lieu); ?></li> <?php
             $reponse = $bdd->query("SELECT * FROM structure, batiment
                                     WHERE structure.id_structure = batiment.id_structure
                                     AND batiment.id_lieu = " . $lieu->id_structure);
@@ -57,12 +59,10 @@
                                                    $donnees['coordonnees_structure'],
                                                    $donnees['image_structure']);
                      array_push($lieu->content, $my_structure);
+                     array_push($array_structure, $my_structure);
                   }
                   foreach ($lieu->content as $batiment) {
-                     ?> <li>
-                           <img src="../../img/icon/right_white.png" alt="">
-                           <a href=""><?php echo($batiment->nom_structure); ?></a>
-                        </li> <?php
+                     ?> <li><?php get_link('../pages/batiment.php?id=', $batiment); ?></li> <?php
                      $reponse = $bdd->query("SELECT * FROM structure, etage
                                              WHERE structure.id_structure = etage.id_structure
                                              AND etage.id_batiment = " . $batiment->id_structure);
@@ -76,12 +76,10 @@
                                                             $donnees['coordonnees_structure'],
                                                             $donnees['image_structure']);
                               array_push($batiment->content, $my_structure);
+                              array_push($array_structure, $my_structure);
                            }
                            foreach ($batiment->content as $etage) {
-                              ?> <li>
-                                    <img src="../../img/icon/right_white.png" alt="">
-                                    <a href=""><?php echo($etage->nom_structure); ?></a>
-                                 </li> <?php
+                              ?> <li><?php get_link('../pages/etage.php?id=', $etage); ?></li> <?php
                               $reponse = $bdd->query("SELECT * FROM structure, cellule
                                                       WHERE structure.id_structure = cellule.id_structure
                                                       AND cellule.id_etage = " . $etage->id_structure);
@@ -95,12 +93,10 @@
                                                                      $donnees['coordonnees_structure'],
                                                                      $donnees['image_structure']);
                                        array_push($etage->content, $my_structure);
+                                       array_push($array_structure, $my_structure);
                                     }
                                     foreach ($etage->content as $cellule) {
-                                       ?> <li>
-                                             <img src="../../img/icon/right_white.png" alt="">
-                                             <a href=""><?php echo($cellule->nom_structure); ?></a>
-                                          </li> <?php
+                                       ?> <li><?php get_link('../pages/cellule.php?id=', $cellule); ?></li> <?php
                                     }
                                  ?>
                               </ul>
