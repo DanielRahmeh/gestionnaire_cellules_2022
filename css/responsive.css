@@ -19,7 +19,7 @@
    .text_validity_pass {
       display: block;
    }
-
+   
    table thead {
       display: none;
       }
@@ -35,5 +35,11 @@
       content: attr(data-label);
       float: left;
       font-weight: bold;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   table tr{
+      width: 90%;
    }
 }
