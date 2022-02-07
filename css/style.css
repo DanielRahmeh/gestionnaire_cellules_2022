@@ -394,7 +394,7 @@ header nav a {
 /* Partie droite */
 .main_display {
    background-color: var(--light-color);
-   border-radius: 30px 0 0 0;
+   border-radius: 30px 0 0 30px;
    padding: 2rem 0 0 3rem;
 }
 
@@ -498,6 +498,11 @@ header nav a {
    background-color: var(--blue-color);
 }
 
+/* Champs contenant une checkbox */
+#checkboxed {
+   padding: 12px 0 10px 0;
+}
+
 /* Champs de saisie */
 .settings_input {
    margin-top: 0.5rem;
@@ -563,3 +568,21 @@ header nav a {
 }
 
 /* ^^^ settings.php / Page des paramètres administrateur ^^^ */
+
+
+/* ^^^ footer.php / Footer des pages ^^^ */
+
+footer {
+   background-color: var(--gray-100);
+   text-align: center;
+   padding: 20px 0px 20px 0px;
+   border-top: 1px solid var(--text-color);
+}
+
+footer nav {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+}
+
+/* ^^^ footer.php / Footer des pages ^^^ */

@@ -28,7 +28,7 @@
             </div>
 
             <!-- Checkbox pour activer la génération de mot de passe -->
-            <div class="elem_setting" id="generate" >
+            <div class="elem_setting" id="checkboxed">
                <label>Genérer un mot de passe</label>
                <input type="checkbox"  name="generate" id="generateCheckBox" title="Le mot de passe sera envoyé par mail" 
                      onclick="checkGeneratePass();generatePassword()">
@@ -118,7 +118,7 @@
             </div>
 
             <!-- Checkbox pour accorder les droits administrateurs -->
-            <div class="elem_setting">
+            <div class="elem_setting" id="checkboxed">
                <label>Droits administrateurs</label>
                <input type="checkbox"  id="rights" name="rights" title="Accorder les droits administrateurs au compte">
             </div>
@@ -249,6 +249,8 @@
 
    <!-- Appel du fichier js regroupant tous les script liés à la page setting_admin.php -->
    <script src="../../js/settings_admin.js"></script>
-
+   <?php
+      include('header/footer.php');
+   ?>
 </body>
 </html>

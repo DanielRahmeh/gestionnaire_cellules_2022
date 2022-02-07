@@ -16,7 +16,7 @@
 
 <main>
    <!-- Formulaire de modifiaction de mot de passe -->
-   <div class="new_user_container">
+   <div class="new_user_container" style="margin-bottom: 468px;">
       <a href="principal.php"> < retour</a><br /><br />
       <h3>Modifier votre mot de passe</h3><br />
       <?php $link = "../scripts/new_password.php?email=" . $email; ?>
@@ -45,5 +45,8 @@
    </div>
 </main>
 <script src="../../js/settings_admin.js"></script>
+<?php
+   include('header/footer.php');
+?>
 </body>
 </html>

@@ -98,6 +98,7 @@
    else {
          header('Location: index.php');
    }
+   include('header/footer.php');
    ?>
 </body>
 </html>
