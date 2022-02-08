@@ -1,6 +1,7 @@
-<!-- Scrtipt permettant la déconnexion de l'utilisateur -->
-
 <?php
+// Scrtipt permettant la déconnexion de l'utilisateur
+
+
    // Supression des données dans les cookies du navigateur
    if (isset($_COOKIE['email']) && isset($_COOKIE['password']) && isset($_COOKIE['admin'])) {
       unset($_COOKIE['email']);

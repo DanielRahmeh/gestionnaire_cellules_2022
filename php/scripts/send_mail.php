@@ -1,11 +1,11 @@
-<!-- Script permmettant l'envoi d'un mail -->
-<!-- Utilisé avec l'adresse suivant : -->
-<!-- - Email           : gdc.numerica.contact@gmail.com -->
-<!-- - Mot de passe    : Numerica!2022.gdc -->
-
-<!-- vu sur : https://github.com/PHPMailer/PHPMailer -->
-
 <?php
+// Script permmettant l'envoi d'un mail
+// Utilisé avec l'adresse suivant :
+// - Email           : gdc.numerica.contact@gmail.com
+// - Mot de passe    : Numerica!2022.gdc
+// vu sur : https://github.com/PHPMailer/PHPMailer
+
+
 // Appel des fichiers utiles au fonctionnment du protocol de mailing
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

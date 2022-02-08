@@ -1,6 +1,7 @@
-<!-- Script permettant d'accorder les droits administrateur à un compte utilisateur -->
-
 <?php
+// Script permettant d'accorder les droits administrateur à un compte utilisateur
+
+
    // Appel du fichier permettant de se connecter à la bdd
    require ('connect_to_db.php');
    $db = new Database();

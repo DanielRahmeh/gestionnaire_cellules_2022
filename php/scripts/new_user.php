@@ -1,6 +1,7 @@
-<!-- Script permettant la création d'un nouveau compte utilisateur -->
-
 <?php
+// Script permettant la création d'un nouveau compte utilisateur
+
+
    // Appel des fichiers permettant le protocol de mailing
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;

@@ -1,6 +1,7 @@
-<!-- Script permettant de supprimer un compte utilisateur -->
-
 <?php
+// Script permettant de supprimer un compte utilisateur
+
+
    // Appel du fichier permettant de se connecter à la bdd
    require ('connect_to_db.php');
    $db = new Database();

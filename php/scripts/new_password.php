@@ -1,6 +1,7 @@
-<!-- Script permettant de modifier le mot de passe d'un utilisateur -->
-
 <?php
+// Script permettant de modifier le mot de passe d'un utilisateur
+
+
    // Appel du fichier permettant de se connecter à la bdd
    require ('connect_to_db.php');
    $db = new Database();
