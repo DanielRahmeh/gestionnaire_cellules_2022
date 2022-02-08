@@ -9,14 +9,16 @@
 
    class Structure {
       public $id_structure;
+      public $rang_structure;
       public $nom_structure;
       public $adresse_structure;
       public $coordonnees_structure;
       public $image_structure;
       public $content = array();
 
-      public function __construct($id_structure, $nom_structure, $adresse_structure, $coordonnees_structure, $image_structure) {
+      public function __construct($id_structure, $rang_structure, $nom_structure, $adresse_structure, $coordonnees_structure, $image_structure) {
          $this->id_structure = $id_structure;
+         $this->rang_structure = $rang_structure;
          $this->nom_structure = $nom_structure;
          $this->adresse_structure = $adresse_structure;
          $this->id_struccoordonnees_structureture = $coordonnees_structure;
@@ -25,9 +27,12 @@
    }
 
    function get_link($url, $structure) {
-      ?><img src="../../img/icon/right_white.png" alt="">
+      ?><img src="../../img/icon/right_white.png" alt="" onclick="dispList('<?php echo($structure->rang_structure);?>')">
       <?php $link = $url . $structure->id_structure; ?>
-      <a href="<?php echo($link); ?>"><?php echo($structure->nom_structure); ?></a><?php
+      <a href="<?php echo($link); ?>"><?php echo($structure->nom_structure); ?></a>
+      <!-- Appel du fichier js regroupant tous les script liés à la page setting_admin.php -->
+      <script src="../../js/list.js"></script>
+      <?php
    }
 
    $array_structure = array();
@@ -35,6 +40,7 @@
                            WHERE structure.id_structure = lieu.id_structure");
    while ($donnees = $reponse->fetch()) {
       $my_structure = new Structure($donnees['id_structure'],
+                                    "batiment",
                                     $donnees['nom_structure'],
                                     $donnees['adresse_structure'],
                                     $donnees['coordonnees_structure'],
@@ -42,7 +48,7 @@
       array_push($array_structure, $my_structure);
    }
    ?>
-   <ul>
+   <ul id="lieu">
       <?php
          foreach ($array_structure as $lieu) {
             ?> <li><?php get_link('../pages/lieu.php?id=', $lieu); ?></li> <?php
@@ -50,10 +56,11 @@
                                     WHERE structure.id_structure = batiment.id_structure
                                     AND batiment.id_lieu = " . $lieu->id_structure);
             ?> 
-            <ul>
+            <ul id="batiment">
                <?php
                   while ($donnees = $reponse->fetch()) {
                      $my_structure = new Structure($donnees['id_structure'],
+                                                   "etage",
                                                    $donnees['nom_structure'],
                                                    $donnees['adresse_structure'],
                                                    $donnees['coordonnees_structure'],
@@ -67,10 +74,11 @@
                                              WHERE structure.id_structure = etage.id_structure
                                              AND etage.id_batiment = " . $batiment->id_structure);
                      ?>
-                     <ul>
+                     <ul id="etage">
                         <?php
                            while ($donnees = $reponse->fetch()) {
                               $my_structure = new Structure($donnees['id_structure'],
+                                                            "cellule",
                                                             $donnees['nom_structure'],
                                                             $donnees['adresse_structure'],
                                                             $donnees['coordonnees_structure'],
@@ -84,10 +92,11 @@
                                                       WHERE structure.id_structure = cellule.id_structure
                                                       AND cellule.id_etage = " . $etage->id_structure);
                               ?>
-                              <ul>
+                              <ul id="cellule">
                                  <?php
                                     while ($donnees = $reponse->fetch()) {
                                        $my_structure = new Structure($donnees['id_structure'],
+                                                                     "/",
                                                                      $donnees['nom_structure'],
                                                                      $donnees['adresse_structure'],
                                                                      $donnees['coordonnees_structure'],
@@ -112,6 +121,3 @@
          }
       ?>
    </ul>
-   <?php
-   // print_r($array_structure);
-?>

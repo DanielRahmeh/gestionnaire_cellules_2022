@@ -235,7 +235,7 @@
                            <td data-label="Email"><?php echo $donnees['email_user']; ?></td>
                            <?php if ($donnees['admin_user'] == 1) {
                                  $link = "settings_admin.php?delete_admin=" . $donnees['email_user'];?>
-                                 <td data-label="Droits administrateurs"><a href="<?php echo($link); ?>">Supprimer</a></td>
+                                 <td data-label="Droits administrateurs"><a href="<?php echo($link); ?>">Retirer</a></td>
                            <?php } else {
                                  $link = "settings_admin.php?new_admin=" . $donnees['email_user'];?>
                                  <td data-label="Droits administrateurs"><a href="<?php echo($link); ?>" class="table_link_pos">Accorder</a></td>

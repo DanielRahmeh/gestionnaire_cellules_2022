@@ -74,13 +74,13 @@
 <!-- Script utilisé pour le diaporama en fond de la page de connexion -->
 <script>
    // Tableaux des url d'images à afficher
-   let images=new Array('http://localhost/gestionnaire_cellules_2022/img/background/HotelTertiaire_Bat.png',
-                        'http://localhost/gestionnaire_cellules_2022/img/background/HotelTertiaire_Lieu.png',
-                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica1_Bat.png', 
-                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_BatA.png', 
-                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_BatB.png',
-                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_BatC.png',
-                        'http://localhost/gestionnaire_cellules_2022/img/background/Numerica2_Lieu.png');
+   let images=new Array('https://rahmeh.fr/gdc/img/background/HotelTertiaire_Bat.png',
+                        'https://rahmeh.fr/gdc/img/background/HotelTertiaire_Lieu.png',
+                        'https://rahmeh.fr/gdc/img/background/Numerica1_Bat.png', 
+                        'https://rahmeh.fr/gdc/img/background/Numerica2_BatA.png', 
+                        'https://rahmeh.fr/gdc/img/background/Numerica2_BatB.png',
+                        'https://rahmeh.fr/gdc/img/background/Numerica2_BatC.png',
+                        'https://rahmeh.fr/gdc/img/background/Numerica2_Lieu.png');
    
    let i = 0;
 

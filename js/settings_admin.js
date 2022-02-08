@@ -119,10 +119,10 @@ function generatePassword() {
    var len = 0;
    
    if (checkBox.checked) {
-      document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
-      document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
-      document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
-      document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("len_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
+      document.getElementById("maj_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
+      document.getElementById("min_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
+      document.getElementById("num_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
 
       // Longueur du mot de passe généré
       if (arrayPasswordCheck[0] == 0)
@@ -175,21 +175,21 @@ pass.oninvalid = function(event) {
 // Fonction permettant d'afficher à l'utilisateur si les critère de validités du mot de passe sont réspecté gràce à des icones
 function checkLivePassword() {
    if (pass.value.length >= arrayPasswordCheck[0])
-      document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("len_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
    else
-      document.getElementById("len_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
+      document.getElementById("len_password_ico").src="https://rahmeh.fr/gdc/img/icon/cancel.png";
    if (pass.value.length - pass.value.replace(/[A-Z]/g, '').length  >= arrayPasswordCheck[1])
-      document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("maj_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
    else
-      document.getElementById("maj_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
+      document.getElementById("maj_password_ico").src="https://rahmeh.fr/gdc/img/icon/cancel.png";
    if (pass.value.length - pass.value.replace(/[a-z]/g, '').length  >= arrayPasswordCheck[2])
-      document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("min_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
    else
-      document.getElementById("min_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png"; 
+      document.getElementById("min_password_ico").src="https://rahmeh.fr/gdc/img/icon/cancel.png"; 
    if (pass.value.length - pass.value.replace(/[1-9]/g, '').length  >= arrayPasswordCheck[3])
-      document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/check.png";
+      document.getElementById("num_password_ico").src="https://rahmeh.fr/gdc/img/icon/check.png";
    else
-      document.getElementById("num_password_ico").src="http://localhost/gestionnaire_cellules_2022/img/icon/cancel.png";
+      document.getElementById("num_password_ico").src="https://rahmeh.fr/gdc/img/icon/cancel.png";
 }
 
 // Cette fonction est appelé à chaque appui sur le clavier de l'utilisateur dans le champs de saisie du mot de passe

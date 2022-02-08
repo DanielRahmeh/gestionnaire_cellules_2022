@@ -15,7 +15,7 @@
    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
    <!-- Intégration de jquery -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
    
    <!-- Intégration de TableFilter librairie jquery permmettant d'intégrer de tableau filtrable et triable -->
    <script src="../../TableFilter-master/dist/tablefilter/tablefilter.js"></script>

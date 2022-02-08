@@ -380,34 +380,11 @@ header nav a {
 
 /* Totalité de la page */
 #main_principal {
+   min-height: calc(100vh - 178px);
    background-color: var(--text-color);
    display: grid;
    grid-template-columns: 23rem auto;
 }
-
-/* Partie gauche */
-.slide_bar {
-   /* height: 1080px; */
-   color: white;
-}
-
-/* Liste de navigation des structures */
-.slide_bar ul {
-   padding: 5px 0px 5px 17px;
-   list-style: none;
-}
-
-/* Liens de la liste de navigations des structures */
-.slide_bar ul a {
-   color: var(--white-color);
-   margin-left: 10px;
-}
-
-.slide_bar ul a:hover{
-   color: var(--blue-color);
-}
-
-
 
 /* Partie droite */
 .main_display {
@@ -430,7 +407,7 @@ header nav a {
 
 /* Contenue en rapport avec la partie de recherche */
 #research_main {
-   margin-top: 35%;
+   margin-top: 30%;
    display: grid;
    place-items: center;
    position: absolute;
@@ -467,6 +444,39 @@ header nav a {
 
 
 /* ^^^ principal.php / main de la page principal ^^^ */
+
+
+
+/* vvv list.php / Liste de navigation vvv */
+
+/* Partie gauche */
+.slide_bar {
+   /* min-height: 100; */
+   color: white;
+}
+
+/* Liste de navigation des structures */
+.slide_bar ul {
+   padding: 5px 0px 5px 17px;
+   list-style: none;
+}
+
+/* Liens de la liste de navigations des structures */
+.slide_bar ul a {
+   color: var(--white-color);
+   margin-left: 10px;
+}
+
+.slide_bar ul a:hover{
+   color: var(--blue-color);
+}
+
+#batiment, #etage, #cellule {
+   display: none;
+}
+
+/* ^^^ principal.php / main de la page principal ^^^ */
+
 
 
 /* vvv settings.php / Page des paramètres administrateur vvv */
