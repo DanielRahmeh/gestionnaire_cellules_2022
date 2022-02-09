@@ -56,7 +56,6 @@
                                        $donnees['coordonnees_structure'],
                                        $donnees['image_structure']);
          array_push($lieu->content, $my_structure);
-         $i++;
       }
       foreach ($lieu->content as $batiment) {
          $batiment->link_structure = $i;
@@ -97,4 +96,30 @@
             }
          }
       }
+   }
+
+
+   function find_path ($array_structure, $link) {
+      $i = 0;
+      foreach ($array_structure as $lieu) {
+         if ($link == $lieu->link_structure)
+            $finded_path = $lieu->path;
+         $i++;
+         foreach ($lieu->content as $batiment) {
+            if ($link == $batiment->link_structure)
+               $finded_path = $batiment->path;
+            $i++;
+            foreach ($batiment->content as $etage) {
+               if ($link == $etage->link_structure)
+                  $finded_path = $etage->path;
+               $i++;
+               foreach ($etage->content as $cellule) {
+                  if ($link == $cellule->link_structure)
+                     $finded_path = $cellule->path;
+                  $i++;
+               }
+            }
+         }
+      }
+      return($finded_path);
    }

@@ -4,7 +4,7 @@
       $link = $url . $structure->id_structure . '&link=' . $i; 
       if(isset($_GET['id']) && $_GET['id'] == $structure->id_structure) { ?>
          <img  src="../../img/icon/right_orange.png" alt="" id="<?php echo($cliked); ?>"
-               onclick="dispList('<?php echo($i);?>', '<?php echo($path);?>')">
+               onclick="dispList('<?php echo($i);?>')">
          <a href="<?php echo($link); ?>" id="selected_structure"><?php echo($structure->nom_structure); ?></a>
       <?php }
       else { ?>
