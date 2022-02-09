@@ -1,3 +1,10 @@
+<?php
+   include('../scripts/init_structure.php');
+   // echo('<pre>');
+   // print_r($array_structure);
+   // echo('</pre>');
+?>
+
 <!-- Header des pages en général -->
 
 <!DOCTYPE html>
@@ -23,10 +30,12 @@
    <link rel="stylesheet" href="../../css/style.css" type="text/css" />
    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
    
+   <script src="../../js/list.js"></script>
+
    <title>Numerica GDC</title>
 </head>
 
-<body>
+<body onload="chekList();">
    <!-- Partie header des pages -->
    <header>
 

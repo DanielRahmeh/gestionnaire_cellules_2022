@@ -17,6 +17,11 @@
 
             <!-- Partie principal au centre de la page -->
             <div class="main_display">
+               <?php
+                  echo('<pre>');
+                     print_r($array_structure);
+                  echo('</pre>');
+               ?>
             </div>
             
          </main>

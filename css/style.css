@@ -448,7 +448,6 @@ header nav a {
 
 /* Partie gauche */
 .slide_bar {
-   /* min-height: 100; */
    color: white;
 }
 
@@ -464,6 +463,11 @@ header nav a {
    margin-left: 10px;
 }
 
+#selected_structure {
+   color: var(--orange-color);
+   font-weight: bold;
+}
+
 .slide_bar ul a:hover{
    color: var(--blue-color);
 }
@@ -477,7 +481,6 @@ header nav a {
 
 
 /* vvv settings.php / Page des paramètres administrateur vvv */
-
 
 /* Contenu basique dans les paramètres */
 .new_user_container {

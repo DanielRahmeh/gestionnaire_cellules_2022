@@ -13,7 +13,9 @@
          <div class="slide_bar">
 
             <!-- Liste de test -->
-            <?php require('../scripts/list.php');?>
+            <?php 
+            require('../scripts/list.php');
+            ?>
          </div>
 
          <!-- Partie principal au centre de la page -->
