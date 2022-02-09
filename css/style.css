@@ -454,7 +454,7 @@ header nav a {
 
 /* Liste de navigation des structures */
 .slide_bar ul {
-   padding: 5px 0px 5px 17px;
+   padding: 0px 0px 0px 17px;
    list-style: none;
 }
 
@@ -471,10 +471,6 @@ header nav a {
 [id^="structure"] {
    display: none;
 }
-
-/* #structure0 {
-   display: block;
-} */
 
 /* ^^^ principal.php / main de la page principal ^^^ */
 

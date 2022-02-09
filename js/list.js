@@ -1,18 +1,25 @@
-function dispList (structure, i) {
+function dispList (i) {
    i = parseInt(i);
    id = 'structure' + i;
+   cliked = 'cliked' + i;
    listToShow = document.getElementById(id);
+   console.log('id :')
+   console.log(cliked)
+   cliked = document.getElementById(cliked);
+   // console.log('val :')
+   // console.log(cliked);
    if (listToShow.style.display == "block") {
-      listToShow.style.display = "none";
       console.log('a cacher');
+      // cliked.src="https://rahmeh.fr/gdc/img/icon/right_white.png";
+      listToShow.style.display = "none";
    }
    else {
-      listToShow.style.display = "block";
       console.log('a afficher');
+      listToShow.style.display = "block";
+      // cliked.src="https://rahmeh.fr/gdc/img/icon/down_white.png";
    }
-   // console.log('Structure a agir:');
-   // console.log(id);
-   // console.log('Siblings of div-01:');
-   // console.log(listToShow);
-   // console.log(listToShow.innerHTML);
+   if ( cliked.src== "https://rahmeh.fr/gdc/img/icon/down_white.png")
+      cliked.src="https://rahmeh.fr/gdc/img/icon/right_white.png";
+   else
+      cliked.src="https://rahmeh.fr/gdc/img/icon/down_white.png";
 }
