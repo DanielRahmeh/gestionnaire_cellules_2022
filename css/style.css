@@ -407,10 +407,7 @@ header nav a {
 
 /* Contenue en rapport avec la partie de recherche */
 #research_main {
-   margin-top: 30%;
-   display: grid;
-   place-items: center;
-   position: absolute;
+   margin-top: 13%;
    background-color: var(--light-color);
    margin-left: auto;
    margin-right: auto;   
@@ -418,7 +415,7 @@ header nav a {
    border-top: 1px solid var(--gray-300);
    border-bottom: 1px solid var(--gray-300);
    border-radius: 30px 0 30px 0;
-    box-shadow: rgba(0, 0, 0, 0.089) -1px 3px 8px 2px;
+   box-shadow: rgba(0, 0, 0, 0.089) -1px 3px 8px 2px;
 }
 
 /* Contenue en rapport avec la partie de recherche */
@@ -471,9 +468,13 @@ header nav a {
    color: var(--blue-color);
 }
 
-#batiment, #etage, #cellule {
+[id^="structure"] {
    display: none;
 }
+
+/* #structure0 {
+   display: block;
+} */
 
 /* ^^^ principal.php / main de la page principal ^^^ */
 

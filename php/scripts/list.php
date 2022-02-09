@@ -26,8 +26,9 @@
       }
    }
 
-   function get_link($url, $structure) {
-      ?><img src="../../img/icon/right_white.png" alt="" onclick="dispList('<?php echo($structure->rang_structure);?>')">
+   function get_link($url, $structure, $i) {
+      ?><img src="../../img/icon/right_white.png" alt=""
+         onclick="dispList('<?php echo($structure->rang_structure);?>', '<?php echo($i);?>')">
       <?php $link = $url . $structure->id_structure; ?>
       <a href="<?php echo($link); ?>"><?php echo($structure->nom_structure); ?></a>
       <!-- Appel du fichier js regroupant tous les script liés à la page setting_admin.php -->
@@ -35,12 +36,14 @@
       <?php
    }
 
+   $i=0;
+   $id = 'structure' . $i;
    $array_structure = array();
    $reponse = $bdd->query("SELECT * FROM structure, lieu
                            WHERE structure.id_structure = lieu.id_structure");
    while ($donnees = $reponse->fetch()) {
       $my_structure = new Structure($donnees['id_structure'],
-                                    "batiment",
+                                    'lieu',
                                     $donnees['nom_structure'],
                                     $donnees['adresse_structure'],
                                     $donnees['coordonnees_structure'],
@@ -51,16 +54,18 @@
    <ul id="lieu">
       <?php
          foreach ($array_structure as $lieu) {
-            ?> <li><?php get_link('../pages/lieu.php?id=', $lieu); ?></li> <?php
+            ?> <li><?php get_link('../pages/lieu.php?id=', $lieu, $i); ?></li> <?php
             $reponse = $bdd->query("SELECT * FROM structure, batiment
                                     WHERE structure.id_structure = batiment.id_structure
                                     AND batiment.id_lieu = " . $lieu->id_structure);
+            $id = 'structure' . $i;
+            $i++;
             ?> 
-            <ul id="batiment">
+            <ul id="<?php echo($id); ?>">
                <?php
                   while ($donnees = $reponse->fetch()) {
                      $my_structure = new Structure($donnees['id_structure'],
-                                                   "etage",
+                                                   $id,
                                                    $donnees['nom_structure'],
                                                    $donnees['adresse_structure'],
                                                    $donnees['coordonnees_structure'],
@@ -69,16 +74,18 @@
                      array_push($array_structure, $my_structure);
                   }
                   foreach ($lieu->content as $batiment) {
-                     ?> <li><?php get_link('../pages/batiment.php?id=', $batiment); ?></li> <?php
+                     ?> <li><?php get_link('../pages/batiment.php?id=', $batiment, $i); ?></li> <?php
                      $reponse = $bdd->query("SELECT * FROM structure, etage
                                              WHERE structure.id_structure = etage.id_structure
                                              AND etage.id_batiment = " . $batiment->id_structure);
-                     ?>
-                     <ul id="etage">
+                     $id = 'structure' . $i;
+                     $i++;
+                     ?> 
+                     <ul id="<?php echo($id); ?>">
                         <?php
                            while ($donnees = $reponse->fetch()) {
                               $my_structure = new Structure($donnees['id_structure'],
-                                                            "cellule",
+                                                            $id,
                                                             $donnees['nom_structure'],
                                                             $donnees['adresse_structure'],
                                                             $donnees['coordonnees_structure'],
@@ -87,16 +94,18 @@
                               array_push($array_structure, $my_structure);
                            }
                            foreach ($batiment->content as $etage) {
-                              ?> <li><?php get_link('../pages/etage.php?id=', $etage); ?></li> <?php
+                              ?> <li><?php get_link('../pages/etage.php?id=', $etage, $i); ?></li> <?php
                               $reponse = $bdd->query("SELECT * FROM structure, cellule
                                                       WHERE structure.id_structure = cellule.id_structure
                                                       AND cellule.id_etage = " . $etage->id_structure);
-                              ?>
-                              <ul id="cellule">
+                              $id = 'structure' . $i;
+                              $i++;
+                              ?> 
+                              <ul id="<?php echo($id); ?>">
                                  <?php
                                     while ($donnees = $reponse->fetch()) {
                                        $my_structure = new Structure($donnees['id_structure'],
-                                                                     "/",
+                                                                     "",
                                                                      $donnees['nom_structure'],
                                                                      $donnees['adresse_structure'],
                                                                      $donnees['coordonnees_structure'],
@@ -105,7 +114,7 @@
                                        array_push($array_structure, $my_structure);
                                     }
                                     foreach ($etage->content as $cellule) {
-                                       ?> <li><?php get_link('../pages/cellule.php?id=', $cellule); ?></li> <?php
+                                       ?> <li><?php get_link('../pages/cellule.php?id=', $cellule, $i); ?></li> <?php
                                     }
                                  ?>
                               </ul>
