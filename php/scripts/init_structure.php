@@ -99,27 +99,75 @@
    }
 
 
-   function find_path ($array_structure, $link) {
-      $i = 0;
+   function find_path($array_structure, $link) {
       foreach ($array_structure as $lieu) {
          if ($link == $lieu->link_structure)
             $finded_path = $lieu->path;
-         $i++;
          foreach ($lieu->content as $batiment) {
             if ($link == $batiment->link_structure)
                $finded_path = $batiment->path;
-            $i++;
             foreach ($batiment->content as $etage) {
                if ($link == $etage->link_structure)
                   $finded_path = $etage->path;
-               $i++;
                foreach ($etage->content as $cellule) {
                   if ($link == $cellule->link_structure)
                      $finded_path = $cellule->path;
-                  $i++;
                }
             }
          }
       }
       return($finded_path);
+   }
+
+   function get_level($i) {
+
+      if ($i == 0)
+         $level = 'lieu';
+      if ($i == 1)
+         $level = 'batiment';
+      if ($i == 2)
+         $level = 'etage';
+      if ($i == 3)
+         $level = 'cellule';
+      return($level);
+   }
+
+   function find_name_path($array_structure, $finded_path){
+      $finded_name_path = array('level' => array(), 'name' => array(), 'id' => array(), 'link' => array());
+      $tab_path = explode('/', $finded_path);
+      for ($i = 0; $i < count($tab_path); $i++) {
+         foreach ($array_structure as $lieu) {
+            if ($tab_path[$i] == $lieu->link_structure) {
+               array_push($finded_name_path['level'], get_level($i));
+               array_push($finded_name_path['name'], $lieu->nom_structure);
+               array_push($finded_name_path['id'], $lieu->id_structure);
+               array_push($finded_name_path['link'], $lieu->link_structure);
+            }
+            foreach ($lieu->content as $batiment) {
+               if ($tab_path[$i] == $batiment->link_structure) {
+                  array_push($finded_name_path['level'], get_level($i));
+                  array_push($finded_name_path['name'], $batiment->nom_structure);
+                  array_push($finded_name_path['id'], $batiment->id_structure);
+                  array_push($finded_name_path['link'], $batiment->link_structure);
+               }
+               foreach ($batiment->content as $etage) {
+                  if ($tab_path[$i] == $etage->link_structure) {
+                     array_push($finded_name_path['level'], get_level($i));
+                     array_push($finded_name_path['name'], $etage->nom_structure);
+                     array_push($finded_name_path['id'], $etage->id_structure);
+                     array_push($finded_name_path['link'], $etage->link_structure);
+                  }
+                  foreach ($etage->content as $cellule) {
+                     if ($tab_path[$i] == $cellule->link_structure) {
+                        array_push($finded_name_path['level'], get_level($i));
+                        array_push($finded_name_path['name'], $cellule->nom_structure);
+                        array_push($finded_name_path['id'], $cellule->id_structure);
+                        array_push($finded_name_path['link'], $cellule->link_structure);
+                     }
+                  }
+               }
+            }
+         }
+      }
+      return ($finded_name_path);
    }

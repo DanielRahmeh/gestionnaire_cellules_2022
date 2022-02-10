@@ -31,7 +31,7 @@ function dispList(i) {
 
 function checkList(path) {
    tab_path = path.split('/');
-   console.log(tab_path);
+   // console.log(tab_path);
    for(i = 0; i < tab_path.length; i++) {
       id = 'structure' + tab_path[i];
       cliked = 'cliked' + tab_path[i];

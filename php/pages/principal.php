@@ -14,7 +14,7 @@
 
             <!-- Liste de test -->
             <?php 
-            require('../scripts/list.php');
+            require('list.php');
             ?>
          </div>
 

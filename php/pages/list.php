@@ -23,7 +23,7 @@
    <ul id="lieu">
       <?php
          foreach ($array_structure as $lieu) {
-            ?> <li><?php get_link('?id=', $lieu, $i, $lieu->path); ?></li> <?php
+            ?> <li><?php get_link('lieu.php?id=', $lieu, $i, $lieu->path); ?></li> <?php
             $id = 'structure' . $i;
             $i++;
             ?> 
@@ -31,7 +31,7 @@
                <?php     
                   foreach ($lieu->content as $batiment) {
                      $batiment->path = $lieu->path . '/' . $i;
-                     ?> <li><?php get_link('?id=', $batiment, $i, $batiment->path); ?></li> <?php
+                     ?> <li><?php get_link('batiment.php?id=', $batiment, $i, $batiment->path); ?></li> <?php
                      $id = 'structure' . $i;
                      $i++;
                      ?> 
@@ -39,7 +39,7 @@
                         <?php
                            foreach ($batiment->content as $etage) {
                               $etage->path = $batiment->path . '/' . $i;
-                              ?> <li><?php get_link('?id=', $etage, $i,  $etage->path); ?></li> <?php
+                              ?> <li><?php get_link('etage.php?id=', $etage, $i,  $etage->path); ?></li> <?php
                               $id = 'structure' . $i;
                               $i++;
                               ?> 
@@ -47,7 +47,7 @@
                                  <?php
                                     foreach ($etage->content as $cellule) {
                                        $cellule->path = $etage->path . '/' . $i;
-                                       ?> <li><?php get_link('?id=', $cellule, $i, $etage->path); ?></li> <?php
+                                       ?> <li><?php get_link('cellule.php?id=', $cellule, $i, $etage->path); ?></li> <?php
                                        $i++;
                                        
                                     }

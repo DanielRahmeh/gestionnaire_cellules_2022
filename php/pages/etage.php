@@ -12,16 +12,12 @@
             <div class="slide_bar">
 
                <!-- Liste de test -->
-               <?php require('../scripts/list.php');?>
+               <?php require('list.php');?>
             </div>
 
             <!-- Partie principal au centre de la page -->
             <div class="main_display">
-               <?php
-                  echo('<pre>');
-                     print_r($array_structure);
-                  echo('</pre>');
-               ?>
+               <?php require('structure_path.php');?>
             </div>
             
          </main>

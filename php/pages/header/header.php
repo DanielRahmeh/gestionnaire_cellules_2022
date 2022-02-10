@@ -41,6 +41,7 @@
    $path = '';
    if (isset($_GET['link'])){
       $path = find_path($array_structure, $_GET['link']);
+      $tab_path = find_name_path($array_structure, $path);
    }
 ?>
 

@@ -598,7 +598,7 @@ header nav a {
 /* ^^^ settings.php / Page des paramètres administrateur ^^^ */
 
 
-/* ^^^ footer.php / Footer des pages ^^^ */
+/* vvv footer.php / Footer des pages vvv */
 
 footer {
    background-color: var(--gray-100);
@@ -614,3 +614,13 @@ footer nav {
 }
 
 /* ^^^ footer.php / Footer des pages ^^^ */
+
+
+/* vvv lieu.php, batiment.php, etage.php, cellule.php / Pages des structures vvv */
+
+.path {
+   /* display: flex; */
+   font-style: italic;
+}
+
+/* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */
