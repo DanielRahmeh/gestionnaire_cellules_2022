@@ -20,22 +20,24 @@
 
          <!-- Partie principal au centre de la page -->
          <div class="main_display">
-            <button class="menu_button"><img src="../../img/icon/menu_off.png" alt="" id="button_click"  onclick="hideList()"></button>
-            <?php
-            // Message de bienvenue vérifiant les droits administrateurs de l'utilisateur
-            if ($admin == 1) {
-                  ?><p id="connect_info">
-                     Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b> en tant qu'administrateur</br>
-                  </p>
-                  <?php
-               }
-            else {
-                  ?><p id="connect_info">
-                     Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b></br>
-                  </p>
-                  <?php
-               }
-            ?>
+            <div class="head_structure">
+               <button class="menu_button"><img src="../../img/icon/menu_off.png" alt="" id="button_click"  onclick="hideList()"></button>
+               <?php
+               // Message de bienvenue vérifiant les droits administrateurs de l'utilisateur
+               if ($admin == 1) {
+                     ?><p id="path">
+                        Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b> en tant qu'administrateur</br>
+                     </p>
+                     <?php
+                  }
+               else {
+                     ?><p id="path">
+                        Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b></br>
+                     </p>
+                     <?php
+                  }
+               ?>
+            </div>
             <HR ALIGN=LEFT WIDTH="99%">
 
             <!-- Partie de recherche de la page principal -->

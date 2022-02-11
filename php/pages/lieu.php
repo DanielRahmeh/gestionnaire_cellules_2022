@@ -31,9 +31,7 @@
                      $surface_structure = $donnees['surface_structure'];
                      $image_structure = $donnees['image_structure'];
                   }
-                  ?><h1> <?php echo($nom_structure); ?> </h1><?php
-               ?>
-               <h1></h1>
+                  ?><h1> <?php echo($nom_structure); ?> </h1>
             </div>
             
          </main>
