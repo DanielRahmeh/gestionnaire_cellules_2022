@@ -13,17 +13,19 @@
       public $nom_structure;
       public $adresse_structure;
       public $coordonnees_structure;
+      public $surface_structure;
       public $image_structure;
       public $path;
       public $content = array();
 
       public function __construct($id_structure, $link_structure, $nom_structure, $adresse_structure, 
-                                 $coordonnees_structure, $image_structure) {
+                                 $coordonnees_structure, $surface_structure, $image_structure) {
          $this->id_structure = $id_structure;
          $this->link_structure = $link_structure;
          $this->nom_structure = $nom_structure;
          $this->adresse_structure = $adresse_structure;
          $this->id_struccoordonnees_structureture = $coordonnees_structure;
+         $this->id_struccoordonnees_structureture = $surface_structure;
          $this->image_structure = $image_structure;
       }
    }
@@ -38,6 +40,7 @@
                                     $donnees['nom_structure'],
                                     $donnees['adresse_structure'],
                                     $donnees['coordonnees_structure'],
+                                    $donnees['surface_structure'],
                                     $donnees['image_structure']);
       array_push($array_structure, $my_structure);
    }
@@ -54,6 +57,7 @@
                                        $donnees['nom_structure'],
                                        $donnees['adresse_structure'],
                                        $donnees['coordonnees_structure'],
+                                       $donnees['surface_structure'],
                                        $donnees['image_structure']);
          array_push($lieu->content, $my_structure);
       }
@@ -70,6 +74,7 @@
                                           $donnees['nom_structure'],
                                           $donnees['adresse_structure'],
                                           $donnees['coordonnees_structure'],
+                                          $donnees['surface_structure'],
                                           $donnees['image_structure']);
             array_push($batiment->content, $my_structure);
          }
@@ -86,6 +91,7 @@
                                              $donnees['nom_structure'],
                                              $donnees['adresse_structure'],
                                              $donnees['coordonnees_structure'],
+                                             $donnees['surface_structure'],
                                              $donnees['image_structure']);
                array_push($etage->content, $my_structure);
             }

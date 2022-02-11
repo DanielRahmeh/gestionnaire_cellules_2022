@@ -20,6 +20,7 @@
 
          <!-- Partie principal au centre de la page -->
          <div class="main_display">
+            <button class="menu_button"><img src="../../img/icon/menu_off.png" alt="" id="button_click"  onclick="hideList()"></button>
             <?php
             // Message de bienvenue vérifiant les droits administrateurs de l'utilisateur
             if ($admin == 1) {

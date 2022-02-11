@@ -17,7 +17,10 @@
 
             <!-- Partie principal au centre de la page -->
             <div class="main_display">
-               <?php require('structure_path.php');?>
+               <div class="head_structure">
+                  <button class="menu_button"><img src="../../img/icon/menu_off.png" alt="" id="button_click"  onclick="hideList()"></button>
+                  <?php require('structure_path.php');?>
+               </div>
             </div>
             
          </main>
