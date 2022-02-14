@@ -22,15 +22,18 @@
    
    table thead {
       display: none;
-      }
-   table tr{
+   }
+
+   table tr {
       display: block;
       margin-bottom: 40px;
    }
+
    table td {
       display: block;
       text-align: right;
    }
+
    table td:before {
       content: attr(data-label);
       float: left;
@@ -38,8 +41,12 @@
    }
 }
 
-@media screen and (max-width: 400px) {
-   table tr{
+@media screen and (max-width: 420px) {
+   #path {
+      display: none;
+   }
+
+   table tr {
       width: 90%;
    }
 }

@@ -33,6 +33,7 @@
    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
    
    <script src="../../js/list.js"></script>
+   <script type ="text/javascript" src ="../../js/map.js"></script>
 
    <title>Numerica GDC</title>
 </head>

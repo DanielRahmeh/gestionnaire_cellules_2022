@@ -39,10 +39,10 @@ function checkList(path) {
          listToShow = document.getElementById(id);
          cliked = document.getElementById(cliked);
          listToShow.style.display = "block";
-         if (cliked.src == "https://rahmeh.fr/gdc/img/icon/right_orange.png")
-            cliked.src ="https://rahmeh.fr/gdc/img/icon/down_orange.png";
-         else
+         if (cliked.src == "https://rahmeh.fr/gdc/img/icon/right_white.png")
             cliked.src ="https://rahmeh.fr/gdc/img/icon/down_white.png";
+         else
+            cliked.src ="https://rahmeh.fr/gdc/img/icon/down_orange.png";
       }
    }
 }
@@ -51,9 +51,7 @@ function checkList(path) {
 
 function hideList() {
    mainPrincipal = document.getElementById('main_principal');
-   console.log(mainPrincipal);
    buttonClick = document.getElementById('button_click');
-   console.log(buttonClick);
    if (buttonClick.src == "https://rahmeh.fr/gdc/img/icon/menu_on.png") {
       buttonClick.src = "https://rahmeh.fr/gdc/img/icon/menu_off.png";
       mainPrincipal.style["grid-template-columns"] = "23rem auto";
@@ -63,3 +61,4 @@ function hideList() {
       mainPrincipal.style["grid-template-columns"] = "0rem auto";
    }
 }
+

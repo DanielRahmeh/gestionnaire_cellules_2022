@@ -132,6 +132,10 @@ input {
    }
 }
 
+h1 {
+   margin-bottom: 40px;
+}
+
 /* Titres h3 et h4 */
 h3, h4 {
    color: var(--text-color);
@@ -412,13 +416,17 @@ header nav a {
 
 /* Contenue en rapport avec la partie de recherche */
 #research_grid {
-   display: grid;
-   place-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   min-height: 50vh;
 }
 
 /* Contenue en rapport avec la partie de recherche */
 #research_main {
-   margin-top: 150px;
+   vertical-align: middle;
+   /* margin-top: 150px; */
    background-color: var(--light-color);
    margin-left: auto;
    margin-right: auto;   
@@ -642,6 +650,36 @@ footer nav {
    font-style: italic;
 }
 
+.img_structure {
+   width: 400px;
+   border-radius: 30px;
+   box-shadow: rgba(0, 0, 0, 0.226) -1px 3px 8px 2px;
+}
 
+#map {
+   height: 280px;
+   width: 400px;
+   border-radius: 30px;
+   box-shadow: rgba(0, 0, 0, 0.226) -1px 3px 8px 2px;
+ }
+
+ .id_structure {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .map_section {
+    text-align: center;
+ }
+
+ .img_section {
+    display: flex;
+ }
+
+ .img_section ul{
+   list-style: none;
+   top: 50%;
+}
 
 /* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */
