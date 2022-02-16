@@ -1,7 +1,27 @@
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 1600px) {
+   .id_structure {
+      display: block;
+   }
+   .map_section {
+      text-align: left;
+   }
+   
+
+}
+
+@media screen and (max-width: 850px) {
 	header {
 		justify-content: space-around;
 	}
+   .img_section {
+      display: block;
+   }
+   .img_section ul {
+      padding-left: 0;
+   }
+   .structure_container {
+      margin: 0;
+   }
 }
 
 @media screen and (max-width: 600px) {
@@ -39,14 +59,15 @@
       float: left;
       font-weight: bold;
    }
+
 }
 
-@media screen and (max-width: 420px) {
-   #path {
-      display: none;
-   }
-
+@media screen and (max-width: 450px) {
    table tr {
       width: 90%;
+   }
+   .img_structure {
+      width: 90%;
+      height: 100%;
    }
 }

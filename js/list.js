@@ -1,12 +1,3 @@
-// function check_path(nb, tab) {
-//    count = 0;
-//    for(i = 0; i < tab.length; i++) {
-//       if (nb == tab[i])
-//          count++;
-//    }
-//    return(count);
-// }
-
 function dispList(i) {
    i = parseInt(i);
    id = 'structure' + i;
@@ -52,12 +43,13 @@ function checkList(path) {
 function hideList() {
    mainPrincipal = document.getElementById('main_principal');
    buttonClick = document.getElementById('button_click');
-   if (buttonClick.src == "https://rahmeh.fr/gdc/img/icon/menu_on.png") {
-      buttonClick.src = "https://rahmeh.fr/gdc/img/icon/menu_off.png";
+   img = document.getElementById('img_click');
+   if (img.src == "https://rahmeh.fr/gdc/img/icon/menu_on.png") {
+      img.src = "https://rahmeh.fr/gdc/img/icon/menu_off.png";
       mainPrincipal.style["grid-template-columns"] = "23rem auto";
    }
    else {
-      buttonClick.src = "https://rahmeh.fr/gdc/img/icon/menu_on.png";
+      img.src = "https://rahmeh.fr/gdc/img/icon/menu_on.png";
       mainPrincipal.style["grid-template-columns"] = "0rem auto";
    }
 }

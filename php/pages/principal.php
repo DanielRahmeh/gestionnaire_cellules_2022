@@ -21,7 +21,7 @@
          <!-- Partie principal au centre de la page -->
          <div class="main_display">
             <div class="head_structure">
-               <button class="menu_button"><img src="../../img/icon/menu_off.png" alt="" id="button_click"  onclick="hideList()"></button>
+            <button class="menu_button" id="button_click" onclick="hideList()"><img src="../../img/icon/menu_off.png" alt="" id="img_click"></button>
                <?php
                // Message de bienvenue vérifiant les droits administrateurs de l'utilisateur
                if ($admin == 1) {

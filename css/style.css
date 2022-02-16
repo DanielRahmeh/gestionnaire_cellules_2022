@@ -388,7 +388,7 @@ header nav a {
    background-color: var(--text-color);
    display: grid;
    grid-template-columns: 23rem auto;
-   animation-duration: 1s;
+   transition: 0.5s;
 }
 
 /* Partie droite */
@@ -396,6 +396,7 @@ header nav a {
    background-color: var(--light-color);
    border-radius: 30px 0 0 30px;
    padding: 2rem 0 0 3rem;
+   transition: 0.5s;
 }
 
 /* Paragraphe */
@@ -409,10 +410,20 @@ header nav a {
    margin-bottom: 30px;
    padding: 10px 20px 10px 20px;
    border-radius: 30px 0 0 0;
-   background-color: var(--gray-150);
+   background-color: var(--gray-100);
    box-shadow: rgba(0, 0, 0, 0.308) -1px 3px 8px 2px;
    border: none;
+   transition: 0.6s;
 }
+
+.main_display .menu_button:hover {
+   width: 90px;
+}
+
+a:active {
+   background-color: var(--gray-200);
+
+ }
 
 /* Contenue en rapport avec la partie de recherche */
 #research_grid {
@@ -478,20 +489,25 @@ header nav a {
 }
 
 /* Liens de la liste de navigations des structures */
+
+/* liste de navigation à gauche */
 .slide_bar ul a {
    color: var(--white-color);
    margin-left: 10px;
 }
 
+/* élément de la liste séléctionné */
 #selected_structure {
    color: var(--orange-color);
    font-weight: bold;
 }
 
+/* survol de la souris des lien de la liste */
 .slide_bar ul a:hover{
    color: var(--blue-color);
 }
 
+/* Sous-liste caché par défault */
 [id^="structure"] {
    display: none;
 }
@@ -638,6 +654,7 @@ footer nav {
 
 /* vvv lieu.php, batiment.php, etage.php, cellule.php / Pages des structures vvv */
 
+/* partie haute des body */
 .head_structure {
    height: 66px;
    display: flex;
@@ -645,41 +662,70 @@ footer nav {
    gap: 20px;
 }
 
+.structure_container {
+   margin-left: 80px;
+}
+
+/* chemin de structure */
 .path {
    width: auto;
    font-style: italic;
 }
 
+/* image des structures */
 .img_structure {
    width: 400px;
+   height: 292px;
    border-radius: 30px;
    box-shadow: rgba(0, 0, 0, 0.226) -1px 3px 8px 2px;
 }
 
+/* affichage de la map via l'api google map */
 #map {
-   height: 280px;
-   width: 400px;
+   height: 268px;
+   width: 100%;
    border-radius: 30px;
    box-shadow: rgba(0, 0, 0, 0.226) -1px 3px 8px 2px;
  }
 
+ /* informations générales des structures */
  .id_structure {
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
+    width: 93%;
+    /* display: flex;
+    justify-content: space-between; */
  }
 
+ /* partie map */
  .map_section {
     text-align: center;
  }
 
+ /* partie image + info */
  .img_section {
     display: flex;
+    margin-bottom: 50px;
  }
 
- .img_section ul{
+ /* les lignes html placé dans les infos */
+ .img_section hr {
+margin: 0;
+}
+
+/* la liste des infos */
+.img_section ul{
    list-style: none;
    top: 50%;
+   width: 100%;
+}
+
+/* Nombre de cellules occupées  */
+.occupe {
+   color: var(--orange-color);
+}
+
+/* Nombre de cellules libre */
+.libre {
+   color: var(--blue-color);
 }
 
 /* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */

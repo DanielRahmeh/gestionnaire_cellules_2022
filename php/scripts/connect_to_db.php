@@ -24,6 +24,8 @@
             $this->_conn = false;
             try {
                 $this->_conn = new PDO('mysql:host=localhost;dbname=gcn;charset=utf8', 'root', 'root');
+                $this->_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->_conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             } catch(PDOException $e) { }
             return $this->_conn;
         }
