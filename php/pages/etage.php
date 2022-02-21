@@ -63,9 +63,12 @@ if($_SESSION['email'] != "") {
                         <?php echo(count($array_cel['organisme']) - (count($array_cel['organisme']) - array_count_values($array_cel['organisme'])['/'])); ?>
                      </li>
                   </ul>
-                  
+
                </div>
             </section>
+            <?php
+            include('disp_cell.php');
+            ?>
          </div>
       </div>
       

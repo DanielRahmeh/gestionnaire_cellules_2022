@@ -59,6 +59,10 @@
       float: left;
       font-weight: bold;
    }
+   
+   .filter-cell {
+      display: block;
+   }
 
 }
 
@@ -67,7 +71,7 @@
       width: 90%;
    }
    .img_structure {
-      width: 90%;
+      width: 100%;
       height: 100%;
    }
 }

@@ -17,7 +17,7 @@ function get_name(name) {
 function initMap() {
    const uluru = { lat: lat, lng: long };
    const map = new google.maps.Map(document.getElementById("map"), {
-     zoom: 15,
+     zoom: 16,
      center: uluru,
    });
     const contentString = '<h3>' + name_coor + '</h3>';

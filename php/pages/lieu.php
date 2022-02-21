@@ -46,6 +46,7 @@ if($_SESSION['email'] != "") {
             <?php require('structure_path.php');?>
 
          </div>
+
          <div class="structure_container">
 
             <!-- Affichage du nom de la structure -->
@@ -92,6 +93,11 @@ if($_SESSION['email'] != "") {
                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0jTUhQHFFFtrzAGl688mWwQ1hnFOsPZQ&callback=initMap&libraries=&v=weekly"
                async>
             </script>
+
+            <?php
+            include('disp_cell.php');
+            ?>
+            
 
          </div>
       </div>

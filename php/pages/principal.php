@@ -21,44 +21,26 @@
          <!-- Partie principal au centre de la page -->
          <div class="main_display">
             <div class="head_structure">
-            <button class="menu_button" id="button_click" onclick="hideList()"><img src="../../img/icon/menu_off.png" alt="" id="img_click"></button>
-               <?php
-               // Message de bienvenue vérifiant les droits administrateurs de l'utilisateur
-               if ($admin == 1) {
-                     ?><p id="path">
-                        Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b> en tant qu'administrateur</br>
-                     </p>
-                     <?php
-                  }
-               else {
-                     ?><p id="path">
-                        Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b></br>
-                     </p>
-                     <?php
-                  }
-               ?>
+            <button class="menu_button" id="button_click" onclick="hideList()">
+               <img src="../../img/icon/menu_off.png" alt="" id="img_click">
+            </button>
+            <?php
+            // Message de bienvenue vérifiant les droits administrateurs de l'utilisateur
+            if ($admin == 1) {
+                  ?><p id="path">
+                     Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b> en tant qu'administrateur</br>
+                  </p>
+                  <?php
+               }
+            else {
+                  ?><p id="path">
+                     Bonjour, vous êtes connecté au compte de : <b> <?php echo($email); ?></b></br>
+                  </p>
+                  <?php
+               }
+            ?>
             </div>
             <HR ALIGN=LEFT WIDTH="99%">
-
-            <!-- Partie de recherche de la page principal -->
-            <div id="research_grid">
-               <div id="research_main">
-
-                  <!-- Logo de Numerica an niveau de la barre de recherche -->
-                  <div id="banniere">
-                     <img src="../../img/logo/logo_img2.png" alt="Retour à l'accueil">
-                     <h3>Gestionnaire de cellules</h3>
-                  </div>
-                  <h4><i>RECHERCHER</i></h4>
-
-                  <!-- Formulaire de recherche -->
-                  <form action="" id="search_bar_main">
-                     <input type="text" name="search" placeholder="Entrer votre recherche" class="search_bar_main" required>
-                     <button type="submit" name="btnEnvoiForm" title="Search" class="search_button"><img src="../../img/icon/search.png" class="icon_search" /></button>
-                  </form>
-
-               </div>
-            </div>
 
          </div>
       </main>

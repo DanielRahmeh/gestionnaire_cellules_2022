@@ -53,7 +53,7 @@
       <!-- Logo principal -->
       <a href="principal.php" id="banniere">
          <img src="../../img/logo/logo_img2.png" alt="Retour à l'accueil">
-         <h3>Gestionnaire de cellules</h3>
+         <h3>GDC Numerica</h3>
       </a>
 
       <!-- Bar de recherche -->

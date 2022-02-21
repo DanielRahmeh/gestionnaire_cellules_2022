@@ -87,7 +87,9 @@ if($_SESSION['email'] != "") {
                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0jTUhQHFFFtrzAGl688mWwQ1hnFOsPZQ&callback=initMap&libraries=&v=weekly"
                async>
             </script>
-
+            <?php
+            include('disp_cell.php');
+            ?>
          </div>
       </div>
    </main>
