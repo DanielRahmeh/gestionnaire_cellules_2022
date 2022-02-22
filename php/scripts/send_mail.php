@@ -9,9 +9,9 @@
 // Appel des fichiers utiles au fonctionnment du protocol de mailing
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require '../../PHPMailer/src/Exception.php';
-require '../../PHPMailer/src/PHPMailer.php';
-require '../../PHPMailer/src/SMTP.php';
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
 
 // Fonction a appelé lors de la mise en place d'un evoie de mail
 // prend en paramètre : le sujet du mail / le message du mail / l'adresse mail du destinataire
@@ -33,11 +33,9 @@ function send_mail($subject, $body, $destinator) {
       $mail->send();
       $mail->SmtpClose();
       unset($mail);
-      echo 'Message has been sent';
    }
    catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
    }
 }
-
 ?>

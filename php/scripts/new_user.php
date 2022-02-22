@@ -60,7 +60,7 @@
                            'date_inscription' => $date_inscription));
 
       // Appel du fichier permettant l'envoi de mail
-      require 'send_mail.php';
+      require '../../PHPmailer/src/send_mail.php';
       send_mail('Inscription au gestionnaire de cellules',
                'Bonjour,<br /><br />
                Vous avez été inscrit sur l\'application \'Gestionnaire de cellules\'.<br />
@@ -71,7 +71,6 @@
                Cordialement,<br />
                L\'équipe technique de Numerica.',
                $email_user);
-
       // Redirection vers la page précédent avec message de validation de création
       header('Location: ../pages/settings_admin.php?valide=1');     
    }

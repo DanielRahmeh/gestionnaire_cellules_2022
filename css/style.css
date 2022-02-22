@@ -417,7 +417,7 @@ header nav a {
 
 .main_display .menu_button {
    width: 60px;
-   margin-bottom: 30px;
+   margin-bottom: 20px;
    padding: 8px 20px 10px 18px;
    border-radius: 30px;
    background-color: var(--gray-100);
@@ -655,7 +655,6 @@ footer nav {
 
 /* partie haute des body */
 .head_structure {
-   height: 66px;
    display: flex;
    align-items: center;
    gap: 20px;
@@ -667,6 +666,7 @@ footer nav {
 
 /* chemin de structure */
 .path {
+   margin-bottom: 0;
    width: auto;
    font-style: italic;
 }
@@ -762,21 +762,27 @@ margin: 0;
 }
 
 .card {
-   width: 166px;
+   width: 145px;
    display: flex;
    align-items: center;
    margin: 15px;
-   border-radius: 5px;  
+   border-radius: 15px;
+   transition-duration: 0.3s;
+   /* box-shadow: 4px 4px 15px 3px rgba(0,0,0,0.28); */
+}
+
+.card:hover {
+   width: 175px;
+   margin-right: 0px;
+   margin-left: 0px;
+   box-shadow: 0px 0px 3px 3px var(--blue-color);
 }
 
 .card a {
    width: 100%;
-   padding: 10px 0 10px 0;
+   padding: 5px 0 5px 0;
    text-align: center;
-}
-
-.title {
-   border-bottom: 1px solid var(--gray-150);
+   font-size: var(--text-s);
 }
 
 #cell-list-loue .card {
@@ -784,13 +790,15 @@ margin: 0;
 }
 
 #cell-list-loue .organisme {
-   background-color: var(--gray-100);
-   border-radius: 0px 0px 5px 5px;
-   box-shadow: inset 0px 28px 12px -24px rgba(0,0,0,0.36);
+   /* background-color: var(--gray-100); */
+   border-radius: 0px 0px 15px 15px;
+   /* box-shadow: inset 0px 28px 12px -24px rgba(0,0,0,0.36); */
 }
 
 #cell-list-loue .title {
-   border-bottom: 4px solid var(--orange-color);
+   border-radius: 15px 15px 0px 0px;
+   background-color: var(--gray-100);
+   /* border-bottom: 4px solid var(--orange-color); */
 }
 
 #cell-list-libre .card {
@@ -798,14 +806,16 @@ margin: 0;
 }
 
 #cell-list-libre .organisme {
-   background-color: var(--gray-100);
+   /* background-color: var(--gray-100); */
    color: var(--text-color);
-   border-radius: 0px 0px 5px 5px;
-   box-shadow: inset 0px 28px 12px -24px rgba(0,0,0,0.36);
+   border-radius: 0px 0px 15px 15px;
+   /* box-shadow: inset 0px 28px 12px -24px rgba(0,0,0,0.36); */
 }
 
 #cell-list-libre .title {
-   border-bottom: 4px solid var(--text-color);
+   border-radius: 15px 15px 0px 0px;
+   background-color: var(--gray-100);
+   /* border-bottom: 4px solid var(--text-color); */
    color: var(--text-color);
 }
 /* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */
