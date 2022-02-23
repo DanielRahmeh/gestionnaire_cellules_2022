@@ -47,13 +47,14 @@ if($_SESSION['email'] != "") {
          <div class="structure_container">
 
             <!-- Affichage du nom de la structure -->
-            <h1><b> <?php echo($nom_structure); ?> </b></h1>
-            
+            <h1 class="h1-etage"><b> <?php echo($nom_structure); ?> </b></h1>
             <section class="id_structure">
+               <button id="plan_button">Afficher le plan</button>
+               <img src="<?php echo($image_structure); ?>" alt="" id="plan"> 
                <div class="img_section">
-
+                  
                   <!-- Affichage des différents données correspondant à la structure -->
-                  <ul>
+                  <ul class="list_etage">
                      <li><b>Surface</b> : <?php echo($surface_structure); ?> m²</li>
                      <li><b>Nombre de cellules total</b> : <?php echo(count($array_cel['nom'])); ?></li>
                      <li class="occupe"><b>Nombre de cellules occupées</b> : 

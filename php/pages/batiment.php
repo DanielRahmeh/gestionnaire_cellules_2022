@@ -48,7 +48,6 @@ if($_SESSION['email'] != "") {
             
             <section class="id_structure">
                <div class="img_section">
-                  
                   <!-- Affichage de l'image de la structure -->
                   <img src="<?php echo($image_structure); ?>" alt="" class="img_structure">
                   

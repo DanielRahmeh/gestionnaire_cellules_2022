@@ -406,7 +406,7 @@ header nav a {
    background-color: var(--light-color);
    /* border-radius: 30px 0 0 0; */
    padding: 2rem 0 0 3rem;
-   transition: 0.5s;
+   transition: 0.3s;
 }
 
 /* Paragraphe */
@@ -423,7 +423,7 @@ header nav a {
    background-color: var(--gray-100);
    box-shadow: rgba(0, 0, 0, 0.308) -1px 3px 8px 2px;
    border: none;
-   transition: 0.6s;
+   transition: 0.2s;
 }
 
 .main_display .menu_button:hover {
@@ -767,15 +767,29 @@ margin: 0;
    align-items: center;
    margin: 15px;
    border-radius: 15px;
-   transition-duration: 0.3s;
+   transition-duration: 0.1s;
    /* box-shadow: 4px 4px 15px 3px rgba(0,0,0,0.28); */
+}
+
+#cell-list-loue .card {
+   border: 2px solid var(--orange-color);
+}
+
+#cell-list-libre .card {
+   border: 2px solid var(--text-color);
 }
 
 .card:hover {
    width: 175px;
-   margin-right: 0px;
+   margin: 15px 0px 13px 0px;
+   /* margin-right: 0px;
    margin-left: 0px;
-   box-shadow: 0px 0px 3px 3px var(--blue-color);
+   margin-bottom: 13px; */
+   /* box-shadow: 0px 0px 3px 3px var(--blue-color); */
+}
+
+#cell-list-loue .card:hover, #cell-list-libre .card:hover {
+   border: 2px solid var(--blue-color);
 }
 
 .card a {
@@ -785,9 +799,7 @@ margin: 0;
    font-size: var(--text-s);
 }
 
-#cell-list-loue .card {
-   border: 2px solid var(--orange-color);
-}
+
 
 #cell-list-loue .organisme {
    /* background-color: var(--gray-100); */
@@ -801,9 +813,7 @@ margin: 0;
    /* border-bottom: 4px solid var(--orange-color); */
 }
 
-#cell-list-libre .card {
-   border: 2px solid var(--text-color);
-}
+
 
 #cell-list-libre .organisme {
    /* background-color: var(--gray-100); */
@@ -817,5 +827,35 @@ margin: 0;
    background-color: var(--gray-100);
    /* border-bottom: 4px solid var(--text-color); */
    color: var(--text-color);
+}
+
+#cell-list-libre a:hover {
+   color: var(--blue-color);
+}
+
+/* .h1-etage {
+   margin-bottom: 20px;
+} */
+
+.list_etage {
+   padding: 0;
+}
+
+#plan {
+   width: 100%;
+   display: none;
+}
+
+#plan_button {
+   width: 130px;
+   padding: 7px;
+   border-radius: 5px;
+   margin-bottom: 20px;
+   border: none;
+   transition-duration: 0.2s;
+}
+
+#plan_button:hover {
+   box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,0.36);
 }
 /* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */
