@@ -1,3 +1,5 @@
+// Fonctions permettant d'affiche la liste déroulant de manière dynamique
+
 function dispList(i) {
    i = parseInt(i);
    id = 'structure' + i;

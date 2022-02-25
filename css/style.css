@@ -842,12 +842,18 @@ margin: 0;
 }
 
 #plan {
-   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   width: 90%;
+   padding: 40px 20px 40px 20px;
+   border: 1px solid var(--gray-150);
    display: none;
+   margin-bottom: 50px;
+   border-radius: 5px;
 }
 
 #plan_button {
-   width: 130px;
+   width: 140px;
    padding: 7px;
    border-radius: 5px;
    margin-bottom: 20px;

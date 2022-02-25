@@ -49,7 +49,7 @@ if($_SESSION['email'] != "") {
             <!-- Affichage du nom de la structure -->
             <h1 class="h1-etage"><b> <?php echo($nom_structure); ?> </b></h1>
             <section class="id_structure">
-               <button id="plan_button">Afficher le plan</button>
+               <button id="plan_button" onclick="dispPlan()">Afficher le plan</button>
                <img src="<?php echo($image_structure); ?>" alt="" id="plan"> 
                <div class="img_section">
                   
@@ -71,7 +71,7 @@ if($_SESSION['email'] != "") {
 
             // Appel du fichier permettant d'afficher la liste filtrable des cellules
             include('disp_cell.php');
-            
+
             ?>
          </div>
       </div>

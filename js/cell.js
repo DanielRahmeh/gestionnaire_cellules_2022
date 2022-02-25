@@ -33,5 +33,17 @@ function getVal(batiment, etage, list) {
    }
 }
 
-// valBatiment.onchange = dispCell(batiment, etage, id);
-// valEtage.onchange = dispCell(batiment, etage, id);
+// Fonction permettant d'afficher ou masquer le plan sur la page étage
+function dispPlan() {
+   var button = document.getElementById('plan_button');
+   var plan = document.getElementById('plan');
+
+   if (plan.style.display == "none") {
+      plan.style.display = "block";
+      button.innerHTML = 'Masquer le plan';
+   }
+   else {
+      plan.style.display = "none";
+      button.innerHTML = 'Afficher le plan';
+   }
+}

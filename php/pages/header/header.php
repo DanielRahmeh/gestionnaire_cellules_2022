@@ -36,6 +36,7 @@
    <!-- Integration du JS -->
    <script type ="text/javascript" src="../../js/list.js"></script>
    <script type ="text/javascript" src ="../../js/map.js"></script>
+   <script type ="text/javascript" src ="../../js/cell.js"></script>
 
    <title>Numerica GDC</title>
 </head>
