@@ -68,7 +68,10 @@ if($_SESSION['email'] != "") {
                </div>
             </section>
             <?php
+
+            // Appel du fichier permettant d'afficher la liste filtrable des cellules
             include('disp_cell.php');
+            
             ?>
          </div>
       </div>

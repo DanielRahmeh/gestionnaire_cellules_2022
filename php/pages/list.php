@@ -1,4 +1,7 @@
 <?php
+// Fichier permettant d'afficher la liste déroulante représentant les structures
+
+// Fonction permettant de récupérer le lien en fonction de l'élément de la liste
    function get_link($url, $structure, $i, $path) {
       $cliked = 'cliked' . $i;
       $link = $url . $structure->id_structure . '&link=' . $i; 
@@ -12,7 +15,6 @@
                onclick="dispList('<?php echo($i);?>', '<?php echo($path);?>')">
          <a href="<?php echo($link); ?>"><?php echo($structure->nom_structure); ?></a>
       <?php } ?>
-      <!-- Appel du fichier js regroupant tous les script liés à la page setting_admin.php -->
       <script src="../../js/list.js"></script>
       <?php
    }
@@ -20,6 +22,8 @@
    $i = 0;
    $id = 'structure' . $i;
    ?>
+
+   <!-- Affichage de la liste en 4 niveau de structure -->
    <ul id="lieu">
       <?php
          foreach ($array_structure as $lieu) {

@@ -119,7 +119,7 @@ foreach ($array_structure as $lieu) {
    }
 }
 
-
+// Fonction permettant de récupérer le bon chemin depuis le tableu d'objet des structures
 function find_path($array_structure, $link) {
 
    foreach ($array_structure as $lieu) {
@@ -141,6 +141,7 @@ function find_path($array_structure, $link) {
    return($finded_path);
 }
 
+// Fonction de récupérer le nom de chaque rang des éléments du chemin
 function get_level($i) {
 
    if ($i == 0)
@@ -154,6 +155,7 @@ function get_level($i) {
    return($level);
 }
 
+// Fonction permettant de récuperer les données de chaque éléments du chemin
 function find_name_path($array_structure, $finded_path){
 
    $finded_name_path = array('level' => array(), 'name' => array(), 'id' => array(), 'link' => array());

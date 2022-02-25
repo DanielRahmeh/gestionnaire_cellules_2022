@@ -1,4 +1,6 @@
 <?php
+// Fichier permettant de récupérer les données de la structure affichée
+
 $reponse = $bdd->query("SELECT * FROM structure
                         WHERE structure.id_structure = " . $_GET['id']);
 while ($donnees = $reponse->fetch()) {

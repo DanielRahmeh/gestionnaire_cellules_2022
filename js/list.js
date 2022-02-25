@@ -22,7 +22,6 @@ function dispList(i) {
 
 function checkList(path) {
    tab_path = path.split('/');
-   // console.log(tab_path);
    if (tab_path.length != 0) {
       for(i = 0; i < tab_path.length; i++) {
          id = 'structure' + tab_path[i];

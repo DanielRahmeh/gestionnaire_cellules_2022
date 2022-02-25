@@ -1,4 +1,5 @@
 <?php
+   // Appel du fichier permettant l'initialisation du tableau d'objet des structures (Lieu, Batiment, Etage et Cellules)
    include('../scripts/init_structure.php');
    // echo('<pre>');
    // print_r($array_structure);
@@ -32,15 +33,20 @@
    <link rel="stylesheet" href="../../css/style.css" type="text/css" />
    <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
    
-   <script src="../../js/list.js"></script>
+   <!-- Integration du JS -->
+   <script type ="text/javascript" src="../../js/list.js"></script>
    <script type ="text/javascript" src ="../../js/map.js"></script>
 
    <title>Numerica GDC</title>
 </head>
 
 <?php
+   // Initialisation du chemin pour arriver jusqu'à la structure affichée
    $path = '';
+
+   // Verification de la structure affichée
    if (isset($_GET['link'])){
+      // Appel des fonctions permettant la création du chemin
       $path = find_path($array_structure, $_GET['link']);
       $tab_path = find_name_path($array_structure, $path);
    }

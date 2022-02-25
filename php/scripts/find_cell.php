@@ -1,4 +1,5 @@
 <?php
+// Fonction permettant d'établir un tableau des cellules sous location que composent la structure affichée
 
 function find_cell($array_structure, $id, $bdd) {
 
