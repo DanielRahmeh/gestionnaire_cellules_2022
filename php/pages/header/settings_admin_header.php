@@ -33,7 +33,7 @@
 
       <!-- Logo principal -->
       <a href="principal.php" id="banniere">
-         <img src="../../img/logo/logo_img2.png" alt="Retour à l'accueil">
+         <img src="../../img/logo/logo_image.png" alt="Retour à l'accueil">
          <h3>GDC Numerica</h3>
       </a>
 

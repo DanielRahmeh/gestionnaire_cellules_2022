@@ -10,7 +10,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head></head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,15 +28,29 @@
 
    <!-- Intégration de TableFilter librairie jquery permmettant d'intégrer de tableau filtrable et triable -->
    <script src="../../TableFilter-master/dist/tablefilter/tablefilter.js"></script>
-
-   <!-- Intégration du CSS -->
-   <link rel="stylesheet" href="../../css/style.css" type="text/css" />
-   <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
-   
+ 
    <!-- Integration du JS -->
    <script type ="text/javascript" src="../../js/list.js"></script>
    <script type ="text/javascript" src ="../../js/map.js"></script>
    <script type ="text/javascript" src ="../../js/cell.js"></script>
+
+   <!-- Intégration des modules requis pour la gestion des modales -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+   <link rel="stylesheet" href="https://unpkg.com/vue-cute-modal@1.1.0/dist/vue-cute-modal.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="https://unpkg.com/vue-cute-modal@1.1.0/dist/vue-cute-modal.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="https://unpkg.com/vue"></script>
+
+   <!-- Intégration du CSS -->
+   <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+   <link rel="stylesheet" href="../../css/responsive.css" type="text/css" />
 
    <title>Numerica GDC</title>
 </head>

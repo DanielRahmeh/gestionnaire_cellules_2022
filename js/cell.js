@@ -47,3 +47,20 @@ function dispPlan() {
       button.innerHTML = 'Afficher le plan';
    }
 }
+
+function newElemSelect(select, text) {
+   var newElem = document.getElementById(select);
+   var newText = document.getElementById(text);
+   
+   newText.value = '';
+}
+
+function newElem(select, text) {
+   var newElem = document.getElementById(select);
+   var newText = document.getElementById(text);
+
+   if (newText.value != '')
+      newElem.selectedIndex = (newElem.length - 1);
+   else
+      newElem.selectedIndex = 0;
+}

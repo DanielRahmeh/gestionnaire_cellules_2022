@@ -30,7 +30,8 @@ function checkList(path) {
          cliked = 'cliked' + tab_path[i];
          listToShow = document.getElementById(id);
          cliked = document.getElementById(cliked);
-         listToShow.style.display = "block";
+         if (i != 3)
+            listToShow.style.display = "block";
          if (cliked.src == "https://rahmeh.fr/gdc/img/icon/right_white.png")
             cliked.src ="https://rahmeh.fr/gdc/img/icon/down_white.png";
          else
