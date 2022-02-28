@@ -64,3 +64,18 @@ function newElem(select, text) {
    else
       newElem.selectedIndex = 0;
 }
+
+function changeTitle(text, input) {
+   var text = document.getElementById(text);
+   var input = document.getElementById(input);
+
+
+   if (input.style.display == 'none') {
+      text.style.display = 'none';
+      input.style.display = 'block';
+   }
+   else {
+      text.style.display = 'block';
+      input.style.display = 'none';
+   }
+}

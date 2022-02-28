@@ -10,4 +10,10 @@ $coordonnees_structure = $donnees['coordonnees_structure'];
 $surface_structure = $donnees['surface_structure'];
 $image_structure = $donnees['image_structure'];
 }
+
+$reponse = $bdd->query("SELECT * FROM cellule");
+while ($donnees = $reponse->fetch()) {
+   if($donnees['id_structure'] ==  $_GET['id'])
+      $id_cellule = $donnees['id_cellule'];
+}
 ?>

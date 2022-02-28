@@ -47,7 +47,18 @@ if($_SESSION['email'] != "") {
          <div class="structure_container">
 
             <!-- Affichage du nom de la structure -->
-            <h1 class="h1-etage"><b> <?php echo($nom_structure); ?> </b></h1>
+            <div class="title-structure">
+               <h1 id="title-text"><b> <?php echo($nom_structure); ?> </b></h1>
+               <?php
+               $url = '../scripts/edit_structure_name.php?id=' . $_GET['id'] . '&link=' . $_GET['link'] . '&rang=etage';
+               ?>
+               <form action="<?php echo($url); ?>" method="Post" id='title-form' style="margin-top: 25px;display: none;">
+                  <label for="">Modifier le nom de l'étage'</label> <br>
+                  <input type="text" name="new_title" value="<?php echo($nom_structure); ?>" style="margin-bottom: 25px;"  
+                  onchange="this.form.submit()">
+               </form>
+               <img src="../../img/icon/modify.png.png" alt="" onclick="changeTitle('title-text', 'title-form')">
+            </div>
             <section class="id_structure">
                <button id="plan_button" onclick="dispPlan()">Afficher le plan</button>
                <img src="<?php echo($image_structure); ?>" alt="" id="plan"> 

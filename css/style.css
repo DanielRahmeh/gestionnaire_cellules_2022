@@ -57,6 +57,7 @@ a {
 /* Survol de liens */
 a:hover {
    color: var(--blue-color);
+   text-decoration: none;
 }
 
 /* Message d'erreur */
@@ -866,14 +867,18 @@ margin: 0;
 }
 
 .cell-list {
-   margin-top: 70px;
+   margin-left: 15px;
+   padding: 5px 10px 10px 10px;
+   margin-bottom: 0;
 }
+
+
 
 .little-button {
    width: 100px;
-   padding: 7px;
-   border-radius: 25px;
-   margin-top: 20px;
+   padding: 3px;
+   border-radius: 5px;
+   margin: 10px 0px 10px 0px;
    border: none;
    transition-duration: 0.2s;
    color: var(--orange-color);
@@ -884,6 +889,25 @@ margin: 0;
    background-color: var(--orange-color);
    color: var(--gray-100);
 }
+
+#add-little-button {
+   color: var(--blue-color);
+}
+
+#add-little-button:hover {
+   background-color: var(--blue-color);
+   color: var(--gray-100);
+}
+
+#delete-little-button {
+   color: var(--text-color);
+}
+
+#delete-little-button:hover {
+   background-color: var(--text-color);
+   color: var(--gray-100);
+}
+
 
 .form-modal input{
    margin-bottom: 15px;
@@ -905,6 +929,16 @@ margin: 0;
 
 .modal-submit:hover {
    box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.151);
+}
+
+.title-structure {
+   display: flex;
+}
+
+.title-structure img {
+   cursor: pointer;
+   height: 22px;
+   margin: 27px 0px 0px 15px;
 }
 
 /* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */
