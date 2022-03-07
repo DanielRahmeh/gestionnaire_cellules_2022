@@ -79,3 +79,13 @@ function changeTitle(text, input) {
       input.style.display = 'none';
    }
 }
+
+function checkedDiv(check, input) {
+   check = document.getElementById(check);
+   input = document.getElementById(input);
+
+   if (check.checked == true) 
+      input.style.display = 'none';
+   else
+      input.style.display = 'block';
+}

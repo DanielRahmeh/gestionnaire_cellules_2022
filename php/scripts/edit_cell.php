@@ -9,12 +9,6 @@ if (!$bdd) {
    die("Error connecting to the database");
 }
 
-echo 'type : ' . ($_POST['modify']) . '<br />';
-echo 'catégorie : ' . ($_POST['cat']) . '<br />';
-echo 'nouvelle catégorie : ' . ($_POST['new-cat']) . '<br />';
-echo 'nouveau type : ' . ($_POST['new-type']) . '<br />';
-echo 'surface : ' . ($_POST['surface']) . '<br />';
-echo 'nouvelle image : ' . ($_POST['new-image']) . '<br /><br /><br />';
 $id_structure = $_GET['id'];
 
 if ($_POST['modify'] != '/' && $_POST['modify'] != '-' ) {

@@ -33,6 +33,7 @@
    <script type ="text/javascript" src="../../js/list.js"></script>
    <script type ="text/javascript" src ="../../js/map.js"></script>
    <script type ="text/javascript" src ="../../js/cell.js"></script>
+   <script type ="text/javascript" src ="../../js/table.js"></script>
 
    <!-- Intégration des modules requis pour la gestion des modales -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -47,6 +48,7 @@
    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    <script src="https://unpkg.com/vue"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 
    <!-- Intégration du CSS -->
    <link rel="stylesheet" href="../../css/style.css" type="text/css" />

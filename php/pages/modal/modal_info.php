@@ -90,7 +90,7 @@
             $url = '../scripts/reset_image.php?id=' . $_GET['id'] . '&link=' . $_GET['link'];
             ?>
             <a href="<?php echo($url); ?>">Supprimer l'image</a>
-            <input type="submit" value="Modifier" class="modal-submit">
+            <input type="submit" value="Confirmer" class="modal-submit">
          </form>
       </div>
       </div>

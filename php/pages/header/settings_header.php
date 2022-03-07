@@ -17,6 +17,7 @@
    
    <!-- Intégration de TableFilter librairie jquery permmettant d'intégrer de tableau filtrable et triable -->
    <script src="../../TableFilter-master/dist/tablefilter/tablefilter.js"></script>
+   <script type ="text/javascript" src ="../../js/table.js"></script>
 
    <!-- Intégration du CSS -->
    <link rel="stylesheet" href="../../css/style.css" type="text/css" />

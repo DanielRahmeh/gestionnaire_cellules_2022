@@ -218,7 +218,7 @@
             ?>
 
             <!-- Affichage du tableau contenant les données récupérés -->
-            <table class="excel-table">
+            <table class="excel-table" id='adimin-table'>
                <thead>
                      <tr>
                         <th _sorttype="string">Email</th>
@@ -247,8 +247,8 @@
                      <?php              
                }
                ?>
-               </tbody> 
-            </table>            
+               </tbody>
+            </table>
          <?php
          }
 
@@ -263,6 +263,7 @@
 
 <!-- Appel du fichier js regroupant tous les script liés à la page setting_admin.php -->
 <script src="../../js/settings_admin.js"></script>
+<script type ="text/javascript" src ="../../js/table.js"></script>
 <?php
    include('header/footer.php');
 ?>

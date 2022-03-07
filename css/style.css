@@ -18,7 +18,7 @@
    --text-color: #1B2032;
    --light-color: white;
    --orange-color: #FB4210;
-   --blue-color: #4C39E9;
+   --blue-color: #4c39e9;
    --alert-color: #f39494;
    --error-color: #b30000;
    --valide-color: #0b8000;
@@ -908,6 +908,22 @@ margin: 0;
    color: var(--gray-100);
 }
 
+.big-button {
+   width: 40px;
+   height: 76px;
+   padding: 0;
+   margin: 0;
+   margin: 0px 0px 0px 0px;
+   border: none;
+   transition-duration: 0.2s;
+   color: var(--orange-color);
+   border-right: 1px solid white;
+   
+}
+
+.big-button:hover {
+   box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.151);
+}
 
 .form-modal input{
    margin-bottom: 15px;
@@ -925,10 +941,12 @@ margin: 0;
    margin-top: 20px;
    color: var(--orange-color);
    transition-duration: 0.2s;
+   width: 100%;
 }
 
 .modal-submit:hover {
    box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.151);
+   color: var(--blue-color);
 }
 
 .title-structure {
@@ -941,4 +959,155 @@ margin: 0;
    margin: 27px 0px 0px 15px;
 }
 
+.etat-lieux {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin: 0 0 100px 0;
+   border-top: 1px solid var(--gray-150);
+   border-bottom: 1px solid var(--gray-150);
+   width: 93%;
+   /* padding: 30px 0px 30px 0px; */
+}
+
+.etat-nav {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 170px;
+   height: 227px;
+   background-size: contain;
+   font-weight: 900;
+   color: white;
+   transition-duration: 0.1s;
+   margin: 30px 5px 30px 5px;
+   font-size: 20px;
+   -webkit-text-stroke: 1px black;
+}
+
+.etat-nav:hover {
+   width: 175px;
+   height: 233px;
+   margin: 25px 10px 25px 10px;
+}
+
+#murs-nav {
+   background-image: url('../img/etat/default_mur.jpg');
+}
+
+
+
+#plafond-nav {
+   background-image: url('../img/etat/default_plafond.jpg');
+}
+
+#sol-nav {
+   background-image: url('../img/etat/default_sol.jpg');
+}
+
+#modal-lieux {
+   position: absolute;
+   left: calc(50% - 425px);
+   margin-top: 50px;
+   margin-left: -50px;
+   width: 100px;
+}
+
+#modal-lieux-width {
+   width: 940px;
+}
+
+.img-list {
+   width: 170px;
+   height: 227px;
+   border-radius: 5px;
+}
+
+.modal-list {
+   list-style: none;
+   display: flex;
+   gap: 20px;
+}
+
+.modal-list form{
+   display: flex;
+   gap: 20px;
+}
+
+.file-modal {
+   margin-bottom: 30px;
+}
+
+.delete-lieu {
+   width: 100%;
+   height: 50px;
+   margin-top: 20px;
+   transition-duration: 0.2s;
+   background-color: var(--gray-100);
+   display: flex;
+   justify-content: center;
+}
+
+.delete-lieu:hover {
+   box-shadow: inset 0px 0px 5px 3px rgba(0, 0, 0, 0.151);
+}
+
+.delete-lieu a {
+   width: 100%;
+   height: 100%;
+   padding-left: 39%;
+   padding-top: 13px;
+}
+
+.delete-lieu:hover a {
+   color: var(--text-color);
+}
+
+#lieu-add {
+   color: var(--blue-color);
+   margin-top: 90px;
+}
+
+.equipement-link {
+   color: var(--text-color);
+}
+
+#delete-equipement:hover {
+   color: var(--orange-color);
+}
+
 /* ^^^ lieu.php, batiment.php, etage.php, cellule.php / Pages des structures ^^^ */
+
+/* vvv list.js / Liste affichés dans les modals vvv */
+
+.list {
+   list-style: none;
+   padding-left: 0;
+   display: flex;
+   flex-flow: wrap;
+   gap: 30px;
+   margin-top: 20px;
+
+}
+
+.list li {
+   padding: 10px 10px 5px 10px;
+   border-radius: 5px;
+   border: 1px solid var(--gray-150);
+   width: 280px;
+   background-color: #f8f8f8;
+}
+
+.title-list {
+   padding-top: 0;
+
+}
+
+.link-modify {
+   display: flex;
+   justify-content: space-around;
+}
+
+
+/* ^^^ list.js / Liste affichés dans les modals ^^^ */
