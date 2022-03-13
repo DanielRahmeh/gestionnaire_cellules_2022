@@ -1,8 +1,3 @@
-<?php
-   // Appel du fichier permettant l'initialisation du tableau d'objet des structures (Lieu, Batiment, Etage et Cellules)
-   include('../scripts/init_structure.php');
-?>
-
 <!-- Header des pages en général -->
 
 <!DOCTYPE html>
@@ -54,19 +49,8 @@
    <title>Numerica GDC</title>
 </head>
 
-<?php
-   // Initialisation du chemin pour arriver jusqu'à la structure affichée
-   $path = '';
 
-   // Verification de la structure affichée
-   if (isset($_GET['link'])){
-      // Appel des fonctions permettant la création du chemin
-      $path = find_path($array_structure, $_GET['link']);
-      $tab_path = find_name_path($array_structure, $path);
-   }
-?>
-
-<body onload="checkList('<?php echo($path); ?>');">
+<body>
    <!-- Partie header des pages -->
    <header>
 
@@ -75,21 +59,4 @@
          <img src="../../img/logo/logo_image.png" alt="Retour à l'accueil">
          <h3>GDC Numerica</h3>
       </a>
-
-      <!-- Bar de recherche -->
-      <form action="searching.php" method="POST" id="search_bar_header">
-         <input type="text" name="searching" placeholder="Entrer votre recherche" class="search_bar" required>
-         <button type="submit" name="btnEnvoiForm" title="Search" class="search_button"><img src="../../img/icon/search.png" class="icon_search" /></button>
-      </form>
-
-      <!-- Boutons de navigation -->
-      <nav>
-         <?php if ($_SESSION['admin'] == 1) {?>
-            <a href="settings_admin.php"  id="settings">
-               <img src="../../img/icon/settings.png" alt="" class="icon_nav">
-            </a>
-            <?php }?>
-         <a href="settings.php" id="user"><img src="../../img/icon/user.png" alt="" class="icon_nav"></a>
-         <a href="../scripts/disconnect.php"  id="power-button"><img src="../../img/icon/power-button.png" alt="" class="icon_nav"></a>
-      </nav>
-   </header>
+</header>

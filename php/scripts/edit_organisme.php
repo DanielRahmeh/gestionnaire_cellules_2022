@@ -8,19 +8,6 @@ if (!$bdd) {
    die("Error connecting to the database");
 }
 
-echo 'organimse : ' . $_POST['organisme'] . '<br />';
-echo 'new_organimse : ' . $_POST['new_organisme'] . '<br />';
-echo 'tel_organimse : ' . $_POST['tel_organisme'] . '<br />';
-echo 'date_entree : ' . $_POST['date_entree'] . '<br />';
-echo 'date_sortie : ' . $_POST['date_sortie'] . '<br />';
-if (isset($_POST['undifinied_date_sortie'])) {
-   echo 'oui' . '<br />';
-}
-else {
-   echo 'non' .  '<br />';
-}
-
-
 $id_organisme = $_POST['organisme'];
 $tel_organisme = $_POST['tel_organisme'];
 $id_structure = $_GET['id'];
@@ -77,14 +64,12 @@ if (isset($_GET['id_bail'])) {
       'id_bail' => $id_bail));
    
    if (!isset($_POST['undifined_tel'])) {
-      echo('non');
       $query = $bdd->prepare('UPDATE organisme SET tel_organisme = :tel_organisme WHERE id_organisme = :id_organisme');
       $query->execute(array(
          'tel_organisme' => $tel_organisme,
          'id_organisme' => $id_organisme));
    }
    else {
-      echo'oui';
       $reponse = $bdd->query("SELECT *
                               FROM organisme
                               WHERE id_organisme = '$id_organisme'");

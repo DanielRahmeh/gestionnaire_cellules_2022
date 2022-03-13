@@ -50,7 +50,7 @@
                   <input type="checkbox" name="stay_connected" placeholder="Toujours rester connecté">
                </div>
                <!-- Lien vers la demande d'un nouveau mot de passe -->
-               <a href="#">Mot de passe oublié</a>
+               <a href="forgot_password.php">Mot de passe oublié</a>
             </div>
 
             <!-- Bouton de confirmation  et d'envoi du formulaire -->

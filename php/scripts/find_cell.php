@@ -6,6 +6,7 @@ function find_cell($array_structure, $id, $bdd) {
    $array_cel = array("nom" => array(),
                      "id" => array(),
                      "link" => array(),
+                     "surface" => array(),
                      "etage" => array(),
                      "batiment" => array(),
                      "lieu" => array(),
@@ -44,6 +45,7 @@ function find_cell($array_structure, $id, $bdd) {
                   array_push($array_cel['nom'],  $cellule->nom_structure);
                   array_push($array_cel['id'],  $cellule->id_structure);
                   array_push($array_cel['link'],  $cellule->link_structure);
+                  array_push($array_cel['surface'],  $cellule->surface_structure);
                   array_push($array_cel['etage'],  $etage->nom_structure);
                   array_push($array_cel['batiment'],  $batiment->nom_structure);
                   array_push($array_cel['lieu'],  $lieu->nom_structure);

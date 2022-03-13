@@ -402,6 +402,13 @@ header nav a {
    transition: 0.5s;
 }
 
+#main_principal_2 {
+   margin-left: 20px;
+   min-height: calc(100vh - 178px);
+   background-color: var(--text-color);
+ 
+}
+
 /* Partie droite */
 .main_display {
    background-color: var(--light-color);
@@ -1019,8 +1026,8 @@ margin: 0;
 }
 
 .img-list {
-   width: 170px;
-   height: 227px;
+   max-width: 190px;
+   /* height: 227px; */
    border-radius: 5px;
 }
 

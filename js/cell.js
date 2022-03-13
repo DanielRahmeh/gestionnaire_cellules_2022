@@ -48,6 +48,17 @@ function dispPlan() {
    }
 }
 
+function dispModifPlan() {
+   var plan = document.getElementById('plan_form');
+
+   if (plan.style.display == "none") {
+      plan.style.display = "block";
+   }
+   else {
+      plan.style.display = "none";
+   }
+}
+
 function newElemSelect(select, text) {
    var newElem = document.getElementById(select);
    var newText = document.getElementById(text);

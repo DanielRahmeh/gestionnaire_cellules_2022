@@ -65,7 +65,13 @@ if($_SESSION['email'] != "") {
                   <!-- Affichage des différents données correspondant à la structure -->
                   <ul>
                      <li><b>Adresse</b><br/><?php echo($adresse_structure); ?> </li><hr>
-                     <li><b>Surface</b><br/><?php echo($surface_structure); ?> m²</li><hr>
+                     <?php
+                        $surface = 0;
+                        for ($i = 0; $i < count($array_cel['surface']); $i++) {
+                           $surface = $surface + $array_cel['surface'][$i];
+                        }
+                     ?>
+                     <li><b>Surface</b><br/><?php echo($surface); ?> m²</li><hr>
                      <li><b>Nombre d'étage</b><br/><?php echo(count(array_count_values($array_cel['etage']))); ?> </li><hr>
                      <li><b>Nombre de cellules total</b><br/><?php echo(count($array_cel['nom'])); ?></li><hr>
                      <li class="occupe"><b>Nombre de cellules occupées</b><br/>

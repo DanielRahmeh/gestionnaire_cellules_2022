@@ -61,12 +61,26 @@ if($_SESSION['email'] != "") {
             </div>
             <section class="id_structure">
                <button id="plan_button" onclick="dispPlan()">Afficher le plan</button>
-               <img src="<?php echo($image_structure); ?>" alt="" id="plan"> 
+               <button id="plan_button" onclick="dispModifPlan()">Modifier le plan</button>
+               <?php
+               $url = '../scripts/edit_plan.php?id=' . $_GET['id'] . '&link=' . $_GET['link'];
+               ?>
+               <form action="<?php echo($url); ?>" method="POST" id="plan_form" style="display: none;" enctype="multipart/form-data">
+                  <input name="plan" type="file">
+                  <input type="submit" value="Modifier" style="margin-bottom: 50px;">
+               </form>
+               <img src="<?php echo($image_structure); ?>" alt="" id="plan">
                <div class="img_section">
                   
                   <!-- Affichage des différents données correspondant à la structure -->
                   <ul class="list_etage">
-                     <li><b>Surface</b> : <?php echo($surface_structure); ?> m²</li>
+                  <?php
+                        $surface = 0;
+                        for ($i = 0; $i < count($array_cel['surface']); $i++) {
+                           $surface = $surface + $array_cel['surface'][$i];
+                        }
+                     ?>
+                     <li><b>Surface</b> : <?php echo($surface); ?> m²</li>
                      <li><b>Nombre de cellules total</b> : <?php echo(count($array_cel['nom'])); ?></li>
                      <li class="occupe"><b>Nombre de cellules occupées</b> : 
                         <?php echo(count($array_cel['organisme']) - array_count_values($array_cel['organisme'])['/']); ?>

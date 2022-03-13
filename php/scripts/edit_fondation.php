@@ -13,7 +13,7 @@ $id_etat = $_POST['etat'];
 $id_structure = $_GET['id'];
 if ($_FILES["new_image"]["name"] != '') {
    if (isset($_FILES['new_image']))
-      move_uploaded_file($_FILES["new_image"]["tmp_name"], "../../img/structures/" . $_FILES["new_image"]["name"]);
+      move_uploaded_file($_FILES["new_image"]["tmp_name"], "../../img/etat/" . $_FILES["new_image"]["name"]);
    $image_structure = 'https://rahmeh.fr/gdc/img/etat/' . $_FILES["new_image"]["name"]; 
 }
 $commentaire = $_POST['commentaire'];

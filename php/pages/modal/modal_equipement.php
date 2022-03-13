@@ -12,9 +12,11 @@
             $id_cat = (int) filter_var($id_modal2, FILTER_SANITIZE_NUMBER_INT);
             $url = "edit_type_equipement.php?id=" . $_GET['id'] . '&link=' . $_GET['link'] . '&id_cat_equipement=' . $id_cat;
             $url2 = "equipement.php?id=" . $_GET['id'] . '&link=' . $_GET['link'] . '&id_cat_equipement=' . $id_cat;
+            $url3 = "mult_equipement.php?id=" . $_GET['id'] . '&link=' . $_GET['link'] . '&id_cat_equipement=' . $id_cat;
          ?>
-         <a href="<?php echo($url); ?>" class="equipement-link">Gerez les types</a> <br> 
-         <a href="<?php echo($url2); ?>" class="equipement-link">Ajouter un équipement</a>
+         <a href="<?php echo($url); ?>" class="equipement-link">Gerez les types</a><br> 
+         <a href="<?php echo($url2); ?>" class="equipement-link">Ajouter un équipement</a><br> 
+         <a href="<?php echo($url3); ?>" class="equipement-link">Ajouter plusieurs équipements</a>
          <hr style="margin-bottom: 30px;">
          <?php
 
@@ -56,13 +58,12 @@
                      <p class="date" style="margin: 0;"><?php echo(date('d/m/Y', strtotime($donnees['date']))); ?></p>
                      
                   </div>
-                  <img src="<?php echo $donnees['image_equipement']; ?>" alt="" style="max-width:100%;margin: 10px 0 10px 0;">
-                  <?php $style = 'background-color: ' . $donnees['color'] . ';margin-bottom: 5px; padding: 5px 0px 3px 0px; color: white; border-radius: 5px; text-align: center;';?>
+                  <?php $style = 'background-color: ' . $donnees['color'] . ';margin: 10px 0 10px 0; padding: 5px 0px 3px 0px; color: white; border-radius: 5px; text-align: center;';?>
                   <p class="etat" style="display: none;"><?php echo($donnees['id_etat']); ?></p>
                   <p class="etat_equipement" style="<?php echo($style); ?>"><?php echo($donnees['nom_etat']); ?></p>
                   <?php
                   $url = "equipement.php?id=" . $_GET['id'] . '&link=' . $_GET['link'] . '&id_equipement=' . $donnees['id_equipement'] . '&id_cat_equipement=' . $id_cat;
-                  $url2 = "delete_equipement.php?id=" . $_GET['id'] . '&link=' . $_GET['link'] . '&id_equipement=' . $donnees['id_equipement'];
+                  $url2 = "../scripts/delete_equipement.php?id=" . $_GET['id'] . '&link=' . $_GET['link'] . '&id_equipement=' . $donnees['id_equipement'];
                   ?>
                   <div class="link-modify">
                      <a href="<?php echo($url);?>"  class="equipement-link">Modifier</a>

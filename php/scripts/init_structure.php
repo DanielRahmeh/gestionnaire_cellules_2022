@@ -22,10 +22,11 @@ class Structure {
    public $path;
    public $content = array(); // tableau represantant les sous-structures
 
-   public function __construct($id_structure, $link_structure, $rang_structure, $nom_structure, $adresse_structure, 
+   public function __construct($id_structure, $link_structure, $surafce_structure, $rang_structure, $nom_structure, $adresse_structure, 
                               $coordonnees_structure, $surface_structure, $image_structure) {
       $this->id_structure = $id_structure;
       $this->link_structure = $link_structure;
+      $this->surface_structure = $surafce_structure;
       $this->rang_structure = $rang_structure;
       $this->nom_structure = $nom_structure;
       $this->adresse_structure = $adresse_structure;
@@ -45,6 +46,7 @@ $reponse = $bdd->query("SELECT * FROM structure, lieu
 while ($donnees = $reponse->fetch()) {
    $my_structure = new Structure($donnees['id_structure'],
                                  $i,
+                                 $donnees['surface_structure'],
                                  'lieu',
                                  $donnees['nom_structure'],
                                  $donnees['adresse_structure'],
@@ -64,6 +66,7 @@ foreach ($array_structure as $lieu) {
    while ($donnees = $reponse->fetch()) {
       $my_structure = new Structure($donnees['id_structure'],
                                     $i,
+                                    $donnees['surface_structure'],
                                     'batiment',
                                     $donnees['nom_structure'],
                                     $donnees['adresse_structure'],
@@ -83,6 +86,7 @@ foreach ($array_structure as $lieu) {
       while ($donnees = $reponse->fetch()) {
          $my_structure = new Structure($donnees['id_structure'],
                                        $i,
+                                       $donnees['surface_structure'],
                                        'etage',
                                        $donnees['nom_structure'],
                                        $donnees['adresse_structure'],
@@ -102,6 +106,7 @@ foreach ($array_structure as $lieu) {
          while ($donnees = $reponse->fetch()) {
             $my_structure = new Structure($donnees['id_structure'],
                                           $i,
+                                          $donnees['surface_structure'],
                                           'cellule',
                                           $donnees['nom_structure'],
                                           $donnees['adresse_structure'],
@@ -194,5 +199,23 @@ function find_name_path($array_structure, $finded_path){
          }
       }
    }
+
+
    return ($finded_name_path);
+}
+
+
+function get_link_serach($id_structure, $array_structure){
+
+   foreach ($array_structure as $lieu) {
+      foreach ($lieu->content as $batiment) {
+         foreach ($batiment->content as $etage) {
+            foreach ($etage->content as $cellule) {
+               if ($id_structure == $cellule->id_structure) {
+                  return ($cellule->link_structure);
+               }
+            }
+         }
+      }
+   }
 }
